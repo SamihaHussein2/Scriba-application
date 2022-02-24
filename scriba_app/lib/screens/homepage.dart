@@ -7,7 +7,12 @@ import 'onboarding.dart';
 class Homepage extends StatelessWidget {
   @override
   Widget build(BuildContext context) => Scaffold(
-        body: Center(
+        body: Container(
+          constraints: const BoxConstraints.expand(),
+          decoration: const BoxDecoration(
+              image: DecorationImage(
+                  image: AssetImage("assets/images/Back-dark.png"),
+                  fit: BoxFit.cover)),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
