@@ -65,10 +65,10 @@ class _OnBoardingBodyState extends State<OnBoardingBody> {
                         (index) => buildDot(index: index),
                       ),
                     ),
-                    Spacer(flex: 2),
+                    Spacer(flex: 1),
                     ElevatedButton(
                       child: const Text("Get Started"),
-                      style: ButtonStyle(),
+                      style: AppTheme.buttonStyle,
                       onPressed: () {
                         Navigator.push(
                           context,
@@ -76,7 +76,7 @@ class _OnBoardingBodyState extends State<OnBoardingBody> {
                         );
                       },
                     ),
-                    Spacer(),
+                    const Spacer(),
                   ],
                 ),
               ),

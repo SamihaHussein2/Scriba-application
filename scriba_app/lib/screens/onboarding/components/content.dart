@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../../defaults/theme.dart';
 import '/defaults/config.dart';
 
 class OnBoardingContent extends StatelessWidget {
@@ -13,15 +14,13 @@ class OnBoardingContent extends StatelessWidget {
       children: [
         Spacer(),
         Text(
-          "Scriba",
-          style: TextStyle(
-              fontSize: getProportionateScreenWidth(36),
-              color: Colors.white,
-              fontWeight: FontWeight.bold),
-        ),
-        Text(
           text!,
           textAlign: TextAlign.center,
+          style: TextStyle(
+            fontFamily: AppTheme.macondoFont.fontFamily,
+            fontSize: getProportionateScreenWidth(30),
+            color: AppTheme.moderateOrange,
+          ),
         ),
         Spacer(flex: 2),
         Image.asset(
