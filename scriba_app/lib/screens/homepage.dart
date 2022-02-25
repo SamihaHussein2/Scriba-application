@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import '/widgets/button_widget.dart';
 
 import '../main.dart';
-import 'onboarding.dart';
+import 'onboarding/onboarding.dart';
 
 class Homepage extends StatelessWidget {
   @override
