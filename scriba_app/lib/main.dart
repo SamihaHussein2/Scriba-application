@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+import 'package:scriba_app/screens/navscreens/homepage.dart';
+import 'package:scriba_app/screens/navscreens/navBar.dart';
+
 import 'defaults/splash.dart';
 
 void main() {
@@ -25,7 +28,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: const Splash(),
+      home: NavigationBarr(),
     );
   }
 }

@@ -1,1 +1,0 @@
-D:\senior year\GP\Scriba-application\scriba_app\android\app\src\main\kotlin\com\example\scriba_app\MainActivity.kt
