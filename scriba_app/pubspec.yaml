@@ -30,6 +30,7 @@ dependencies:
   flutter:
     sdk: flutter
   animated_splash_screen: ^1.2.0
+  dot_navigation_bar: ^1.0.1+3
   google_fonts: ^2.3.1
 
   # The following adds the Cupertino Icons font to your application.
@@ -55,6 +56,7 @@ flutter:
   assets: 
   - assets/images/
   - assets/images/onboarding/
+  - assets/images/homepage_icons/
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
   # the material Icons class.
