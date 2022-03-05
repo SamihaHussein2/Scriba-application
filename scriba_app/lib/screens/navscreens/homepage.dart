@@ -1,86 +1,92 @@
-import 'dart:io';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:scriba_app/defaults/theme.dart';
-import '/widgets/button_widget.dart';
+import 'package:scriba_app/screens/navscreens/account.dart';
+import 'package:scriba_app/screens/navscreens/history.dart';
+import 'package:scriba_app/screens/navscreens/mainpage.dart';
+import 'package:scriba_app/screens/navscreens/myths.dart';
 import 'package:dot_navigation_bar/dot_navigation_bar.dart';
-import 'package:image_picker/image_picker.dart';
 
-class Homepage extends StatefulWidget {
-  @override
-  State<Homepage> createState() => _HomepageState();
-}
-
-class _HomepageState extends State<Homepage> {
-  File? img;
-  Future ImportImage() async {
-    try {
-      final img = await ImagePicker().pickImage(source: ImageSource.gallery);
-      if (img == null) return;
-
-      final PickedImage = File(img.path);
-      setState(() => this.img = PickedImage);
-    } on PlatformException catch (e) {
-      print("Failed to pick image: $e");
-    }
-  }
-
+class Homepage extends StatelessWidget {
   @override
   Widget build(BuildContext context) => Scaffold(
           body: Container(
-        constraints: const BoxConstraints.expand(),
         decoration: const BoxDecoration(
             image: DecorationImage(
                 image: AssetImage("assets/images/Back-dark.png"),
-                fit: BoxFit.cover)),
-        child: ListView(
-          children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    shape: const CircleBorder(),
-                    primary: AppTheme.darkRed,
-                  ),
-                  child: Container(
-                      width: 100,
-                      height: 100,
-                      alignment: Alignment.center,
-                      decoration: const BoxDecoration(shape: BoxShape.circle),
-                      child: Image.asset(
-                        "assets/images/homepage_icons/Import.png",
-                        width: 70,
-                      )),
-                  onPressed: () {
-                    ImportImage();
-                  },
-                ),
-                SizedBox(
-                  width: 40,
-                ),
-                ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    shape: const CircleBorder(),
-                    primary: AppTheme.darkRed,
-                  ),
-                  child: Container(
-                    width: 100,
-                    height: 100,
-                    alignment: Alignment.center,
-                    decoration: const BoxDecoration(shape: BoxShape.circle),
-                    child: Icon(
-                      Icons.camera,
-                      color: AppTheme.moderateOrange,
-                      size: 50,
-                    ),
-                  ),
-                  onPressed: () {},
-                )
-              ],
-            )
-          ],
-        ),
+                fit: BoxFit.fill)),
+        child: navBar(),
       ));
 }
+
+class navBar extends StatefulWidget {
+  navBar({Key? key}) : super(key: key);
+
+  @override
+  State<navBar> createState() => _navBarState();
+}
+
+int currentIndex = 0;
+var _selectedTab = _SelectedTab.home;
+
+class _navBarState extends State<navBar> {
+  List pages = [
+    MainPage(),
+    MythsPage(),
+    HistoryPage(),
+    AccountPage(),
+  ];
+
+  void _handleIndexChanged(int i) {
+    setState(() {
+      _selectedTab = _SelectedTab.values[i];
+      currentIndex = i;
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Colors.transparent,
+      body: pages[currentIndex],
+      bottomNavigationBar: Padding(
+        padding: EdgeInsets.only(bottom: 10),
+        child: DotNavigationBar(
+          // enableFloatingNavBar: true,
+
+          paddingR: EdgeInsets.all(5),
+
+          //curve: Curves.slowMiddle,
+          backgroundColor: AppTheme.darkRed,
+
+          margin: EdgeInsets.only(left: 15, right: 15),
+          currentIndex: _SelectedTab.values.indexOf(_selectedTab),
+
+          boxShadow: [
+            BoxShadow(
+              blurRadius: 2,
+              offset: Offset(0, 3),
+              spreadRadius: 0,
+            )
+          ],
+          dotIndicatorColor: AppTheme.moderateOrange,
+          unselectedItemColor: Colors.grey,
+          onTap: _handleIndexChanged,
+          items: [
+            DotNavigationBarItem(
+                icon: Icon(Icons.home), selectedColor: AppTheme.moderateOrange),
+            DotNavigationBarItem(
+                icon: Icon(Icons.info_outline),
+                selectedColor: AppTheme.moderateOrange),
+            DotNavigationBarItem(
+                icon: Icon(Icons.star), selectedColor: AppTheme.moderateOrange),
+            DotNavigationBarItem(
+                icon: Icon(Icons.person),
+                selectedColor: AppTheme.moderateOrange),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+enum _SelectedTab { home, myth, history, account }
