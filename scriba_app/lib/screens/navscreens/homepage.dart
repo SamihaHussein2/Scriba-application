@@ -1,9 +1,30 @@
+import 'dart:io';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:scriba_app/defaults/theme.dart';
 import '/widgets/button_widget.dart';
 import 'package:dot_navigation_bar/dot_navigation_bar.dart';
+import 'package:image_picker/image_picker.dart';
 
-class Homepage extends StatelessWidget {
+class Homepage extends StatefulWidget {
+  @override
+  State<Homepage> createState() => _HomepageState();
+}
+
+class _HomepageState extends State<Homepage> {
+  File? img;
+  Future ImportImage() async {
+    try {
+      final img = await ImagePicker().pickImage(source: ImageSource.gallery);
+      if (img == null) return;
+
+      final PickedImage = File(img.path);
+      setState(() => this.img = PickedImage);
+    } on PlatformException catch (e) {
+      print("Failed to pick image: $e");
+    }
+  }
+
   @override
   Widget build(BuildContext context) => Scaffold(
           body: Container(
@@ -32,7 +53,9 @@ class Homepage extends StatelessWidget {
                         "assets/images/homepage_icons/Import.png",
                         width: 70,
                       )),
-                  onPressed: () {},
+                  onPressed: () {
+                    ImportImage();
+                  },
                 ),
                 SizedBox(
                   width: 40,
