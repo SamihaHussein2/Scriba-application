@@ -6,7 +6,6 @@ import 'package:flutter/services.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:scriba_app/defaults/theme.dart';
 import 'package:scriba_app/screens/navscreens/homepage.dart';
-import '/widgets/button_widget.dart';
 import 'package:dot_navigation_bar/dot_navigation_bar.dart';
 import 'package:image_picker/image_picker.dart';
 
