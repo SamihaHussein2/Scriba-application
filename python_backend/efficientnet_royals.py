@@ -17,6 +17,8 @@ Original file is located at
 import time
 import numpy as np # linear algebra
 import pandas as pd # data processing, CSV file I/O (e.g. pd.read_csv)
+from io import BytesIO
+import base64
 
 # Input data files are available in the "../input/" directory.
 # For example, running this (by clicking run or pressing Shift+Enter) will list the files in the input directory
@@ -26,7 +28,7 @@ from torch.utils.data import DataLoader
 from torch.utils.data.dataset import Dataset
 import pandas as pd
 import numpy as np
-from torch.utils.data.sampler import SubsetRandomSampler
+from torch.utils.data.sampler import SubsetRandomSampler 
 import cv2
 import os
 import torchvision
@@ -45,8 +47,8 @@ from tqdm.autonotebook import tqdm
 batch_size = 50
 im_size = 150
 
-train_set = 'D:/senior year/GP/datasets/Dataset-Royals/train'
-test_set = 'D:/senior year/GP/datasets/Dataset-Royals/test'
+train_set = 'dataset/train/'
+test_set = 'dataset/test'
 print(test_set)
 
 def normalization_parameter(dataloader):
@@ -571,12 +573,14 @@ def img_plot(image,inv_normalize = None):
 # image = cv2.resize(image, (224, 224))   
 # gaussian_blur = cv2.GaussianBlur(image, (5,5), 1.5)
 # ret, thresh = cv2.threshold(gaussian_blur, 0, 255, cv2.THRESH_BINARY_INV + 
-#                                         cv2.THRESH_OTSU)
-
-image = cv2.imread('D:/senior year/GP/datasets/Dataset-Royals/test/Unas/Unas_1') 
-print(image) 
-pred = predict(classifier,image,device,encoder,test_transforms,inv_normalize)
-
+#           
+#                              cv2.THRESH_OTSU)
+def predictImage(image): #string 
+    #image = cv2.imread('D:/senior year/GP/datasets/Dataset-Royals/test/Unas/Unas_1') 
+    #decode image 64
+    image = base64.decodestring(image)
+    pred = predict(classifier,image,device,encoder,test_transforms,inv_normalize)
+    return pred 
 # import csv
 # import pandas
 
