@@ -1,4 +1,4 @@
-#Sat Mar 05 21:40:17 EET 2022
-base.0=D\:\\senior year\\GP\\Scriba-application\\scriba_app\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
+#Tue Mar 08 12:04:13 EET 2022
+base.0=D\:\\University\\Senior Year\\Scriba\\Flutter Project\\scriba_app\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
 renamed.0=classes.dex
 path.0=classes.dex

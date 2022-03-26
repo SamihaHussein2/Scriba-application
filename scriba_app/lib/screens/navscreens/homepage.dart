@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:scriba_app/defaults/theme.dart';
-import 'package:scriba_app/screens/navscreens/account.dart';
-import 'package:scriba_app/screens/navscreens/history.dart';
-import 'package:scriba_app/screens/navscreens/mainpage.dart';
-import 'package:scriba_app/screens/navscreens/myths.dart';
+import '/defaults/theme.dart';
+import '/screens/navscreens/account.dart';
+import '/screens/navscreens/history.dart';
+import '/screens/navscreens/myth.dart';
+import '/screens/navscreens/mainpage.dart';
 import 'package:dot_navigation_bar/dot_navigation_bar.dart';
+
+import 'myth.dart';
 
 class Homepage extends StatelessWidget {
   @override
@@ -31,8 +33,8 @@ var _selectedTab = _SelectedTab.home;
 class _navBarState extends State<navBar> {
   List pages = [
     MainPage(),
-    MythsPage(),
-    HistoryPage(),
+    MythScreen(),
+    HistoryScreen(),
     AccountPage(),
   ];
 

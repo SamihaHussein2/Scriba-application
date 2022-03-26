@@ -6,7 +6,6 @@ import 'package:flutter/services.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:scriba_app/defaults/theme.dart';
 import 'package:scriba_app/screens/navscreens/homepage.dart';
-import '/widgets/button_widget.dart';
 import 'package:dot_navigation_bar/dot_navigation_bar.dart';
 import 'package:image_picker/image_picker.dart';
 
@@ -16,7 +15,7 @@ class MainPage extends StatefulWidget {
 }
 
 class _HomepageState extends State<MainPage> {
-  var ipUrl = "http://192.168.95.1:8003/image";
+  var ipUrl = "http://192.168.211.1:8003/image";
 
   File? img;
   Future ImportImage() async {
@@ -119,7 +118,7 @@ class _HomepageState extends State<MainPage> {
               print(value.data['status']);
               if (value.data['status'] == "Image Opened") {
                 Fluttertoast.showToast(
-                  msg: "Image Sent To Backend",
+                  msg: "This is King ",
                   toastLength: Toast.LENGTH_SHORT,
                   gravity: ToastGravity.BOTTOM,
                   backgroundColor: Colors.green,

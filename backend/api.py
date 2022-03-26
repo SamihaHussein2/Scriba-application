@@ -11,6 +11,7 @@ from flask import request
 from PIL import Image
 from io import BytesIO
 import base64
+from python_backend.efficientnet_royals import predictImage
 
 app = Flask(__name__)
 
@@ -40,8 +41,7 @@ def sendImagePostRequestFunction():
     data = request.json['image']
     try:
         image = Image.open(BytesIO(base64.b64decode(data)))
-        #model(image)
-        #base66 to segmentation (encode) to model 
+        prediction=predictImage(image)
         return jsonify(
             {
                 "status": "Image Opened"
@@ -56,6 +56,9 @@ def sendImagePostRequestFunction():
 
 
 
+#andh predict 
+        
+
 
 if __name__ == '__main__':
-    app.run(host='192.168.95.1', port=8003)
+    app.run(host='192.168.211.1', port=8003)

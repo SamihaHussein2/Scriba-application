@@ -94,16 +94,12 @@ class TranslationScreen extends StatelessWidget {
                 ),
 
                 ElevatedButton.icon(
-                    style: ElevatedButton.styleFrom(
-                      padding: EdgeInsets.only(right: 20, left: 20),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(20),
-                      ),
-                    ),
+                    style: AppTheme.buttonStyle,
                     onPressed: () {},
                     icon: Icon(Icons.save),
-                    label: Text('Save Translation',
-                        style: TextStyle(color: Colors.black))),
+                    label: Text(
+                      'Save Translation',
+                    )),
               ],
             )));
   }
