@@ -8,6 +8,7 @@ import 'package:scriba_app/defaults/theme.dart';
 import 'package:scriba_app/screens/navscreens/homepage.dart';
 import 'package:dot_navigation_bar/dot_navigation_bar.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:scriba_app/screens/translation.dart';
 
 class MainPage extends StatefulWidget {
   @override
@@ -106,6 +107,8 @@ class _HomepageState extends State<MainPage> {
         ]),
       ),
       floatingActionButton: FloatingActionButton(
+        backgroundColor: AppTheme.darkRed,
+        foregroundColor: AppTheme.moderateOrange,
         onPressed: () {
           try {
             final bytes = File(img!.path).readAsBytesSync();
@@ -117,6 +120,10 @@ class _HomepageState extends State<MainPage> {
             ).then((value) {
               print(value.data['status']);
               if (value.data['status'] == "Image Opened") {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (_) => TranslationScreen()),
+                );
                 Fluttertoast.showToast(
                   msg: "This is King ",
                   toastLength: Toast.LENGTH_SHORT,
