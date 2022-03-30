@@ -167,7 +167,7 @@
       "name": "js",
       "rootUri": "file:///E:/SDK%20dart-flutter/flutter_windows_2.5.3-stable/flutter/.pub-cache/hosted/pub.dartlang.org/js-0.6.3",
       "packageUri": "lib/",
-      "languageVersion": "2.16"
+      "languageVersion": "2.12"
     },
     {
       "name": "lints",
@@ -275,7 +275,7 @@
       "name": "source_span",
       "rootUri": "file:///E:/SDK%20dart-flutter/flutter_windows_2.5.3-stable/flutter/.pub-cache/hosted/pub.dartlang.org/source_span-1.8.1",
       "packageUri": "lib/",
-      "languageVersion": "2.14"
+      "languageVersion": "2.12"
     },
     {
       "name": "stack_trace",
@@ -310,7 +310,6 @@
     {
       "name": "tflite",
       "rootUri": "file:///E:/SDK%20dart-flutter/flutter_windows_2.5.3-stable/flutter/.pub-cache/hosted/pub.dartlang.org/tflite-1.1.2",
-      "rootUri": "file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/test_api-0.4.9",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -345,15 +344,7 @@
       "languageVersion": "2.15"
     }
   ],
-  "generated": "2022-03-30T16:30:35.373590Z",
-
-  "generated": "2022-03-30T08:09:37.143094Z",
-
+  "generated": "2022-03-30T17:53:50.125150Z",
   "generator": "pub",
-  "generatorVersion": "2.16.2",
-
-  "generated": "2022-03-29T16:50:49.531522Z",
-  "generator": "pub",
-  "generatorVersion": "2.17.0-150.0.dev"
-
+  "generatorVersion": "2.16.2"
 }

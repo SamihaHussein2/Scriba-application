@@ -18,16 +18,11 @@ class MainPage extends StatefulWidget {
   State<MainPage> createState() => _HomepageState();
 }
 
-
-
-
-
-
 class _HomepageState extends State<MainPage> {
  
 
 PickedFile? _image;
-  bool _loading =false ; 
+  bool _loading =false; 
   List<dynamic>?_outputs;
 
   void initState() {
