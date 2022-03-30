@@ -24,12 +24,19 @@
 @import path_provider_ios;
 #endif
 
+#if __has_include(<tflite/TflitePlugin.h>)
+#import <tflite/TflitePlugin.h>
+#else
+@import tflite;
+#endif
+
 @implementation GeneratedPluginRegistrant
 
 + (void)registerWithRegistry:(NSObject<FlutterPluginRegistry>*)registry {
   [FluttertoastPlugin registerWithRegistrar:[registry registrarForPlugin:@"FluttertoastPlugin"]];
   [FLTImagePickerPlugin registerWithRegistrar:[registry registrarForPlugin:@"FLTImagePickerPlugin"]];
   [FLTPathProviderPlugin registerWithRegistrar:[registry registrarForPlugin:@"FLTPathProviderPlugin"]];
+  [TflitePlugin registerWithRegistrar:[registry registrarForPlugin:@"TflitePlugin"]];
 }
 
 @end

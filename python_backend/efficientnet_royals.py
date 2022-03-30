@@ -582,7 +582,6 @@ def predictImage(image): #string
     pred = predict(classifier,image,device,encoder,test_transforms,inv_normalize)
     return pred 
 # import csv
-# import pandas
 
 # File = '/content/drive/MyDrive/SCRIBA/Dataset-Royals/Dataset-Royals.csv'
 
