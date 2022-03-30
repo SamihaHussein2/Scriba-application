@@ -11,6 +11,7 @@ import 'package:image_picker/image_picker.dart';
 import 'package:tflite/tflite.dart';
 import 'dart:async';
 
+import 'package:scriba_app/screens/translation.dart';
 
 class MainPage extends StatefulWidget {
   @override
