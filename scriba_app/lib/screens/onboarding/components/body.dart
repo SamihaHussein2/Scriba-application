@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:scriba_app/screens/navscreens/homepage.dart';
 import '../../navscreens/mainpage.dart';
+import '../intro.dart';
 import '/defaults/theme.dart';
 import '/defaults/config.dart';
 import '../components/content.dart';
@@ -73,7 +74,7 @@ class _OnBoardingBodyState extends State<OnBoardingBody> {
                       onPressed: () {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (_) => Homepage()),
+                          MaterialPageRoute(builder: (_) => IntroPage()),
                         );
                       },
                     ),

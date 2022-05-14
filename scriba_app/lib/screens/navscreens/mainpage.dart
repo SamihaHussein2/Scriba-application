@@ -98,19 +98,22 @@ class _HomepageState extends State<MainPage> {
                                   ElevatedButton(
                                     style: ElevatedButton.styleFrom(
                                       shape: const CircleBorder(),
-                                      primary: AppTheme.moderateOrange,
+                                      primary: AppTheme.darkRed,
+                                      side: BorderSide(
+                                          color: AppTheme.moderateOrange,
+                                          width: 5),
                                     ),
                                     child: Column(
                                       children: [
                                         Container(
-                                            width: 100,
-                                            height: 100,
+                                            width: 90,
+                                            height: 90,
                                             alignment: Alignment.center,
                                             decoration: const BoxDecoration(
                                                 shape: BoxShape.circle),
                                             child: Image.asset(
-                                              "assets/images/royal.png",
-                                              width: 70,
+                                              "assets/images/homepage_icons/char.png",
+                                              width: 50,
                                             )),
                                       ],
                                     ),
@@ -119,17 +122,20 @@ class _HomepageState extends State<MainPage> {
                                   ElevatedButton(
                                     style: ElevatedButton.styleFrom(
                                       shape: const CircleBorder(),
-                                      primary: AppTheme.moderateOrange,
+                                      primary: AppTheme.darkRed,
+                                      side: BorderSide(
+                                          color: AppTheme.moderateOrange,
+                                          width: 5),
                                     ),
                                     child: Container(
-                                        width: 100,
-                                        height: 100,
+                                        width: 90,
+                                        height: 90,
                                         alignment: Alignment.center,
                                         decoration: const BoxDecoration(
                                             shape: BoxShape.circle),
                                         child: Image.asset(
-                                          "assets/images/characters.png",
-                                          width: 70,
+                                          "assets/images/homepage_icons/royal.png",
+                                          width: 50,
                                         )),
                                     onPressed: _optiondialogbox,
                                   )

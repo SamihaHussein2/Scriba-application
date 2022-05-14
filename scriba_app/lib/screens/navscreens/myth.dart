@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import '/defaults/theme.dart';
 
 import '/defaults/config.dart';
+import 'homepage.dart';
 
 class MythScreen extends StatelessWidget {
   const MythScreen({Key? key}) : super(key: key);
@@ -20,11 +21,13 @@ class MythScreen extends StatelessWidget {
                   color: AppTheme.moderateOrange,
                 ))),
         body: Container(
+
             // constraints: const BoxConstraints.expand(),
             decoration: const BoxDecoration(
                 image: DecorationImage(
                     image: AssetImage("assets/images/Back-dark.png"),
                     fit: BoxFit.cover)),
+            padding: const EdgeInsets.only(top: 30),
             child: Column(
               children: <Widget>[
                 SizedBox(

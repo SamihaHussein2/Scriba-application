@@ -25,6 +25,7 @@ class HistoryScreen extends StatelessWidget {
                 image: DecorationImage(
                     image: AssetImage("assets/images/Back-dark.png"),
                     fit: BoxFit.cover)),
+            padding: const EdgeInsets.only(top: 30),
             child: Column(
               children: <Widget>[
                 SizedBox(

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:scriba_app/screens/onboarding/intro.dart';
 
 import '/screens/navscreens/mainpage.dart';
 import '/screens/navscreens/homepage.dart';
@@ -30,7 +31,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: const Splash(),
+      home: Splash(),
     );
   }
 }

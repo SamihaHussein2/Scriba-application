@@ -12,85 +12,174 @@
 12         to allow setting breakpoints, to provide hot reload, etc.
 13    -->
 14    <uses-permission android:name="android.permission.INTERNET" />
-14-->D:\senior year\GP\Scriba-application\scriba_app\android\app\src\debug\AndroidManifest.xml:6:5-66
-14-->D:\senior year\GP\Scriba-application\scriba_app\android\app\src\debug\AndroidManifest.xml:6:22-64
+14-->D:\Senior\Scriba-application\scriba_app\android\app\src\debug\AndroidManifest.xml:6:5-66
+14-->D:\Senior\Scriba-application\scriba_app\android\app\src\debug\AndroidManifest.xml:6:22-64
 15    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-15-->D:\senior year\GP\Scriba-application\scriba_app\android\app\src\main\AndroidManifest.xml:3:5-81
-15-->D:\senior year\GP\Scriba-application\scriba_app\android\app\src\main\AndroidManifest.xml:3:22-78
+15-->D:\Senior\Scriba-application\scriba_app\android\app\src\main\AndroidManifest.xml:3:5-81
+15-->D:\Senior\Scriba-application\scriba_app\android\app\src\main\AndroidManifest.xml:3:22-78
 16    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-16-->D:\senior year\GP\Scriba-application\scriba_app\android\app\src\main\AndroidManifest.xml:4:5-80
-16-->D:\senior year\GP\Scriba-application\scriba_app\android\app\src\main\AndroidManifest.xml:4:22-77
-17
-18    <application
-19        android:name="android.app.Application"
-20        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-20-->[androidx.core:core:1.6.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\122df2e57d294d1a53db26bbc3b813c1\core-1.6.0\AndroidManifest.xml:24:18-86
-21        android:debuggable="true"
-22        android:icon="@mipmap/ic_launcher"
-23        android:label="scriba_app" >
-24        <activity
-25            android:name="com.example.scriba_app.MainActivity"
-26            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
-27            android:exported="true"
-28            android:hardwareAccelerated="true"
-29            android:launchMode="singleTop"
-30            android:theme="@style/LaunchTheme"
-31            android:windowSoftInputMode="adjustResize" >
-32
-33            <!--
-34                 Specifies an Android theme to apply to this Activity as soon as
-35                 the Android process has started. This theme is visible to the user
-36                 while the Flutter UI initializes. After that, this theme continues
-37                 to determine the Window background behind the Flutter UI.
-38            -->
-39            <meta-data
-40                android:name="io.flutter.embedding.android.NormalTheme"
-41                android:resource="@style/NormalTheme" />
-42
-43            <intent-filter>
-44                <action android:name="android.intent.action.MAIN" />
-45
-46                <category android:name="android.intent.category.LAUNCHER" />
-47            </intent-filter>
-48        </activity>
-49        <!--
-50             Don't delete the meta-data below.
-51             This is used by the Flutter tool to generate GeneratedPluginRegistrant.java
-52        -->
-53        <meta-data
-54            android:name="flutterEmbedding"
-55            android:value="2" />
-56
-57        <provider
-57-->[:image_picker] D:\senior year\GP\Scriba-application\scriba_app\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:8:9-16:20
-58            android:name="io.flutter.plugins.imagepicker.ImagePickerFileProvider"
-58-->[:image_picker] D:\senior year\GP\Scriba-application\scriba_app\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:9:13-82
-59            android:authorities="com.example.scriba_app.flutter.image_provider"
-59-->[:image_picker] D:\senior year\GP\Scriba-application\scriba_app\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:10:13-74
-60            android:exported="false"
-60-->[:image_picker] D:\senior year\GP\Scriba-application\scriba_app\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:11:13-37
-61            android:grantUriPermissions="true" >
-61-->[:image_picker] D:\senior year\GP\Scriba-application\scriba_app\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:12:13-47
-62            <meta-data
-62-->[:image_picker] D:\senior year\GP\Scriba-application\scriba_app\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:13:13-15:75
-63                android:name="android.support.FILE_PROVIDER_PATHS"
-63-->[:image_picker] D:\senior year\GP\Scriba-application\scriba_app\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:14:17-67
-64                android:resource="@xml/flutter_image_picker_file_paths" />
-64-->[:image_picker] D:\senior year\GP\Scriba-application\scriba_app\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:15:17-72
-65        </provider>
-66
-67        <uses-library
-67-->[androidx.window:window:1.0.0-beta04] C:\Users\user\.gradle\caches\transforms-2\files-2.1\03c633e46d75bfb21f082f0417f55161\jetified-window-1.0.0-beta04\AndroidManifest.xml:25:9-27:40
-68            android:name="androidx.window.extensions"
-68-->[androidx.window:window:1.0.0-beta04] C:\Users\user\.gradle\caches\transforms-2\files-2.1\03c633e46d75bfb21f082f0417f55161\jetified-window-1.0.0-beta04\AndroidManifest.xml:26:13-54
-69            android:required="false" />
-69-->[androidx.window:window:1.0.0-beta04] C:\Users\user\.gradle\caches\transforms-2\files-2.1\03c633e46d75bfb21f082f0417f55161\jetified-window-1.0.0-beta04\AndroidManifest.xml:27:13-37
-70        <uses-library
-70-->[androidx.window:window:1.0.0-beta04] C:\Users\user\.gradle\caches\transforms-2\files-2.1\03c633e46d75bfb21f082f0417f55161\jetified-window-1.0.0-beta04\AndroidManifest.xml:28:9-30:40
-71            android:name="androidx.window.sidecar"
-71-->[androidx.window:window:1.0.0-beta04] C:\Users\user\.gradle\caches\transforms-2\files-2.1\03c633e46d75bfb21f082f0417f55161\jetified-window-1.0.0-beta04\AndroidManifest.xml:29:13-51
-72            android:required="false" />
-72-->[androidx.window:window:1.0.0-beta04] C:\Users\user\.gradle\caches\transforms-2\files-2.1\03c633e46d75bfb21f082f0417f55161\jetified-window-1.0.0-beta04\AndroidManifest.xml:30:13-37
-73    </application>
-74
-75</manifest>
+16-->D:\Senior\Scriba-application\scriba_app\android\app\src\main\AndroidManifest.xml:4:5-80
+16-->D:\Senior\Scriba-application\scriba_app\android\app\src\main\AndroidManifest.xml:4:22-77
+17    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+17-->[com.google.android.gms:play-services-measurement-api:21.0.0] C:\Users\samih\.gradle\caches\transforms-2\files-2.1\c1a4ffb790f71f3c62e7bb66f607cdbd\jetified-play-services-measurement-api-21.0.0\AndroidManifest.xml:23:5-79
+17-->[com.google.android.gms:play-services-measurement-api:21.0.0] C:\Users\samih\.gradle\caches\transforms-2\files-2.1\c1a4ffb790f71f3c62e7bb66f607cdbd\jetified-play-services-measurement-api-21.0.0\AndroidManifest.xml:23:22-76
+18    <uses-permission android:name="android.permission.WAKE_LOCK" />
+18-->[com.google.android.gms:play-services-measurement-api:21.0.0] C:\Users\samih\.gradle\caches\transforms-2\files-2.1\c1a4ffb790f71f3c62e7bb66f607cdbd\jetified-play-services-measurement-api-21.0.0\AndroidManifest.xml:24:5-68
+18-->[com.google.android.gms:play-services-measurement-api:21.0.0] C:\Users\samih\.gradle\caches\transforms-2\files-2.1\c1a4ffb790f71f3c62e7bb66f607cdbd\jetified-play-services-measurement-api-21.0.0\AndroidManifest.xml:24:22-65
+19    <uses-permission android:name="com.google.android.gms.permission.AD_ID" />
+19-->[com.google.android.gms:play-services-measurement-api:21.0.0] C:\Users\samih\.gradle\caches\transforms-2\files-2.1\c1a4ffb790f71f3c62e7bb66f607cdbd\jetified-play-services-measurement-api-21.0.0\AndroidManifest.xml:25:5-79
+19-->[com.google.android.gms:play-services-measurement-api:21.0.0] C:\Users\samih\.gradle\caches\transforms-2\files-2.1\c1a4ffb790f71f3c62e7bb66f607cdbd\jetified-play-services-measurement-api-21.0.0\AndroidManifest.xml:25:22-76
+20    <uses-permission android:name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE" />
+20-->[com.google.android.gms:play-services-measurement:21.0.0] C:\Users\samih\.gradle\caches\transforms-2\files-2.1\cefaa639dbcea015306791fd1cdfac6f\jetified-play-services-measurement-21.0.0\AndroidManifest.xml:26:5-110
+20-->[com.google.android.gms:play-services-measurement:21.0.0] C:\Users\samih\.gradle\caches\transforms-2\files-2.1\cefaa639dbcea015306791fd1cdfac6f\jetified-play-services-measurement-21.0.0\AndroidManifest.xml:26:22-107
+21
+22    <application
+23        android:name="android.app.Application"
+24        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+24-->[androidx.core:core:1.6.0] C:\Users\samih\.gradle\caches\transforms-2\files-2.1\875654acb8fd75501dc33efa1bebb479\core-1.6.0\AndroidManifest.xml:24:18-86
+25        android:debuggable="true"
+26        android:icon="@mipmap/ic_launcher"
+27        android:label="scriba_app" >
+28        <activity
+29            android:name="com.example.scriba_app.MainActivity"
+30            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
+31            android:exported="true"
+32            android:hardwareAccelerated="true"
+33            android:launchMode="singleTop"
+34            android:theme="@style/LaunchTheme"
+35            android:windowSoftInputMode="adjustResize" >
+36
+37            <!--
+38                 Specifies an Android theme to apply to this Activity as soon as
+39                 the Android process has started. This theme is visible to the user
+40                 while the Flutter UI initializes. After that, this theme continues
+41                 to determine the Window background behind the Flutter UI.
+42            -->
+43            <meta-data
+44                android:name="io.flutter.embedding.android.NormalTheme"
+45                android:resource="@style/NormalTheme" />
+46
+47            <intent-filter>
+48                <action android:name="android.intent.action.MAIN" />
+49
+50                <category android:name="android.intent.category.LAUNCHER" />
+51            </intent-filter>
+52        </activity>
+53        <!--
+54             Don't delete the meta-data below.
+55             This is used by the Flutter tool to generate GeneratedPluginRegistrant.java
+56        -->
+57        <meta-data
+58            android:name="flutterEmbedding"
+59            android:value="2" />
+60
+61        <service
+61-->[:firebase_core] D:\Senior\Scriba-application\scriba_app\build\firebase_core\intermediates\library_manifest\debug\AndroidManifest.xml:8:9-12:19
+62            android:name="com.google.firebase.components.ComponentDiscoveryService"
+62-->[:firebase_core] D:\Senior\Scriba-application\scriba_app\build\firebase_core\intermediates\library_manifest\debug\AndroidManifest.xml:8:18-89
+63            android:directBootAware="true"
+63-->[com.google.firebase:firebase-common:20.1.1] C:\Users\samih\.gradle\caches\transforms-2\files-2.1\6f1c414f67323fa3a9de68954e9e284d\jetified-firebase-common-20.1.1\AndroidManifest.xml:35:13-43
+64            android:exported="false" >
+64-->[com.google.android.gms:play-services-measurement-api:21.0.0] C:\Users\samih\.gradle\caches\transforms-2\files-2.1\c1a4ffb790f71f3c62e7bb66f607cdbd\jetified-play-services-measurement-api-21.0.0\AndroidManifest.xml:30:13-37
+65            <meta-data
+65-->[:firebase_core] D:\Senior\Scriba-application\scriba_app\build\firebase_core\intermediates\library_manifest\debug\AndroidManifest.xml:9:13-11:85
+66                android:name="com.google.firebase.components:io.flutter.plugins.firebase.core.FlutterFirebaseCoreRegistrar"
+66-->[:firebase_core] D:\Senior\Scriba-application\scriba_app\build\firebase_core\intermediates\library_manifest\debug\AndroidManifest.xml:10:17-124
+67                android:value="com.google.firebase.components.ComponentRegistrar" />
+67-->[:firebase_core] D:\Senior\Scriba-application\scriba_app\build\firebase_core\intermediates\library_manifest\debug\AndroidManifest.xml:11:17-82
+68            <meta-data
+68-->[com.google.android.gms:play-services-measurement-api:21.0.0] C:\Users\samih\.gradle\caches\transforms-2\files-2.1\c1a4ffb790f71f3c62e7bb66f607cdbd\jetified-play-services-measurement-api-21.0.0\AndroidManifest.xml:31:13-33:85
+69                android:name="com.google.firebase.components:com.google.firebase.analytics.connector.internal.AnalyticsConnectorRegistrar"
+69-->[com.google.android.gms:play-services-measurement-api:21.0.0] C:\Users\samih\.gradle\caches\transforms-2\files-2.1\c1a4ffb790f71f3c62e7bb66f607cdbd\jetified-play-services-measurement-api-21.0.0\AndroidManifest.xml:32:17-139
+70                android:value="com.google.firebase.components.ComponentRegistrar" />
+70-->[com.google.android.gms:play-services-measurement-api:21.0.0] C:\Users\samih\.gradle\caches\transforms-2\files-2.1\c1a4ffb790f71f3c62e7bb66f607cdbd\jetified-play-services-measurement-api-21.0.0\AndroidManifest.xml:33:17-82
+71            <meta-data
+71-->[com.google.firebase:firebase-installations:17.0.1] C:\Users\samih\.gradle\caches\transforms-2\files-2.1\75696b8cf80c33699685bc2305e50db4\jetified-firebase-installations-17.0.1\AndroidManifest.xml:18:13-20:85
+72                android:name="com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsRegistrar"
+72-->[com.google.firebase:firebase-installations:17.0.1] C:\Users\samih\.gradle\caches\transforms-2\files-2.1\75696b8cf80c33699685bc2305e50db4\jetified-firebase-installations-17.0.1\AndroidManifest.xml:19:17-127
+73                android:value="com.google.firebase.components.ComponentRegistrar" />
+73-->[com.google.firebase:firebase-installations:17.0.1] C:\Users\samih\.gradle\caches\transforms-2\files-2.1\75696b8cf80c33699685bc2305e50db4\jetified-firebase-installations-17.0.1\AndroidManifest.xml:20:17-82
+74        </service>
+75
+76        <provider
+76-->[:image_picker] D:\Senior\Scriba-application\scriba_app\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:8:9-16:20
+77            android:name="io.flutter.plugins.imagepicker.ImagePickerFileProvider"
+77-->[:image_picker] D:\Senior\Scriba-application\scriba_app\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:9:13-82
+78            android:authorities="com.example.scriba_app.flutter.image_provider"
+78-->[:image_picker] D:\Senior\Scriba-application\scriba_app\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:10:13-74
+79            android:exported="false"
+79-->[:image_picker] D:\Senior\Scriba-application\scriba_app\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:11:13-37
+80            android:grantUriPermissions="true" >
+80-->[:image_picker] D:\Senior\Scriba-application\scriba_app\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:12:13-47
+81            <meta-data
+81-->[:image_picker] D:\Senior\Scriba-application\scriba_app\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:13:13-15:75
+82                android:name="android.support.FILE_PROVIDER_PATHS"
+82-->[:image_picker] D:\Senior\Scriba-application\scriba_app\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:14:17-67
+83                android:resource="@xml/flutter_image_picker_file_paths" />
+83-->[:image_picker] D:\Senior\Scriba-application\scriba_app\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:15:17-72
+84        </provider>
+85
+86        <uses-library
+86-->[androidx.window:window:1.0.0-beta04] C:\Users\samih\.gradle\caches\transforms-2\files-2.1\9a30143a20a029e68d2a2c8980fee508\jetified-window-1.0.0-beta04\AndroidManifest.xml:25:9-27:40
+87            android:name="androidx.window.extensions"
+87-->[androidx.window:window:1.0.0-beta04] C:\Users\samih\.gradle\caches\transforms-2\files-2.1\9a30143a20a029e68d2a2c8980fee508\jetified-window-1.0.0-beta04\AndroidManifest.xml:26:13-54
+88            android:required="false" />
+88-->[androidx.window:window:1.0.0-beta04] C:\Users\samih\.gradle\caches\transforms-2\files-2.1\9a30143a20a029e68d2a2c8980fee508\jetified-window-1.0.0-beta04\AndroidManifest.xml:27:13-37
+89        <uses-library
+89-->[androidx.window:window:1.0.0-beta04] C:\Users\samih\.gradle\caches\transforms-2\files-2.1\9a30143a20a029e68d2a2c8980fee508\jetified-window-1.0.0-beta04\AndroidManifest.xml:28:9-30:40
+90            android:name="androidx.window.sidecar"
+90-->[androidx.window:window:1.0.0-beta04] C:\Users\samih\.gradle\caches\transforms-2\files-2.1\9a30143a20a029e68d2a2c8980fee508\jetified-window-1.0.0-beta04\AndroidManifest.xml:29:13-51
+91            android:required="false" />
+91-->[androidx.window:window:1.0.0-beta04] C:\Users\samih\.gradle\caches\transforms-2\files-2.1\9a30143a20a029e68d2a2c8980fee508\jetified-window-1.0.0-beta04\AndroidManifest.xml:30:13-37
+92
+93        <provider
+93-->[com.google.firebase:firebase-common:20.1.1] C:\Users\samih\.gradle\caches\transforms-2\files-2.1\6f1c414f67323fa3a9de68954e9e284d\jetified-firebase-common-20.1.1\AndroidManifest.xml:26:9-31:39
+94            android:name="com.google.firebase.provider.FirebaseInitProvider"
+94-->[com.google.firebase:firebase-common:20.1.1] C:\Users\samih\.gradle\caches\transforms-2\files-2.1\6f1c414f67323fa3a9de68954e9e284d\jetified-firebase-common-20.1.1\AndroidManifest.xml:27:13-77
+95            android:authorities="com.example.scriba_app.firebaseinitprovider"
+95-->[com.google.firebase:firebase-common:20.1.1] C:\Users\samih\.gradle\caches\transforms-2\files-2.1\6f1c414f67323fa3a9de68954e9e284d\jetified-firebase-common-20.1.1\AndroidManifest.xml:28:13-72
+96            android:directBootAware="true"
+96-->[com.google.firebase:firebase-common:20.1.1] C:\Users\samih\.gradle\caches\transforms-2\files-2.1\6f1c414f67323fa3a9de68954e9e284d\jetified-firebase-common-20.1.1\AndroidManifest.xml:29:13-43
+97            android:exported="false"
+97-->[com.google.firebase:firebase-common:20.1.1] C:\Users\samih\.gradle\caches\transforms-2\files-2.1\6f1c414f67323fa3a9de68954e9e284d\jetified-firebase-common-20.1.1\AndroidManifest.xml:30:13-37
+98            android:initOrder="100" />
+98-->[com.google.firebase:firebase-common:20.1.1] C:\Users\samih\.gradle\caches\transforms-2\files-2.1\6f1c414f67323fa3a9de68954e9e284d\jetified-firebase-common-20.1.1\AndroidManifest.xml:31:13-36
+99
+100        <receiver
+100-->[com.google.android.gms:play-services-measurement:21.0.0] C:\Users\samih\.gradle\caches\transforms-2\files-2.1\cefaa639dbcea015306791fd1cdfac6f\jetified-play-services-measurement-21.0.0\AndroidManifest.xml:29:9-33:20
+101            android:name="com.google.android.gms.measurement.AppMeasurementReceiver"
+101-->[com.google.android.gms:play-services-measurement:21.0.0] C:\Users\samih\.gradle\caches\transforms-2\files-2.1\cefaa639dbcea015306791fd1cdfac6f\jetified-play-services-measurement-21.0.0\AndroidManifest.xml:30:13-85
+102            android:enabled="true"
+102-->[com.google.android.gms:play-services-measurement:21.0.0] C:\Users\samih\.gradle\caches\transforms-2\files-2.1\cefaa639dbcea015306791fd1cdfac6f\jetified-play-services-measurement-21.0.0\AndroidManifest.xml:31:13-35
+103            android:exported="false" >
+103-->[com.google.android.gms:play-services-measurement:21.0.0] C:\Users\samih\.gradle\caches\transforms-2\files-2.1\cefaa639dbcea015306791fd1cdfac6f\jetified-play-services-measurement-21.0.0\AndroidManifest.xml:32:13-37
+104        </receiver>
+105
+106        <service
+106-->[com.google.android.gms:play-services-measurement:21.0.0] C:\Users\samih\.gradle\caches\transforms-2\files-2.1\cefaa639dbcea015306791fd1cdfac6f\jetified-play-services-measurement-21.0.0\AndroidManifest.xml:35:9-38:40
+107            android:name="com.google.android.gms.measurement.AppMeasurementService"
+107-->[com.google.android.gms:play-services-measurement:21.0.0] C:\Users\samih\.gradle\caches\transforms-2\files-2.1\cefaa639dbcea015306791fd1cdfac6f\jetified-play-services-measurement-21.0.0\AndroidManifest.xml:36:13-84
+108            android:enabled="true"
+108-->[com.google.android.gms:play-services-measurement:21.0.0] C:\Users\samih\.gradle\caches\transforms-2\files-2.1\cefaa639dbcea015306791fd1cdfac6f\jetified-play-services-measurement-21.0.0\AndroidManifest.xml:37:13-35
+109            android:exported="false" />
+109-->[com.google.android.gms:play-services-measurement:21.0.0] C:\Users\samih\.gradle\caches\transforms-2\files-2.1\cefaa639dbcea015306791fd1cdfac6f\jetified-play-services-measurement-21.0.0\AndroidManifest.xml:38:13-37
+110        <service
+110-->[com.google.android.gms:play-services-measurement:21.0.0] C:\Users\samih\.gradle\caches\transforms-2\files-2.1\cefaa639dbcea015306791fd1cdfac6f\jetified-play-services-measurement-21.0.0\AndroidManifest.xml:39:9-43:72
+111            android:name="com.google.android.gms.measurement.AppMeasurementJobService"
+111-->[com.google.android.gms:play-services-measurement:21.0.0] C:\Users\samih\.gradle\caches\transforms-2\files-2.1\cefaa639dbcea015306791fd1cdfac6f\jetified-play-services-measurement-21.0.0\AndroidManifest.xml:40:13-87
+112            android:enabled="true"
+112-->[com.google.android.gms:play-services-measurement:21.0.0] C:\Users\samih\.gradle\caches\transforms-2\files-2.1\cefaa639dbcea015306791fd1cdfac6f\jetified-play-services-measurement-21.0.0\AndroidManifest.xml:41:13-35
+113            android:exported="false"
+113-->[com.google.android.gms:play-services-measurement:21.0.0] C:\Users\samih\.gradle\caches\transforms-2\files-2.1\cefaa639dbcea015306791fd1cdfac6f\jetified-play-services-measurement-21.0.0\AndroidManifest.xml:42:13-37
+114            android:permission="android.permission.BIND_JOB_SERVICE" />
+114-->[com.google.android.gms:play-services-measurement:21.0.0] C:\Users\samih\.gradle\caches\transforms-2\files-2.1\cefaa639dbcea015306791fd1cdfac6f\jetified-play-services-measurement-21.0.0\AndroidManifest.xml:43:13-69
+115
+116        <meta-data
+116-->[com.google.android.gms:play-services-basement:18.0.0] C:\Users\samih\.gradle\caches\transforms-2\files-2.1\2ffdea9840cb447d8a46ba75a1207d80\jetified-play-services-basement-18.0.0\AndroidManifest.xml:21:9-23:69
+117            android:name="com.google.android.gms.version"
+117-->[com.google.android.gms:play-services-basement:18.0.0] C:\Users\samih\.gradle\caches\transforms-2\files-2.1\2ffdea9840cb447d8a46ba75a1207d80\jetified-play-services-basement-18.0.0\AndroidManifest.xml:22:13-58
+118            android:value="@integer/google_play_services_version" />
+118-->[com.google.android.gms:play-services-basement:18.0.0] C:\Users\samih\.gradle\caches\transforms-2\files-2.1\2ffdea9840cb447d8a46ba75a1207d80\jetified-play-services-basement-18.0.0\AndroidManifest.xml:23:13-66
+119    </application>
+120
+121</manifest>
