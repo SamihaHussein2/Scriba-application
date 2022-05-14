@@ -22,7 +22,7 @@ class AccountPage extends StatelessWidget {
         child: ListView(
           children: [
             Column(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
+              ///crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
                 Padding(padding: EdgeInsets.only(bottom: 40)),
                 Text(
@@ -45,6 +45,115 @@ class AccountPage extends StatelessWidget {
                   ),
                 ),
               ],
+            ),
+            SizedBox(
+              height: 40,
+            ),
+            Container(
+              height: 470,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(60),
+                color: AppTheme.darkRed,
+                boxShadow: [
+                  BoxShadow(color: AppTheme.darkRed, spreadRadius: 5),
+                ],
+              ),
+              child: ListView(
+                children: [
+                  SizedBox(
+                    height: 70,
+                  ),
+                  Card(
+                    color: AppTheme.darkRed,
+                    child: ListTile(
+                      onTap: () {},
+                      leading: Icon(Icons.mode_edit_outline_outlined),
+                      iconColor: AppTheme.moderateOrange,
+                      title: Text(
+                        "Edit Profile",
+                        style: TextStyle(
+                            fontFamily:
+                                GoogleFonts.macondoSwashCaps().fontFamily,
+                            fontSize: 25,
+                            color: AppTheme.moderateOrange),
+                      ),
+                    ),
+                    margin: EdgeInsets.only(left: 30, right: 30),
+                    shape: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10),
+                        borderSide: BorderSide(color: AppTheme.moderateOrange)),
+                  ),
+                  SizedBox(
+                    height: 30,
+                  ),
+                  Card(
+                    color: AppTheme.darkRed,
+                    child: ListTile(
+                      onTap: () {},
+                      leading: Icon(Icons.thumbs_up_down_rounded),
+                      iconColor: AppTheme.moderateOrange,
+                      title: Text(
+                        "Feedback",
+                        style: TextStyle(
+                            fontFamily:
+                                GoogleFonts.macondoSwashCaps().fontFamily,
+                            fontSize: 25,
+                            color: AppTheme.moderateOrange),
+                      ),
+                    ),
+                    margin: EdgeInsets.only(left: 30, right: 30),
+                    shape: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10),
+                        borderSide: BorderSide(color: AppTheme.moderateOrange)),
+                  ),
+                  SizedBox(
+                    height: 30,
+                  ),
+                  Card(
+                    color: AppTheme.darkRed,
+                    child: ListTile(
+                      onTap: () {},
+                      leading: Icon(Icons.share_rounded),
+                      iconColor: AppTheme.moderateOrange,
+                      title: Text(
+                        "Share App",
+                        style: TextStyle(
+                            fontFamily:
+                                GoogleFonts.macondoSwashCaps().fontFamily,
+                            fontSize: 25,
+                            color: AppTheme.moderateOrange),
+                      ),
+                    ),
+                    margin: EdgeInsets.only(left: 30, right: 30),
+                    shape: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10),
+                        borderSide: BorderSide(color: AppTheme.moderateOrange)),
+                  ),
+                  SizedBox(
+                    height: 30,
+                  ),
+                  Card(
+                    color: AppTheme.darkRed,
+                    child: ListTile(
+                      onTap: () {},
+                      leading: Icon(Icons.logout),
+                      iconColor: AppTheme.moderateOrange,
+                      title: Text(
+                        "Logout",
+                        style: TextStyle(
+                            fontFamily:
+                                GoogleFonts.macondoSwashCaps().fontFamily,
+                            fontSize: 25,
+                            color: AppTheme.moderateOrange),
+                      ),
+                    ),
+                    margin: EdgeInsets.only(left: 30, right: 30),
+                    shape: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10),
+                        borderSide: BorderSide(color: AppTheme.moderateOrange)),
+                  ),
+                ],
+              ),
             )
           ],
         ),

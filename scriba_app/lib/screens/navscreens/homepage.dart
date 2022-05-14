@@ -55,7 +55,7 @@ class _navBarState extends State<navBar> {
         child: DotNavigationBar(
           // enableFloatingNavBar: true,
 
-          paddingR: EdgeInsets.all(5),
+          paddingR: EdgeInsets.all(10),
 
           //curve: Curves.slowMiddle,
           backgroundColor: AppTheme.darkRed,
