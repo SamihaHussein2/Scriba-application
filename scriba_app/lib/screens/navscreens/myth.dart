@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import '/defaults/theme.dart';
 
 import '/defaults/config.dart';
@@ -13,13 +14,15 @@ class MythScreen extends StatelessWidget {
     return Scaffold(
         extendBodyBehindAppBar: true,
         appBar: AppBar(
-            centerTitle: true,
-            backgroundColor: Colors.transparent,
-            title: Text("Mtyh",
-                style: TextStyle(
-                  fontFamily: AppTheme.macondoFont.fontFamily,
+          automaticallyImplyLeading: false,
+          title: Text("Myth",
+              style: TextStyle(
                   color: AppTheme.moderateOrange,
-                ))),
+                  fontSize: 25,
+                  fontFamily: GoogleFonts.macondoSwashCaps().fontFamily)),
+          centerTitle: true,
+          backgroundColor: Colors.transparent,
+        ),
         body: Container(
 
             // constraints: const BoxConstraints.expand(),

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:scriba_app/screens/translation_arabic.dart';
 import '/defaults/theme.dart';
 
 import '../defaults/config.dart';
@@ -10,6 +12,15 @@ class TranslationScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     SizeConfig().init(context);
     return Scaffold(
+        appBar: AppBar(
+          title: Text("Translation of Hieroglyph",
+              style: TextStyle(
+                  color: AppTheme.moderateOrange,
+                  fontSize: 25,
+                  fontFamily: GoogleFonts.macondoSwashCaps().fontFamily)),
+          centerTitle: true,
+          backgroundColor: AppTheme.darkRed,
+        ),
         body: Container(
             // constraints: const BoxConstraints.expand(),
             decoration: const BoxDecoration(
@@ -19,7 +30,7 @@ class TranslationScreen extends StatelessWidget {
             child: Column(
               children: <Widget>[
                 SizedBox(
-                  height: 300,
+                  height: 250,
                   child: Card(
                       color: Colors.transparent,
                       child: ListTile(
@@ -44,11 +55,17 @@ class TranslationScreen extends StatelessWidget {
                               color: AppTheme.moderateOrange),
                           tooltip: "Translate to Arabic",
                           disabledColor: Colors.white,
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (_) => TranslationScreenArabic()),
+                            );
+                          },
                         ),
                       ),
                       margin: EdgeInsets.only(
-                          top: 100, left: 20, right: 20, bottom: 0),
+                          top: 30, left: 20, right: 20, bottom: 0),
                       shape: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(10),
                           borderSide:
@@ -59,43 +76,17 @@ class TranslationScreen extends StatelessWidget {
                 //     icon: Icon(Icons.translate),
                 //     label: Text('Translate to Arabic')),
                 SizedBox(
-                  height: 170,
-                  child: Card(
-                    color: Colors.transparent,
-                    child: ListTile(
-                      title: Text(
-                        "Myth\n",
-                        style: TextStyle(
-                          color: AppTheme.moderateOrange,
-                          fontFamily: AppTheme.macondoFont.fontFamily,
-                          fontSize: 25,
-                        ),
-                      ),
-                      subtitle: Text(
-                        "Lorem ipsum dolor sit amet.",
-                        style: TextStyle(
-                          color: AppTheme.moderateOrange,
-                          fontFamily: AppTheme.macondoFont.fontFamily,
-                          fontSize: 18,
-                        ),
-                      ),
-                      trailing: IconButton(
-                        onPressed: () {},
-                        icon: Icon(Icons.more_horiz),
-                        color: AppTheme.moderateOrange,
-                      ),
-                    ),
-                    margin: EdgeInsets.only(
-                        top: 40, left: 20, right: 20, bottom: 20),
-                    shape: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(10),
-                        borderSide: BorderSide(color: AppTheme.moderateOrange)),
-                  ),
+                  height: 20,
                 ),
-
                 ElevatedButton.icon(
                     style: AppTheme.buttonStyle,
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (_) => TranslationScreenArabic()),
+                      );
+                    },
                     icon: Icon(Icons.save),
                     label: Text(
                       'Save Translation',

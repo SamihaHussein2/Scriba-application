@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:scriba_app/screens/Royals_Pages/translation_royals.dart';
 import 'package:scriba_app/screens/onboarding/intro.dart';
 
 import '/screens/navscreens/mainpage.dart';
