@@ -6,6 +6,7 @@ import 'package:scriba_app/defaults/splash.dart';
 import '../../defaults/config.dart';
 import '../../defaults/theme.dart';
 import '../navscreens/homepage.dart';
+import '../login.dart';
 
 class IntroPage extends StatelessWidget {
   const IntroPage({Key? key}) : super(key: key);
@@ -46,7 +47,7 @@ class IntroPage extends StatelessWidget {
                               onPressed: () {
                                 Navigator.push(
                                   context,
-                                  MaterialPageRoute(builder: (_) => Homepage()),
+                                  MaterialPageRoute(builder: (_) => Login()),
                                 );
                               },
                             ),
@@ -67,7 +68,7 @@ class IntroPage extends StatelessWidget {
                               onPressed: () {
                                 Navigator.push(
                                   context,
-                                  MaterialPageRoute(builder: (_) => Homepage()),
+                                  MaterialPageRoute(builder: (_) => Login()),
                                 );
                               },
                             ),
