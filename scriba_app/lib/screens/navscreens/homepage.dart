@@ -77,7 +77,10 @@ class _navBarState extends State<navBar> {
             DotNavigationBarItem(
                 icon: Icon(Icons.home), selectedColor: AppTheme.moderateOrange),
             DotNavigationBarItem(
-                icon: Icon(Icons.info_outline),
+                icon: ImageIcon(
+                  AssetImage("assets/images/homepage_icons/royal.png"),
+                  size: 22,
+                ),
                 selectedColor: AppTheme.moderateOrange),
             DotNavigationBarItem(
                 icon: Icon(Icons.star), selectedColor: AppTheme.moderateOrange),

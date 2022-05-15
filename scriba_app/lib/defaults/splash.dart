@@ -1,25 +1,46 @@
 import 'package:flutter/material.dart';
-import 'package:animated_splash_screen/animated_splash_screen.dart';
-import '/defaults/theme.dart';
-import '../screens/onboarding/onboarding.dart';
+import 'package:scriba_app/screens/onboarding/intro.dart';
 
 class Splash extends StatefulWidget {
-  const Splash({Key? key}) : super(key: key);
-
   @override
   _SplashState createState() => _SplashState();
 }
 
 class _SplashState extends State<Splash> {
   @override
+  void initState() {
+    Future.delayed(Duration(seconds: 3), () {
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (_) => IntroPage()),
+      );
+    });
+
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: AnimatedSplashScreen(
-      backgroundColor: AppTheme.darkRed,
-      duration: 3000,
-      splash: Image.asset('assets/images/logo.png'),
-      nextScreen: const OnBoardingScreen(),
-      splashTransition: SplashTransition.fadeTransition,
-    ));
+        body: Container(
+            color: Colors.black,
+            child: Stack(children: [
+              Positioned.fill(
+                child: Image.asset('assets/images/Back-dark.png',
+                    fit: BoxFit.fitWidth),
+              ),
+              Center(
+                  child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.stretch,
+                      children: [
+                    Center(
+                      child: Image.asset(
+                        "assets/images/logo.png",
+                        width: 270,
+                      ),
+                    ),
+                  ]))
+            ])));
   }
 }
