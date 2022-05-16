@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:scriba_app/defaults/theme.dart';
+import 'package:google_fonts/google_fonts.dart';
+import '../../defaults/config.dart';
 
 class Login extends StatefulWidget {
   static const String id = 'mentor sample 1';
@@ -15,17 +17,13 @@ class _LoginState extends State<Login> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        //width: double.infinity,
-        // height: double.infinity,
-        // decoration: BoxDecoration(
-        //   color: AppTheme.darkRed,
-        //   // borderRadius: BorderRadius.only(
-        //   //     bottomLeft: Radius.circular(60),
-        //   //     bottomRight: Radius.circular(60)),
-        //   // image: DecorationImage(
-        //   //   image: AssetImage("assets/images/logo.png"),
-        //   // ),
-        // ),
+        width: double.infinity,
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage("assets/images/Back-light.png"),
+            fit: BoxFit.fill,
+          ),
+        ),
         child: Column(
           //crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -34,16 +32,16 @@ class _LoginState extends State<Login> {
             Padding(
               padding: const EdgeInsets.all(10),
             ),
+
             Container(
-              height: 150,
+              height: 180,
               decoration: BoxDecoration(
                 color: AppTheme.darkRed,
                 borderRadius: new BorderRadius.only(
-                    bottomLeft: const Radius.circular(60.0),
-                    bottomRight: const Radius.circular(60.0)),
+                    bottomLeft: const Radius.circular(50.0),
+                    bottomRight: const Radius.circular(50.0)),
                 image: DecorationImage(
-                  image: AssetImage("assets/images/logo.png"),
-                ),
+                    image: AssetImage("assets/images/logo.png"), scale: 1),
               ),
               // crossAxisAlignment: CrossAxisAlignment.start,
               // children: <Widget>[
@@ -56,18 +54,18 @@ class _LoginState extends State<Login> {
               //   )
               // ],
             ),
-            const SizedBox(height: 20),
+            //const SizedBox(height: 20),
 
             Expanded(
               child: Container(
-                decoration: const BoxDecoration(
-                  image: DecorationImage(
-                      image: AssetImage("assets/images/Back-light.png"),
-                      fit: BoxFit.cover),
-                ),
+                // decoration: const BoxDecoration(
+                //   image: DecorationImage(
+                //       image: AssetImage("assets/images/Back-light.png"),
+                //       fit: BoxFit.cover),
+                // ),
                 child: SingleChildScrollView(
                   child: Padding(
-                    padding: const EdgeInsets.all(30),
+                    padding: const EdgeInsets.all(20),
                     child: Column(
                       children: [
                         const SizedBox(
@@ -75,43 +73,37 @@ class _LoginState extends State<Login> {
                         ),
                         // #email, #password
                         Container(
-                          decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(10),
-                            boxShadow: const [
-                              BoxShadow(
-                                  color: Color.fromRGBO(171, 171, 171, .7),
-                                  blurRadius: 20,
-                                  offset: Offset(0, 10)),
-                            ],
-                          ),
                           child: Column(
                             children: [
                               Container(
-                                padding: const EdgeInsets.all(10),
+                                padding: const EdgeInsets.only(left: 20.0),
                                 decoration: BoxDecoration(
-                                  border: Border(
-                                      bottom: BorderSide(
-                                          color: Colors.grey.shade200)),
-                                ),
+                                    color: AppTheme.moderateOrange,
+                                    borderRadius: BorderRadius.circular(10),
+                                    border:
+                                        Border.all(color: AppTheme.darkRed)),
                                 child: const TextField(
                                   decoration: InputDecoration(
                                       hintText: "Email",
-                                      hintStyle: TextStyle(color: Colors.grey),
+                                      hintStyle: TextStyle(
+                                        color: AppTheme.darkRed,
+                                      ),
                                       border: InputBorder.none),
                                 ),
                               ),
+                              const SizedBox(height: 20),
                               Container(
-                                padding: const EdgeInsets.all(10),
+                                padding: const EdgeInsets.only(left: 20.0),
                                 decoration: BoxDecoration(
-                                  border: Border(
-                                      bottom: BorderSide(
-                                          color: Colors.grey.shade200)),
-                                ),
+                                    color: AppTheme.moderateOrange,
+                                    borderRadius: BorderRadius.circular(10),
+                                    border:
+                                        Border.all(color: AppTheme.darkRed)),
                                 child: const TextField(
                                   decoration: InputDecoration(
                                       hintText: "Password",
-                                      hintStyle: TextStyle(color: Colors.grey),
+                                      hintStyle:
+                                          TextStyle(color: AppTheme.darkRed),
                                       border: InputBorder.none),
                                 ),
                               ),
@@ -121,22 +113,19 @@ class _LoginState extends State<Login> {
                         const SizedBox(height: 40),
                         // #login
                         Container(
-                          height: 50,
-                          margin: const EdgeInsets.symmetric(horizontal: 50),
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(50),
-                              color: AppTheme.darkRed),
-                          child: const Center(
-                            child: Text(
-                              "Login",
-                              style: TextStyle(
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.bold),
+                          child: Center(
+                            child: ElevatedButton(
+                              child: const Text("Login"),
+                              style: AppTheme.buttonStyle,
+                              onPressed: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(builder: (_) => Login()),
+                                );
+                              },
                             ),
                           ),
                         ),
-                        const SizedBox(height: 30),
-                        // #login SNS
 
                         const SizedBox(height: 30),
                         Row(
