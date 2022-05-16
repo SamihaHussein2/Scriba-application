@@ -102,8 +102,9 @@ class _LoginState extends State<Login> {
                                 child: const TextField(
                                   decoration: InputDecoration(
                                       hintText: "Password",
-                                      hintStyle:
-                                          TextStyle(color: AppTheme.darkRed),
+                                      hintStyle: TextStyle(
+                                          //fontFamily: GoogleFonts.macondoSwashCaps().fontFamily,
+                                          color: AppTheme.darkRed),
                                       border: InputBorder.none),
                                 ),
                               ),
@@ -127,44 +128,66 @@ class _LoginState extends State<Login> {
                           ),
                         ),
 
-                        const SizedBox(height: 30),
+                        const SizedBox(height: 10),
+                        Row(children: <Widget>[
+                          Expanded(
+                            child: new Container(
+                                margin: const EdgeInsets.only(
+                                    left: 10.0, right: 20.0),
+                                child: Divider(
+                                  color: Colors.black,
+                                  height: 36,
+                                )),
+                          ),
+                          Text(
+                            "OR",
+                            style: GoogleFonts.macondoSwashCaps(),
+                          ),
+                          Expanded(
+                            child: new Container(
+                                margin: const EdgeInsets.only(
+                                    left: 20.0, right: 10.0),
+                                child: Divider(
+                                  color: Colors.black,
+                                  height: 36,
+                                )),
+                          ),
+                        ]),
                         Row(
+                          crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
-                            Expanded(
-                              child: Container(
-                                height: 50,
-                                decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(50),
-                                    color: Colors.blue),
-                                child: const Center(
-                                  child: Text(
-                                    "Facebook",
-                                    style: TextStyle(
-                                        color: Colors.white,
-                                        fontWeight: FontWeight.bold),
-                                  ),
-                                ),
+                            Center(
+                              child: ElevatedButton(
+                                child: const Text("Login with Google"),
+                                style: AppTheme.buttonStyle,
+                                onPressed: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(builder: (_) => Login()),
+                                  );
+                                },
                               ),
-                            ),
-                            const SizedBox(width: 30),
-                            Expanded(
-                              child: Container(
-                                height: 50,
-                                decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(50),
-                                    color: Colors.black),
-                                child: const Center(
-                                  child: Text(
-                                    "Github",
-                                    style: TextStyle(
-                                        color: Colors.white,
-                                        fontWeight: FontWeight.bold),
-                                  ),
-                                ),
-                              ),
-                            ),
+                            )
                           ],
                         ),
+                        const SizedBox(height: 10),
+                        Row(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            Center(
+                              child: ElevatedButton(
+                                child: const Text("Login with phone number"),
+                                style: AppTheme.buttonStyle,
+                                onPressed: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(builder: (_) => Login()),
+                                  );
+                                },
+                              ),
+                            )
+                          ],
+                        )
                       ],
                     ),
                   ),
