@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:scriba_app/defaults/theme.dart';
+import 'package:scriba_app/screens/edit_profile.dart';
 
 import '../../defaults/config.dart';
 
@@ -83,7 +84,12 @@ class _AccountPageState extends State<AccountPage> {
                   Card(
                     color: AppTheme.darkRed,
                     child: ListTile(
-                      onTap: () {},
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (_) => EditProfile()),
+                        );
+                      },
                       leading: Icon(Icons.mode_edit_outline_outlined),
                       iconColor: AppTheme.moderateOrange,
                       title: Text(

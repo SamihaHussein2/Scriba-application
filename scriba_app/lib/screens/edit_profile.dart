@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:scriba_app/defaults/theme.dart';
+import 'package:scriba_app/screens/navscreens/homepage.dart';
 
 import '../../defaults/config.dart';
 
@@ -30,6 +31,10 @@ class _AccountPageState extends State<EditProfile> {
     //precacheImage(AssetImage("assets/images/Back-light.png"), context);
     SizeConfig().init(context);
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: AppTheme.darkRed,
+        leading: Icon(Icons.arrow_back_ios_new_outlined),
+      ),
       body: Container(
         // constraints: const BoxConstraints.expand(),
         decoration: const BoxDecoration(
@@ -75,8 +80,125 @@ class _AccountPageState extends State<EditProfile> {
                   BoxShadow(color: AppTheme.darkRed, spreadRadius: 5),
                 ],
               ),
-              child: ListView(
-                children: [],
+              child: Column(
+                children: [
+                  SizedBox(
+                    height: 70,
+                  ),
+                  Container(
+                    width: 350,
+                    child: Column(
+                      children: [
+                        TextFormField(
+                          style: TextStyle(color: AppTheme.moderateOrange),
+                          decoration: const InputDecoration(
+                            enabledBorder: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                  color: AppTheme.moderateOrange, width: 3.0),
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(10.0)),
+                            ),
+                            border: OutlineInputBorder(),
+                            focusedBorder: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                  color: AppTheme.moderateOrange, width: 5.0),
+                            ),
+                            focusColor: AppTheme.moderateOrange,
+                            labelText: 'John Doe',
+                            labelStyle:
+                                TextStyle(color: AppTheme.moderateOrange),
+                            fillColor: AppTheme.moderateOrange,
+                          ),
+                        ),
+                        SizedBox(
+                          height: 40,
+                        ),
+                        TextFormField(
+                          style: TextStyle(color: AppTheme.moderateOrange),
+                          decoration: const InputDecoration(
+                            enabledBorder: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                  color: AppTheme.moderateOrange, width: 3.0),
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(10.0)),
+                            ),
+                            border: OutlineInputBorder(),
+                            focusedBorder: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                  color: AppTheme.moderateOrange, width: 5.0),
+                            ),
+                            focusColor: AppTheme.moderateOrange,
+                            labelText: 'john123@gmail.com',
+                            labelStyle:
+                                TextStyle(color: AppTheme.moderateOrange),
+                            fillColor: AppTheme.moderateOrange,
+                          ),
+                        ),
+                        SizedBox(
+                          height: 40,
+                        ),
+                        TextFormField(
+                          style: TextStyle(color: AppTheme.moderateOrange),
+                          decoration: const InputDecoration(
+                            suffixIcon: Icon(Icons.remove_red_eye_outlined),
+                            suffixIconColor: AppTheme.moderateOrange,
+                            enabledBorder: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                  color: AppTheme.moderateOrange, width: 3.0),
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(10.0)),
+                            ),
+                            border: OutlineInputBorder(),
+                            focusedBorder: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                  color: AppTheme.moderateOrange, width: 5.0),
+                            ),
+                            focusColor: AppTheme.moderateOrange,
+                            labelText: '******',
+                            labelStyle:
+                                TextStyle(color: AppTheme.moderateOrange),
+                            fillColor: AppTheme.moderateOrange,
+                          ),
+                        ),
+                        SizedBox(
+                          height: 40,
+                        ),
+                        ElevatedButton(
+                          onPressed: () {
+                            print('Hi there');
+                          },
+                          style: ElevatedButton.styleFrom(
+                              padding: EdgeInsets.zero,
+                              shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(20))),
+                          child: Ink(
+                            decoration: BoxDecoration(
+                                gradient: const LinearGradient(colors: [
+                                  AppTheme.moderateOrange,
+                                  AppTheme.gradientColor,
+                                  AppTheme.moderateOrange,
+                                ]),
+                                borderRadius: BorderRadius.circular(20)),
+                            child: Container(
+                              width: 300,
+                              height: 50,
+                              alignment: Alignment.center,
+                              child: Text(
+                                "Update Account",
+                                style: TextStyle(
+                                    fontFamily: GoogleFonts.macondoSwashCaps()
+                                        .fontFamily,
+                                    fontSize: 20,
+                                    color: AppTheme.darkRed),
+                              ),
+                            ),
+                          ),
+                        ),
+                        //navBar(),
+                      ],
+                    ),
+                  )
+                ],
               ),
             )
           ],

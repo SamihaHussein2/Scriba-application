@@ -7,6 +7,7 @@ class AppTheme {
   static const darkRed = Color.fromRGBO(35, 31, 32, 1);
   static const darkRedOpacity = Color.fromRGBO(35, 31, 32, 0.9);
   static const moderateOrange = Color.fromRGBO(197, 154, 67, 1);
+  static const gradientColor = Color.fromRGBO(237, 223, 147, 1);
   static TextStyle macondoFont = GoogleFonts.macondoSwashCaps();
 
   static ButtonStyle buttonStyle = ElevatedButton.styleFrom(
