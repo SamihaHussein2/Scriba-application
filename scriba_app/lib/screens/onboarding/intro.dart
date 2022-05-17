@@ -7,6 +7,7 @@ import '../../defaults/config.dart';
 import '../../defaults/theme.dart';
 import '../navscreens/homepage.dart';
 import '../login.dart';
+import '../signup.dart';
 
 class IntroPage extends StatelessWidget {
   const IntroPage({Key? key}) : super(key: key);
@@ -47,7 +48,7 @@ class IntroPage extends StatelessWidget {
                               onPressed: () {
                                 Navigator.push(
                                   context,
-                                  MaterialPageRoute(builder: (_) => Login()),
+                                  MaterialPageRoute(builder: (_) => Signup()),
                                 );
                               },
                             ),

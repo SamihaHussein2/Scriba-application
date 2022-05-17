@@ -35,4 +35,17 @@ class AppTheme {
     side: const BorderSide(color: moderateOrange, width: 3),
     padding: const EdgeInsets.only(left: 90, right: 90, top: 10, bottom: 10),
   );
+
+  static ButtonStyle loginStyle = ElevatedButton.styleFrom(
+    textStyle: TextStyle(
+        fontSize: getProportionateScreenWidth(15),
+        fontFamily: macondoFont.fontFamily,
+        color: moderateOrange),
+    primary: darkRedOpacity,
+    shape: RoundedRectangleBorder(
+      borderRadius: BorderRadius.circular(50),
+    ),
+    side: const BorderSide(color: moderateOrange, width: 3),
+    padding: const EdgeInsets.only(left: 90, right: 90, top: 10, bottom: 10),
+  );
 }

@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:scriba_app/defaults/theme.dart';
 import 'package:google_fonts/google_fonts.dart';
-import '../../defaults/config.dart';
 
 class Login extends StatefulWidget {
-  static const String id = 'mentor sample 1';
+  static const String id = 'Login';
 
   const Login({Key? key}) : super(key: key);
 
@@ -16,6 +15,7 @@ class _LoginState extends State<Login> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       body: Container(
         width: double.infinity,
         decoration: BoxDecoration(
@@ -153,13 +153,12 @@ class _LoginState extends State<Login> {
                                 )),
                           ),
                         ]),
-                        Row(
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            Center(
+                        Container(
+                            alignment: Alignment.center,
+                            child: Center(
                               child: ElevatedButton(
                                 child: const Text("Login with Google"),
-                                style: AppTheme.buttonStyle,
+                                style: AppTheme.loginStyle,
                                 onPressed: () {
                                   Navigator.push(
                                     context,
@@ -167,17 +166,14 @@ class _LoginState extends State<Login> {
                                   );
                                 },
                               ),
-                            )
-                          ],
-                        ),
+                            )),
                         const SizedBox(height: 10),
-                        Row(
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            Center(
+                        Container(
+                            alignment: Alignment.center,
+                            child: Center(
                               child: ElevatedButton(
                                 child: const Text("Login with phone number"),
-                                style: AppTheme.buttonStyle,
+                                style: AppTheme.loginStyle,
                                 onPressed: () {
                                   Navigator.push(
                                     context,
@@ -185,9 +181,7 @@ class _LoginState extends State<Login> {
                                   );
                                 },
                               ),
-                            )
-                          ],
-                        )
+                            ))
                       ],
                     ),
                   ),
