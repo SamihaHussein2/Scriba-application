@@ -1,16 +1,33 @@
-import 'dart:ffi';
-
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:scriba_app/defaults/theme.dart';
 
 import '../../defaults/config.dart';
 
-class AccountPage extends StatelessWidget {
+class AccountPage extends StatefulWidget {
   const AccountPage({Key? key}) : super(key: key);
 
   @override
+  State<AccountPage> createState() => _AccountPageState();
+}
+
+class _AccountPageState extends State<AccountPage> {
+  // late Image myImage;
+  // @override
+  // void initState() {
+  //   super.initState();
+  //   myImage = Image.asset("assets/images/Back-light.png");
+  // }
+
+  // @override
+  // void didChangeDependencies() {
+  //   super.didChangeDependencies();
+  //   precacheImage(myImage.image, context);
+  // }
+
+  @override
   Widget build(BuildContext context) {
+    //precacheImage(AssetImage("assets/images/Back-light.png"), context);
     SizeConfig().init(context);
     return Scaffold(
       body: Container(
@@ -50,7 +67,7 @@ class AccountPage extends StatelessWidget {
               height: 40,
             ),
             Container(
-              height: 470,
+              height: MediaQuery.of(context).size.height,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(60),
                 color: AppTheme.darkRed,
