@@ -92,6 +92,10 @@ class _AccountPageState extends State<EditProfile> {
                         TextFormField(
                           style: TextStyle(color: AppTheme.moderateOrange),
                           decoration: const InputDecoration(
+                            hintText: "John Doe",
+                            hintStyle: TextStyle(
+                              color: AppTheme.moderateOrange,
+                            ),
                             enabledBorder: OutlineInputBorder(
                               borderSide: BorderSide(
                                   color: AppTheme.moderateOrange, width: 3.0),
@@ -101,13 +105,8 @@ class _AccountPageState extends State<EditProfile> {
                             border: OutlineInputBorder(),
                             focusedBorder: OutlineInputBorder(
                               borderSide: BorderSide(
-                                  color: AppTheme.moderateOrange, width: 5.0),
+                                  color: AppTheme.moderateOrange, width: 3.0),
                             ),
-                            focusColor: AppTheme.moderateOrange,
-                            labelText: 'John Doe',
-                            labelStyle:
-                                TextStyle(color: AppTheme.moderateOrange),
-                            fillColor: AppTheme.moderateOrange,
                           ),
                         ),
                         SizedBox(
@@ -116,6 +115,10 @@ class _AccountPageState extends State<EditProfile> {
                         TextFormField(
                           style: TextStyle(color: AppTheme.moderateOrange),
                           decoration: const InputDecoration(
+                            hintText: "John123@gmail.com",
+                            hintStyle: TextStyle(
+                              color: AppTheme.moderateOrange,
+                            ),
                             enabledBorder: OutlineInputBorder(
                               borderSide: BorderSide(
                                   color: AppTheme.moderateOrange, width: 3.0),
@@ -125,13 +128,8 @@ class _AccountPageState extends State<EditProfile> {
                             border: OutlineInputBorder(),
                             focusedBorder: OutlineInputBorder(
                               borderSide: BorderSide(
-                                  color: AppTheme.moderateOrange, width: 5.0),
+                                  color: AppTheme.moderateOrange, width: 3.0),
                             ),
-                            focusColor: AppTheme.moderateOrange,
-                            labelText: 'john123@gmail.com',
-                            labelStyle:
-                                TextStyle(color: AppTheme.moderateOrange),
-                            fillColor: AppTheme.moderateOrange,
                           ),
                         ),
                         SizedBox(
@@ -140,8 +138,10 @@ class _AccountPageState extends State<EditProfile> {
                         TextFormField(
                           style: TextStyle(color: AppTheme.moderateOrange),
                           decoration: const InputDecoration(
-                            suffixIcon: Icon(Icons.remove_red_eye_outlined),
-                            suffixIconColor: AppTheme.moderateOrange,
+                            hintText: "*****",
+                            hintStyle: TextStyle(
+                              color: AppTheme.moderateOrange,
+                            ),
                             enabledBorder: OutlineInputBorder(
                               borderSide: BorderSide(
                                   color: AppTheme.moderateOrange, width: 3.0),
@@ -151,13 +151,8 @@ class _AccountPageState extends State<EditProfile> {
                             border: OutlineInputBorder(),
                             focusedBorder: OutlineInputBorder(
                               borderSide: BorderSide(
-                                  color: AppTheme.moderateOrange, width: 5.0),
+                                  color: AppTheme.moderateOrange, width: 3.0),
                             ),
-                            focusColor: AppTheme.moderateOrange,
-                            labelText: '******',
-                            labelStyle:
-                                TextStyle(color: AppTheme.moderateOrange),
-                            fillColor: AppTheme.moderateOrange,
                           ),
                         ),
                         SizedBox(

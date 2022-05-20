@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:scriba_app/defaults/splash.dart';
 import 'package:scriba_app/defaults/theme.dart';
 import 'package:scriba_app/screens/edit_profile.dart';
+import 'package:scriba_app/widgets/edit_profile_containers.dart';
 
 import '../../defaults/config.dart';
 
@@ -81,100 +83,29 @@ class _AccountPageState extends State<AccountPage> {
                   SizedBox(
                     height: 70,
                   ),
-                  Card(
-                    color: AppTheme.darkRed,
-                    child: ListTile(
-                      onTap: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (_) => EditProfile()),
-                        );
-                      },
-                      leading: Icon(Icons.mode_edit_outline_outlined),
-                      iconColor: AppTheme.moderateOrange,
-                      title: Text(
-                        "Edit Profile",
-                        style: TextStyle(
-                            fontFamily:
-                                GoogleFonts.macondoSwashCaps().fontFamily,
-                            fontSize: 25,
-                            color: AppTheme.moderateOrange),
-                      ),
-                    ),
-                    margin: EdgeInsets.only(left: 30, right: 30),
-                    shape: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(10),
-                        borderSide: BorderSide(color: AppTheme.moderateOrange)),
-                  ),
+                  EditContainer(
+                      icon: Icons.mode_edit_outline_outlined,
+                      text: "Edit profile",
+                      dest: EditProfile()),
                   SizedBox(
                     height: 30,
                   ),
-                  Card(
-                    color: AppTheme.darkRed,
-                    child: ListTile(
-                      onTap: () {},
-                      leading: Icon(Icons.thumbs_up_down_rounded),
-                      iconColor: AppTheme.moderateOrange,
-                      title: Text(
-                        "Feedback",
-                        style: TextStyle(
-                            fontFamily:
-                                GoogleFonts.macondoSwashCaps().fontFamily,
-                            fontSize: 25,
-                            color: AppTheme.moderateOrange),
-                      ),
-                    ),
-                    margin: EdgeInsets.only(left: 30, right: 30),
-                    shape: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(10),
-                        borderSide: BorderSide(color: AppTheme.moderateOrange)),
-                  ),
+                  EditContainer(
+                      icon: Icons.thumbs_up_down_rounded,
+                      text: "Feedback",
+                      dest: EditProfile()),
                   SizedBox(
                     height: 30,
                   ),
-                  Card(
-                    color: AppTheme.darkRed,
-                    child: ListTile(
-                      onTap: () {},
-                      leading: Icon(Icons.share_rounded),
-                      iconColor: AppTheme.moderateOrange,
-                      title: Text(
-                        "Share App",
-                        style: TextStyle(
-                            fontFamily:
-                                GoogleFonts.macondoSwashCaps().fontFamily,
-                            fontSize: 25,
-                            color: AppTheme.moderateOrange),
-                      ),
-                    ),
-                    margin: EdgeInsets.only(left: 30, right: 30),
-                    shape: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(10),
-                        borderSide: BorderSide(color: AppTheme.moderateOrange)),
-                  ),
+                  EditContainer(
+                      icon: Icons.share_rounded,
+                      text: "Share App",
+                      dest: EditProfile()),
                   SizedBox(
                     height: 30,
                   ),
-                  Card(
-                    color: AppTheme.darkRed,
-                    child: ListTile(
-                      onTap: () {},
-                      leading: Icon(Icons.logout),
-                      iconColor: AppTheme.moderateOrange,
-                      title: Text(
-                        "Logout",
-                        style: TextStyle(
-                            fontFamily:
-                                GoogleFonts.macondoSwashCaps().fontFamily,
-                            fontSize: 25,
-                            color: AppTheme.moderateOrange),
-                      ),
-                    ),
-                    margin: EdgeInsets.only(left: 30, right: 30),
-                    shape: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(10),
-                        borderSide: BorderSide(color: AppTheme.moderateOrange)),
-                  ),
+                  EditContainer(
+                      icon: Icons.logout, text: "Logout", dest: Splash())
                 ],
               ),
             )

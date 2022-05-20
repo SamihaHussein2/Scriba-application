@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:scriba_app/widgets/app_cards.dart';
 import '/defaults/theme.dart';
 
 import '/defaults/config.dart';
@@ -28,89 +29,12 @@ class HistoryScreen extends StatelessWidget {
                 image: DecorationImage(
                     image: AssetImage("assets/images/Back-dark.png"),
                     fit: BoxFit.cover)),
-            padding: const EdgeInsets.only(top: 30),
+            padding: const EdgeInsets.only(top: 90),
             child: Column(
               children: <Widget>[
-                SizedBox(
-                  height: 200,
-                  child: Card(
-                      color: Colors.transparent,
-                      child: ListTile(
-                        subtitle: Text(
-                          "Lorem ipsum dolor sit amet.",
-                          style: TextStyle(
-                            color: AppTheme.moderateOrange,
-                            fontFamily: AppTheme.macondoFont.fontFamily,
-                            fontSize: 18,
-                          ),
-                        ),
-                        trailing: IconButton(
-                          icon: Icon(Icons.more_horiz,
-                              color: AppTheme.moderateOrange),
-                          tooltip: "Lorem ipsum dolor sit amet.",
-                          disabledColor: Colors.white,
-                          onPressed: () {},
-                        ),
-                      ),
-                      margin: EdgeInsets.only(
-                          top: 100, left: 20, right: 20, bottom: 0),
-                      shape: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(10),
-                          borderSide:
-                              BorderSide(color: AppTheme.moderateOrange))),
-                ),
-                SizedBox(
-                  height: 170,
-                  child: Card(
-                    color: Colors.transparent,
-                    child: ListTile(
-                      subtitle: Text(
-                        "Lorem ipsum dolor sit amet.",
-                        style: TextStyle(
-                          color: AppTheme.moderateOrange,
-                          fontFamily: AppTheme.macondoFont.fontFamily,
-                          fontSize: 18,
-                        ),
-                      ),
-                      trailing: IconButton(
-                        onPressed: () {},
-                        icon: Icon(Icons.more_horiz),
-                        color: AppTheme.moderateOrange,
-                      ),
-                    ),
-                    margin: EdgeInsets.only(
-                        top: 40, left: 20, right: 20, bottom: 20),
-                    shape: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(10),
-                        borderSide: BorderSide(color: AppTheme.moderateOrange)),
-                  ),
-                ),
-                SizedBox(
-                  height: 170,
-                  child: Card(
-                    color: Colors.transparent,
-                    child: ListTile(
-                      subtitle: Text(
-                        "Lorem ipsum dolor sit amet.",
-                        style: TextStyle(
-                          color: AppTheme.moderateOrange,
-                          fontFamily: AppTheme.macondoFont.fontFamily,
-                          fontSize: 18,
-                        ),
-                      ),
-                      trailing: IconButton(
-                        onPressed: () {},
-                        icon: Icon(Icons.more_horiz),
-                        color: AppTheme.moderateOrange,
-                      ),
-                    ),
-                    margin: EdgeInsets.only(
-                        top: 40, left: 20, right: 20, bottom: 20),
-                    shape: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(10),
-                        borderSide: BorderSide(color: AppTheme.moderateOrange)),
-                  ),
-                ),
+                AppCard(title: "", subtitle: "Lorem ipsum dolor sit amet."),
+                AppCard(title: "", subtitle: "Lorem ipsum dolor sit amet."),
+                AppCard(title: "", subtitle: "Lorem ipsum dolor sit amet."),
               ],
             )));
   }
