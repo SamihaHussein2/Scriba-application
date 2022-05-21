@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:scriba_app/defaults/theme.dart';
+import 'package:scriba_app/screens/navscreens/account.dart';
 import 'package:scriba_app/screens/navscreens/homepage.dart';
+import 'package:scriba_app/screens/navscreens/mainpage.dart';
+import 'package:scriba_app/widgets/app_btn.dart';
+import 'package:scriba_app/widgets/app_textfield.dart';
 
 import '../../defaults/config.dart';
 
@@ -10,6 +14,10 @@ class EditProfile extends StatefulWidget {
 
   @override
   State<EditProfile> createState() => _AccountPageState();
+}
+
+_Update() {
+  print("Hi There");
 }
 
 class _AccountPageState extends State<EditProfile> {
@@ -85,84 +93,37 @@ class _AccountPageState extends State<EditProfile> {
                     width: 350,
                     child: Column(
                       children: [
-                        TextFormField(
-                          style: TextStyle(color: AppTheme.moderateOrange),
-                          decoration: const InputDecoration(
-                            hintText: "John Doe",
-                            hintStyle: TextStyle(
-                              color: AppTheme.moderateOrange,
-                            ),
-                            enabledBorder: OutlineInputBorder(
-                              borderSide: BorderSide(
-                                  color: AppTheme.moderateOrange, width: 3.0),
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(10.0)),
-                            ),
-                            border: OutlineInputBorder(),
-                            focusedBorder: OutlineInputBorder(
-                              borderSide: BorderSide(
-                                  color: AppTheme.moderateOrange, width: 3.0),
-                            ),
-                          ),
+                        AppTextField(
+                          obscureText: false,
+                          fillColor: AppTheme.moderateOrange,
+                          textColor: AppTheme.moderateOrange,
+                          text: "John Doe",
                         ),
                         SizedBox(
                           height: 40,
                         ),
-                        TextFormField(
-                          style: TextStyle(color: AppTheme.moderateOrange),
-                          decoration: const InputDecoration(
-                            hintText: "John123@gmail.com",
-                            hintStyle: TextStyle(
-                              color: AppTheme.moderateOrange,
-                            ),
-                            enabledBorder: OutlineInputBorder(
-                              borderSide: BorderSide(
-                                  color: AppTheme.moderateOrange, width: 3.0),
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(10.0)),
-                            ),
-                            border: OutlineInputBorder(),
-                            focusedBorder: OutlineInputBorder(
-                              borderSide: BorderSide(
-                                  color: AppTheme.moderateOrange, width: 3.0),
-                            ),
-                          ),
+                        AppTextField(
+                          obscureText: false,
+                          fillColor: AppTheme.moderateOrange,
+                          textColor: AppTheme.moderateOrange,
+                          text: "John123@gmail.com",
                         ),
                         SizedBox(
                           height: 40,
                         ),
-                        TextFormField(
-                          style: TextStyle(color: AppTheme.moderateOrange),
-                          decoration: const InputDecoration(
-                            hintText: "*****",
-                            hintStyle: TextStyle(
-                              color: AppTheme.moderateOrange,
-                            ),
-                            enabledBorder: OutlineInputBorder(
-                              borderSide: BorderSide(
-                                  color: AppTheme.moderateOrange, width: 3.0),
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(10.0)),
-                            ),
-                            border: OutlineInputBorder(),
-                            focusedBorder: OutlineInputBorder(
-                              borderSide: BorderSide(
-                                  color: AppTheme.moderateOrange, width: 3.0),
-                            ),
-                          ),
-                        ),
+                        AppTextField(
+                            obscureText: true,
+                            fillColor: AppTheme.moderateOrange,
+                            textColor: AppTheme.moderateOrange,
+                            text: "*****"),
                         SizedBox(
                           height: 40,
                         ),
-                        ElevatedButton(
-                          onPressed: () {
-                            print('Hi there');
-                          },
-                          style: ElevatedButton.styleFrom(
-                              padding: EdgeInsets.zero,
-                              shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(20))),
-                          child: Ink(
+                        AppBtn(
+                            fontSize: 20,
+                            textcolor: AppTheme.darkRed,
+                            width: 300,
+                            height: 50,
                             decoration: BoxDecoration(
                                 gradient: const LinearGradient(colors: [
                                   AppTheme.moderateOrange,
@@ -170,22 +131,8 @@ class _AccountPageState extends State<EditProfile> {
                                   AppTheme.moderateOrange,
                                 ]),
                                 borderRadius: BorderRadius.circular(20)),
-                            child: Container(
-                              width: 300,
-                              height: 50,
-                              alignment: Alignment.center,
-                              child: Text(
-                                "Update Account",
-                                style: TextStyle(
-                                    fontFamily: GoogleFonts.macondoSwashCaps()
-                                        .fontFamily,
-                                    fontSize: 20,
-                                    color: AppTheme.darkRed),
-                              ),
-                            ),
-                          ),
-                        ),
-                        //navBar(),
+                            link: Homepage(),
+                            text: "Update Account"),
                       ],
                     ),
                   )

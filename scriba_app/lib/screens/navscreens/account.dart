@@ -6,6 +6,7 @@ import 'package:scriba_app/screens/edit_profile.dart';
 import 'package:scriba_app/widgets/edit_profile_containers.dart';
 import 'package:scriba_app/widgets/sharing_links.dart';
 import 'package:share_plus/share_plus.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../../defaults/config.dart';
 
@@ -19,8 +20,13 @@ class AccountPage extends StatefulWidget {
 class _AccountPageState extends State<AccountPage> {
   // Add link app in play store when deployed
   String appURL = "link Scriba app in play store";
-  String FeedbackURL = "link Scriba feedback app in play store";
+  String FeedbackURL =
+      "https://docs.google.com/forms/d/e/1FAIpQLScpldHNCspTFKqV0BStINBo0XYNs5wbOGZiV3NtE6CXvuS5uw/viewform?usp=sf_link";
 
+  _launchURL() async {
+    final Uri _url = Uri.parse(FeedbackURL);
+    if (!await launchUrl(_url)) throw 'Could not launch $_url';
+  }
   // late Image myImage;
   // @override
   // void initState() {
@@ -96,10 +102,28 @@ class _AccountPageState extends State<AccountPage> {
                   SizedBox(
                     height: 30,
                   ),
-                  SharingLinks(
-                      icon: Icons.thumbs_up_down_rounded,
-                      text: "Feedback",
-                      url: FeedbackURL),
+                  Card(
+                    color: AppTheme.darkRed,
+                    child: ListTile(
+                      onTap: () {
+                        _launchURL();
+                      },
+                      leading: Icon(Icons.thumbs_up_down_rounded),
+                      iconColor: AppTheme.moderateOrange,
+                      title: Text(
+                        "Feedback",
+                        style: TextStyle(
+                            fontFamily:
+                                GoogleFonts.macondoSwashCaps().fontFamily,
+                            fontSize: 25,
+                            color: AppTheme.moderateOrange),
+                      ),
+                    ),
+                    margin: EdgeInsets.only(left: 30, right: 30),
+                    shape: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10),
+                        borderSide: BorderSide(color: AppTheme.moderateOrange)),
+                  ),
                   SizedBox(
                     height: 30,
                   ),

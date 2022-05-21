@@ -2,6 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:scriba_app/defaults/splash.dart';
+import 'package:scriba_app/widgets/app_btn.dart';
 
 import '../../defaults/config.dart';
 import '../../defaults/theme.dart';
@@ -24,82 +25,171 @@ class IntroPage extends StatelessWidget {
                   child: Image.asset('assets/images/Back-dark.png',
                       fit: BoxFit.fitWidth),
                 ),
-                Center(
+                Flexible(
+                  fit: FlexFit.loose,
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
-                      SizedBox(height: 210),
+                      SizedBox(height: 170),
                       Center(
                         child: Image.asset(
                           "assets/images/logo.png",
                           width: 270,
                         ),
                       ),
-                      SizedBox(height: 180),
-                      Row(
-                        children: [
-                          Expanded(
-                              child: Container(
-                            height: 50,
-                            child: ElevatedButton(
-                              child: const Text("Create Account"),
-                              style: AppTheme.buttonStyle,
-                              onPressed: () {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(builder: (_) => Signup()),
-                                );
-                              },
+                      SizedBox(height: 140),
+                      Flexible(
+                        fit: FlexFit.loose,
+                        child: Column(
+                          children: [
+                            AppBtn(
+                                width: 300,
+                                height: 50,
+                                decoration: BoxDecoration(
+                                  gradient: const LinearGradient(colors: [
+                                    AppTheme.darkRed,
+                                    AppTheme.darkRed,
+                                    AppTheme.darkRed,
+                                  ]),
+                                  border: Border.all(
+                                      width: 2, color: AppTheme.moderateOrange),
+                                  borderRadius: BorderRadius.circular(20),
+                                ),
+                                link: Signup(),
+                                text: "Create an Account",
+                                textcolor: AppTheme.moderateOrange,
+                                fontSize: 20),
+                            SizedBox(
+                              height: 10,
                             ),
-                          )),
-                        ],
-                      ),
-                      SizedBox(
-                        height: 10,
-                      ),
-                      Row(
-                        children: [
-                          Expanded(
-                              child: Container(
-                            height: 50,
-                            child: ElevatedButton(
-                              child: const Text("Login"),
-                              style: AppTheme.buttonStyle,
-                              onPressed: () {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(builder: (_) => Login()),
-                                );
-                              },
+                            AppBtn(
+                                width: 300,
+                                height: 50,
+                                decoration: BoxDecoration(
+                                  gradient: const LinearGradient(colors: [
+                                    AppTheme.darkRed,
+                                    AppTheme.darkRed,
+                                    AppTheme.darkRed,
+                                  ]),
+                                  border: Border.all(
+                                      width: 2, color: AppTheme.moderateOrange),
+                                  borderRadius: BorderRadius.circular(20),
+                                ),
+                                link: Login(),
+                                text: "Login",
+                                textcolor: AppTheme.moderateOrange,
+                                fontSize: 20),
+                            SizedBox(
+                              height: 10,
                             ),
-                          )),
-                        ],
-                      ),
-                      SizedBox(
-                        height: 10,
-                      ),
-                      Row(
-                        children: [
-                          Expanded(
-                              child: Container(
-                            height: 50,
-                            child: ElevatedButton(
-                              child: const Text("Continue as a guest"),
-                              style: AppTheme.buttonGolden,
-                              onPressed: () {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(builder: (_) => Homepage()),
-                                );
-                              },
-                            ),
-                          )),
-                        ],
-                      ),
+                            AppBtn(
+                                width: 300,
+                                height: 50,
+                                decoration: BoxDecoration(
+                                  gradient: const LinearGradient(colors: [
+                                    AppTheme.moderateOrange,
+                                    AppTheme.gradientColor,
+                                    AppTheme.moderateOrange,
+                                  ]),
+                                  border: Border.all(
+                                      width: 2, color: Colors.transparent),
+                                  borderRadius: BorderRadius.circular(20),
+                                ),
+                                link: Homepage(),
+                                text: "Continue as a Guest",
+                                textcolor: AppTheme.darkRed,
+                                fontSize: 20),
+                          ],
+                        ),
+                      )
+                      // Row(
+                      //   children: [
+                      //     Container(
+                      //       alignment: Alignment.center,
+                      //       padding: EdgeInsets.only(left: 40),
+                      //       //height: 50,
+                      //       child: AppBtn(
+                      //           width: 300,
+                      //           height: 50,
+                      //           decoration: BoxDecoration(
+                      //             gradient: const LinearGradient(colors: [
+                      //               AppTheme.darkRed,
+                      //               AppTheme.darkRed,
+                      //               AppTheme.darkRed,
+                      //             ]),
+                      //             border: Border.all(
+                      //                 width: 2, color: AppTheme.moderateOrange),
+                      //             borderRadius: BorderRadius.circular(20),
+                      //           ),
+                      //           link: Signup(),
+                      //           text: "Create an Account",
+                      //           textcolor: AppTheme.moderateOrange,
+                      //           fontSize: 20),
+                      //     ),
+                      //   ],
+                      // ),
+                      // SizedBox(
+                      //   height: 10,
+                      // ),
+                      // Row(
+                      //   children: [
+                      //     Container(
+                      //       alignment: Alignment.center,
+                      //       padding: EdgeInsets.only(left: 40),
+                      //       //height: 50,
+                      //       child: AppBtn(
+                      //           width: 300,
+                      //           height: 50,
+                      //           decoration: BoxDecoration(
+                      //             gradient: const LinearGradient(colors: [
+                      //               AppTheme.darkRed,
+                      //               AppTheme.darkRed,
+                      //               AppTheme.darkRed,
+                      //             ]),
+                      //             border: Border.all(
+                      //                 width: 2, color: AppTheme.moderateOrange),
+                      //             borderRadius: BorderRadius.circular(20),
+                      //           ),
+                      //           link: Login(),
+                      //           text: "Login",
+                      //           textcolor: AppTheme.moderateOrange,
+                      //           fontSize: 20),
+                      //     ),
+                      //   ],
+                      // ),
+                      // SizedBox(
+                      //   height: 10,
+                      // ),
+                      // Row(
+                      //   children: [
+                      //     Container(
+                      //       alignment: Alignment.center,
+                      //       padding: EdgeInsets.only(left: 40),
+                      //       //height: 50,
+                      //       child: AppBtn(
+                      //           width: 300,
+                      //           height: 50,
+                      //           decoration: BoxDecoration(
+                      //             gradient: const LinearGradient(colors: [
+                      //               AppTheme.moderateOrange,
+                      //               AppTheme.gradientColor,
+                      //               AppTheme.moderateOrange,
+                      //             ]),
+                      //             border: Border.all(
+                      //                 width: 2, color: Colors.transparent),
+                      //             borderRadius: BorderRadius.circular(20),
+                      //           ),
+                      //           link: Homepage(),
+                      //           text: "Continue as a Guest",
+                      //           textcolor: AppTheme.darkRed,
+                      //           fontSize: 20),
+                      //     ),
+                      //   ],
+                      // ),
                     ],
                   ),
-                )
+                ),
               ],
             )));
   }

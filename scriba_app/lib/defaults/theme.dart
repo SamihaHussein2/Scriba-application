@@ -33,7 +33,7 @@ class AppTheme {
       borderRadius: BorderRadius.circular(50),
     ),
     side: const BorderSide(color: moderateOrange, width: 3),
-    padding: const EdgeInsets.only(left: 90, right: 90, top: 10, bottom: 10),
+    padding: const EdgeInsets.only(left: 0, right: 0, top: 0, bottom: 0),
   );
 
   static ButtonStyle loginStyle = ElevatedButton.styleFrom(

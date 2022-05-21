@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:scriba_app/defaults/theme.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:scriba_app/widgets/app_btn.dart';
 
 class Signup extends StatefulWidget {
   static const String id = 'Signup';
