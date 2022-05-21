@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:scriba_app/defaults/theme.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:scriba_app/screens/navscreens/mainpage.dart';
 
 class Login extends StatefulWidget {
   static const String id = 'Login';
@@ -121,7 +122,7 @@ class _LoginState extends State<Login> {
                               onPressed: () {
                                 Navigator.push(
                                   context,
-                                  MaterialPageRoute(builder: (_) => Login()),
+                                  MaterialPageRoute(builder: (_) => MainPage()),
                                 );
                               },
                             ),

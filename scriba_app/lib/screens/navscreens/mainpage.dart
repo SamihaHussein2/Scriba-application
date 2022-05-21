@@ -38,8 +38,8 @@ class _HomepageState extends State<MainPage> {
   loadModel() async {
     print("loading model");
     await Tflite.loadModel(
-      model: "assets/royals.tflite",
-      labels: "assets/royals.txt",
+      model: "assets/hieroglyphics.tflite",
+      labels: "assets/labels.txt",
     );
     print("sucessfull");
   }
