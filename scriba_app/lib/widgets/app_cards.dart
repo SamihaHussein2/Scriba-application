@@ -5,15 +5,19 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:scriba_app/defaults/theme.dart';
+import 'package:scriba_app/screens/myth_page.dart';
+import 'package:scriba_app/screens/translation.dart';
 
 class AppCard extends StatelessWidget {
   String title;
   final String subtitle;
-  //final Widget dest;
+  final Widget dest;
 
-  AppCard({Key? key, required this.subtitle, required this.title
-      //required this.dest
-      })
+  AppCard(
+      {Key? key,
+      required this.subtitle,
+      required this.title,
+      required this.dest})
       : super(key: key);
 
   @override
@@ -40,7 +44,8 @@ class AppCard extends StatelessWidget {
             ),
             trailing: ElevatedButton(
               onPressed: () {
-                print('Hi there');
+                Navigator.push(
+                    context, MaterialPageRoute(builder: (_) => dest));
               },
               style: ElevatedButton.styleFrom(
                   padding: EdgeInsets.zero,

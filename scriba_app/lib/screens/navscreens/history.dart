@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:scriba_app/screens/translation.dart';
 import 'package:scriba_app/widgets/app_cards.dart';
 import '/defaults/theme.dart';
 
@@ -32,9 +33,21 @@ class HistoryScreen extends StatelessWidget {
             padding: const EdgeInsets.only(top: 90),
             child: Column(
               children: <Widget>[
-                AppCard(title: "", subtitle: "Lorem ipsum dolor sit amet."),
-                AppCard(title: "", subtitle: "Lorem ipsum dolor sit amet."),
-                AppCard(title: "", subtitle: "Lorem ipsum dolor sit amet."),
+                AppCard(
+                  title: "",
+                  subtitle: "Lorem ipsum dolor sit amet.",
+                  dest: TranslationScreen(),
+                ),
+                AppCard(
+                  title: "",
+                  subtitle: "Lorem ipsum dolor sit amet.",
+                  dest: TranslationScreen(),
+                ),
+                AppCard(
+                  title: "",
+                  subtitle: "Lorem ipsum dolor sit amet.",
+                  dest: TranslationScreen(),
+                ),
               ],
             )));
   }

@@ -163,6 +163,7 @@ class _HomepageState extends State<MainPage> {
     setState(() {
       _image = image;
     });
+    classifyImage(image);
   }
 
   //camera method

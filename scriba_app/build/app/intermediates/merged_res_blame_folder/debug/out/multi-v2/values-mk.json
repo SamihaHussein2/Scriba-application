@@ -4,7 +4,7 @@
             "outputFile": "D:\\Senior\\Scriba-application\\scriba_app\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-mk\\values-mk.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\samih\\.gradle\\caches\\transforms-2\\files-2.1\\875654acb8fd75501dc33efa1bebb479\\core-1.6.0\\res\\values-mk\\values-mk.xml",
+                    "source": "C:\\Users\\samih\\.gradle\\caches\\transforms-2\\files-2.1\\f9455c21b56d148374e88e8b9fa9c592\\core-1.7.0\\res\\values-mk\\values-mk.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

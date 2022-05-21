@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:scriba_app/screens/myth_page.dart';
 import 'package:scriba_app/widgets/app_cards.dart';
 import '/defaults/theme.dart';
 
@@ -35,17 +36,23 @@ class MythScreen extends StatelessWidget {
             child: Column(
               children: <Widget>[
                 AppCard(
-                    title: "Royal Ramses II",
-                    subtitle:
-                        "Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet"),
+                  title: "Royal Ramses II",
+                  subtitle:
+                      "Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet",
+                  dest: SingleMyth(),
+                ),
                 AppCard(
-                    title: "Isis & Osiris",
-                    subtitle:
-                        "Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet"),
+                  title: "Isis & Osiris",
+                  subtitle:
+                      "Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet",
+                  dest: SingleMyth(),
+                ),
                 AppCard(
-                    title: "Royal Ahmose I",
-                    subtitle:
-                        "Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet")
+                  title: "Royal Ahmose I",
+                  subtitle:
+                      "Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet",
+                  dest: SingleMyth(),
+                )
               ],
             )));
   }

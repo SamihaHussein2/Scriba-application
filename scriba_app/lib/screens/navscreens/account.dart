@@ -4,6 +4,8 @@ import 'package:scriba_app/defaults/splash.dart';
 import 'package:scriba_app/defaults/theme.dart';
 import 'package:scriba_app/screens/edit_profile.dart';
 import 'package:scriba_app/widgets/edit_profile_containers.dart';
+import 'package:scriba_app/widgets/sharing_links.dart';
+import 'package:share_plus/share_plus.dart';
 
 import '../../defaults/config.dart';
 
@@ -15,6 +17,10 @@ class AccountPage extends StatefulWidget {
 }
 
 class _AccountPageState extends State<AccountPage> {
+  // Add link app in play store when deployed
+  String appURL = "link Scriba app in play store";
+  String FeedbackURL = "link Scriba feedback app in play store";
+
   // late Image myImage;
   // @override
   // void initState() {
@@ -90,17 +96,17 @@ class _AccountPageState extends State<AccountPage> {
                   SizedBox(
                     height: 30,
                   ),
-                  EditContainer(
+                  SharingLinks(
                       icon: Icons.thumbs_up_down_rounded,
                       text: "Feedback",
-                      dest: EditProfile()),
+                      url: FeedbackURL),
                   SizedBox(
                     height: 30,
                   ),
-                  EditContainer(
+                  SharingLinks(
                       icon: Icons.share_rounded,
                       text: "Share App",
-                      dest: EditProfile()),
+                      url: appURL),
                   SizedBox(
                     height: 30,
                   ),

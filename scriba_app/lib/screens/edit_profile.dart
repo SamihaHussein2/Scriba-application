@@ -33,7 +33,11 @@ class _AccountPageState extends State<EditProfile> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: AppTheme.darkRed,
-        leading: Icon(Icons.arrow_back_ios_new_outlined),
+        leading: new IconButton(
+          icon: new Icon(Icons.arrow_back_ios_new_outlined,
+              color: AppTheme.moderateOrange),
+          onPressed: () => Navigator.of(context).pop(),
+        ),
       ),
       body: Container(
         // constraints: const BoxConstraints.expand(),
@@ -47,14 +51,6 @@ class _AccountPageState extends State<EditProfile> {
               ///crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
                 Padding(padding: EdgeInsets.only(bottom: 40)),
-                Text(
-                  "Welcome your majesty",
-                  style: TextStyle(
-                    fontSize: 30,
-                    fontFamily: GoogleFonts.macondoSwashCaps().fontFamily,
-                    color: AppTheme.darkRed,
-                  ),
-                ),
                 SizedBox(
                   height: 10,
                 ),
