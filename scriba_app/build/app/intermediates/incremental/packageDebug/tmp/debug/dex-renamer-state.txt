@@ -1,4 +1,4 @@
-#Sat May 21 20:27:39 EET 2022
+#Sun May 22 00:39:01 EET 2022
 base.0=D\:\\senior year\\GP\\Scriba-application\\scriba_app\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
 renamed.0=classes.dex
 path.0=classes.dex
