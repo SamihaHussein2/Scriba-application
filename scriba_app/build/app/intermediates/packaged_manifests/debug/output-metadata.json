@@ -4,7 +4,7 @@
     "type": "PACKAGED_MANIFESTS",
     "kind": "Directory"
   },
-  "applicationId": "com.example.scriba_app",
+  "applicationId": "com.scriba.app",
   "variantName": "debug",
   "elements": [
     {

@@ -47,10 +47,12 @@ dependencies:
   cupertino_icons: ^1.0.2
   meta: ^1.1.1
   flutter_signin_button: ^2.0.0
+  
 dev_dependencies:
+  flutter_launcher_icons: "^0.9.2"
   flutter_test:
     sdk: flutter
-  flutter_launcher_icons: ^0.9.2
+  
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
@@ -59,11 +61,10 @@ dev_dependencies:
   # rules and activating additional ones.
   flutter_lints: ^1.0.0
 
-
 flutter_icons:
   android: true
   ios: true
-  image_path: "assets/images/logo.png"
+  image_path: "assets/images/play_store_Scriba_logo.png"
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

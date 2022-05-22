@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.scriba_app"
+    package="com.scriba.app"
     android:versionCode="1"
     android:versionName="1.0.0" >
 
     <uses-sdk
         android:minSdkVersion="19"
-        android:targetSdkVersion="31" />
+        android:targetSdkVersion="32" />
     <!--
          Flutter needs it to communicate with the running application
          to allow setting breakpoints, to provide hot reload, etc.
@@ -24,7 +24,7 @@
         android:appComponentFactory="androidx.core.app.CoreComponentFactory"
         android:debuggable="true"
         android:icon="@mipmap/ic_launcher"
-        android:label="scriba_app" >
+        android:label="Scriba" >
         <activity
             android:name="com.example.scriba_app.MainActivity"
             android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
@@ -75,7 +75,7 @@
 
         <provider
             android:name="io.flutter.plugins.imagepicker.ImagePickerFileProvider"
-            android:authorities="com.example.scriba_app.flutter.image_provider"
+            android:authorities="com.scriba.app.flutter.image_provider"
             android:exported="false"
             android:grantUriPermissions="true" >
             <meta-data
@@ -84,7 +84,7 @@
         </provider>
         <provider
             android:name="dev.fluttercommunity.plus.share.ShareFileProvider"
-            android:authorities="com.example.scriba_app.flutter.share_provider"
+            android:authorities="com.scriba.app.flutter.share_provider"
             android:exported="false"
             android:grantUriPermissions="true" >
             <meta-data
@@ -106,7 +106,7 @@
 
         <provider
             android:name="com.google.firebase.provider.FirebaseInitProvider"
-            android:authorities="com.example.scriba_app.firebaseinitprovider"
+            android:authorities="com.scriba.app.firebaseinitprovider"
             android:directBootAware="true"
             android:exported="false"
             android:initOrder="100" />

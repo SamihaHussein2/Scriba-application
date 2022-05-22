@@ -399,7 +399,7 @@
     },
     {
       "name": "string_scanner",
-      "rootUri": "file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/string_scanner-1.1.0",
+      "rootUri": "file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/string_scanner-1.1.1",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -512,7 +512,7 @@
       "languageVersion": "2.15"
     }
   ],
-  "generated": "2022-05-21T23:11:41.115682Z",
+  "generated": "2022-05-22T02:08:11.907477Z",
   "generator": "pub",
-  "generatorVersion": "2.18.0-109.0.dev"
+  "generatorVersion": "2.18.0-142.0.dev"
 }

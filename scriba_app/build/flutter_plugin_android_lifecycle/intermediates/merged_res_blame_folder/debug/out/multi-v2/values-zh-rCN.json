@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "D:\\senior year\\GP\\Scriba-application\\scriba_app\\build\\flutter_plugin_android_lifecycle\\intermediates\\res\\merged\\debug\\values-zh-rCN\\values-zh-rCN.xml",
+            "outputFile": "D:\\Senior\\Scriba-application\\scriba_app\\build\\flutter_plugin_android_lifecycle\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-zh-rCN\\values-zh-rCN.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\user\\.gradle\\caches\\transforms-2\\files-2.1\\875654acb8fd75501dc33efa1bebb479\\core-1.6.0\\res\\values-zh-rCN\\values-zh-rCN.xml",
+                    "source": "C:\\Users\\samih\\.gradle\\caches\\transforms-2\\files-2.1\\875654acb8fd75501dc33efa1bebb479\\core-1.6.0\\res\\values-zh-rCN\\values-zh-rCN.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -16,10 +16,10 @@
             ]
         },
         {
-            "outputFile": "D:\\senior year\\GP\\Scriba-application\\scriba_app\\build\\flutter_plugin_android_lifecycle\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-zh-rCN\\values-zh-rCN.xml",
+            "outputFile": "D:\\Senior\\Scriba-application\\scriba_app\\build\\flutter_plugin_android_lifecycle\\intermediates\\res\\merged\\debug\\values-zh-rCN\\values-zh-rCN.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\user\\.gradle\\caches\\transforms-2\\files-2.1\\875654acb8fd75501dc33efa1bebb479\\core-1.6.0\\res\\values-zh-rCN\\values-zh-rCN.xml",
+                    "source": "C:\\Users\\samih\\.gradle\\caches\\transforms-2\\files-2.1\\875654acb8fd75501dc33efa1bebb479\\core-1.6.0\\res\\values-zh-rCN\\values-zh-rCN.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

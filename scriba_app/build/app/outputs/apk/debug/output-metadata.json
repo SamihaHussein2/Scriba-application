@@ -4,7 +4,7 @@
     "type": "APK",
     "kind": "Directory"
   },
-  "applicationId": "com.example.scriba_app",
+  "applicationId": "com.scriba.app",
   "variantName": "processDebugResources",
   "elements": [
     {

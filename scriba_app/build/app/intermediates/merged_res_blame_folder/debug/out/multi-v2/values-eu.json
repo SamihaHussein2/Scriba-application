@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "D:\\senior year\\GP\\Scriba-application\\scriba_app\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-eu\\values-eu.xml",
+            "outputFile": "D:\\Senior\\Scriba-application\\scriba_app\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-eu\\values-eu.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\user\\.gradle\\caches\\transforms-2\\files-2.1\\2ffdea9840cb447d8a46ba75a1207d80\\jetified-play-services-basement-18.0.0\\res\\values-eu\\values.xml",
+                    "source": "C:\\Users\\samih\\.gradle\\caches\\transforms-2\\files-2.1\\2ffdea9840cb447d8a46ba75a1207d80\\jetified-play-services-basement-18.0.0\\res\\values-eu\\values.xml",
                     "from": {
                         "startLines": "4",
                         "startColumns": "0",
@@ -21,7 +21,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\user\\.gradle\\caches\\transforms-2\\files-2.1\\f9455c21b56d148374e88e8b9fa9c592\\core-1.7.0\\res\\values-eu\\values-eu.xml",
+                    "source": "C:\\Users\\samih\\.gradle\\caches\\transforms-2\\files-2.1\\f9455c21b56d148374e88e8b9fa9c592\\core-1.7.0\\res\\values-eu\\values-eu.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
