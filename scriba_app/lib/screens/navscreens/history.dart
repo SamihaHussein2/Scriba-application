@@ -33,21 +33,21 @@ class HistoryScreen extends StatelessWidget {
             padding: const EdgeInsets.only(top: 90),
             child: Column(
               children: <Widget>[
-                AppCard(
-                  title: "",
-                  subtitle: "Lorem ipsum dolor sit amet.",
-                  dest: TranslationScreen(),
-                ),
-                AppCard(
-                  title: "",
-                  subtitle: "Lorem ipsum dolor sit amet.",
-                  dest: TranslationScreen(),
-                ),
-                AppCard(
-                  title: "",
-                  subtitle: "Lorem ipsum dolor sit amet.",
-                  dest: TranslationScreen(),
-                ),
+                // AppCard(
+                //   title: "",
+                //   subtitle: "Lorem ipsum dolor sit amet.",
+                //   dest: TranslationScreen(),
+                // ),
+                // AppCard(
+                //   title: "",
+                //   subtitle: "Lorem ipsum dolor sit amet.",
+                //   dest: TranslationScreen(),
+                // ),
+                // AppCard(
+                //   title: "",
+                //   subtitle: "Lorem ipsum dolor sit amet.",
+                //   dest: TranslationScreen(),
+                // ),
               ],
             )));
   }

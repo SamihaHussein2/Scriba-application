@@ -1,20 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'package:scriba_app/defaults/config.dart';
 import 'package:scriba_app/defaults/theme.dart';
+import 'package:scriba_app/provider/myth_notifier.dart';
 import 'package:scriba_app/widgets/app_cards.dart';
 
 class SingleMyth extends StatelessWidget {
-  const SingleMyth({Key? key}) : super(key: key);
+  final int index;
+  const SingleMyth({Key? key, required this.index}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     SizeConfig().init(context);
+    MythNotifier mythNotifier = Provider.of<MythNotifier>(context);
     return Scaffold(
         extendBodyBehindAppBar: true,
         appBar: AppBar(
           automaticallyImplyLeading: false,
-          title: Text("Myth",
+          title: Text(
+              context.watch<MythNotifier>().mythList.elementAt(index).title,
               style: TextStyle(
                   color: AppTheme.moderateOrange,
                   fontSize: 25,
@@ -40,8 +45,8 @@ class SingleMyth extends StatelessWidget {
                   height: 20,
                 ),
                 ClipRRect(
-                    child: Image.asset(
-                  "assets/images/isis.png",
+                    child: Image.network(
+                  context.watch<MythNotifier>().mythList.elementAt(index).image,
                   width: 200,
                   height: 200,
                 )),
@@ -55,7 +60,11 @@ class SingleMyth extends StatelessWidget {
                   margin: EdgeInsets.all(25),
                   //alignment: Alignment.center,
                   child: Text(
-                      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+                      context
+                          .watch<MythNotifier>()
+                          .mythList
+                          .elementAt(index)
+                          .info,
                       style: TextStyle(
                           fontFamily: GoogleFonts.macondoSwashCaps().fontFamily,
                           fontSize: 20,
