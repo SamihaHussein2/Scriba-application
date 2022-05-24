@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import '/defaults/theme.dart';
 import '/screens/navscreens/account.dart';
 import '/screens/navscreens/history.dart';
-import '/screens/navscreens/myth.dart';
+import 'myth_page.dart';
 import '/screens/navscreens/mainpage.dart';
 import 'package:dot_navigation_bar/dot_navigation_bar.dart';
 
-import 'myth.dart';
+import 'myth_page.dart';
 
 class Homepage extends StatelessWidget {
   @override

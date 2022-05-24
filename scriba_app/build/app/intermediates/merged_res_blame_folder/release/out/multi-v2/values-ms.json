@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "D:\\Senior\\Scriba-application\\scriba_app\\build\\app\\intermediates\\incremental\\mergeReleaseResources\\merged.dir\\values-ms\\values-ms.xml",
+            "outputFile": "D:\\Senior\\Grad\\Scriba-application\\scriba_app\\build\\app\\intermediates\\incremental\\mergeReleaseResources\\merged.dir\\values-ms\\values-ms.xml",
             "map": [
                 {
                     "source": "C:\\Users\\samih\\.gradle\\caches\\transforms-2\\files-2.1\\2ffdea9840cb447d8a46ba75a1207d80\\jetified-play-services-basement-18.0.0\\res\\values-ms\\values.xml",

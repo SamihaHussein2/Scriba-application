@@ -6892,9 +6892,9 @@ kotlinx.coroutines.flow.FlowKt__ZipKt$combineTransform$$inlined$combineTransform
 com.google.common.base.Predicates$CompositionPredicate
 com.google.android.gms.tasks.zzq:
     public abstract void zzc()
+androidx.core.view.WindowInsetsCompat$Api21ReflectionHolder
 com.google.firebase.components.Preconditions:
     public void <init>()
-androidx.core.view.WindowInsetsCompat$Api21ReflectionHolder
 kotlin.jvm.JvmOverloads
 kotlin.ranges.UIntRange
 io.flutter.plugins.urllauncher.MethodCallHandlerImpl:
@@ -7668,13 +7668,13 @@ androidx.core.app.ComponentActivity:
     public boolean dispatchKeyEvent(android.view.KeyEvent)
     private androidx.collection.SimpleArrayMap mExtraDataMap
     private androidx.lifecycle.LifecycleRegistry mLifecycleRegistry
+kotlinx.coroutines.channels.ChannelsKt__ChannelsKt$sendBlocking$1
 kotlinx.coroutines.scheduling.TasksKt:
     public static final boolean isBlocking(kotlinx.coroutines.scheduling.Task)
     public static final java.lang.String DEFAULT_DISPATCHER_NAME
     public static final java.lang.String DEFAULT_SCHEDULER_NAME
     public static final int TASK_NON_BLOCKING
     public static final int TASK_PROBABLY_BLOCKING
-kotlinx.coroutines.channels.ChannelsKt__ChannelsKt$sendBlocking$1
 kotlin.coroutines.CombinedContext$Serialized
 com.google.common.base.CharMatcher$Any
 com.google.common.cache.LocalCache$Segment$1
@@ -8286,8 +8286,8 @@ kotlin.concurrent.LocksKt
 kotlin.ULong
 com.google.firebase.installations.FirebaseInstallations$2
 com.google.android.gms.internal.measurement.zzcw
-javax.annotation.Detainted
 org.intellij.lang.annotations.JdkConstants$TabPlacement
+javax.annotation.Detainted
 com.google.firebase.installations.interop.R$id
 kotlin.jvm.internal.ClassReference:
     public static synthetic void getTypeParameters$annotations()
@@ -11720,8 +11720,8 @@ androidx.core.view.MenuKt$iterator$1
 com.google.android.gms.common.Feature:
     public void <init>(java.lang.String,long)
 com.google.common.base.Functions$FunctionForMapNoDefault
-com.google.firebase.annotations.PublicApi
 kotlinx.coroutines.test.TestCoroutineContext
+com.google.firebase.annotations.PublicApi
 com.google.common.eventbus.package-info
 com.google.common.collect.MapMakerInternalMap$StrongKeyWeakValueEntry$Helper
 com.google.common.cache.LocalCache$AccessQueue$2
@@ -13448,7 +13448,7 @@ com.google.android.gms.internal.measurement.zzgc:
     static synthetic void zzak(com.google.android.gms.internal.measurement.zzgc,java.lang.Iterable)
 kotlin.KotlinVersion:
     public static final kotlin.KotlinVersion$Companion Companion
-io.flutter.plugin.common.BinaryMessenger$-CC
-io.flutter.plugin.platform.PlatformView$-CC
-androidx.lifecycle.DefaultLifecycleObserver$-CC
 io.flutter.view.TextureRegistry$SurfaceTextureEntry$-CC
+io.flutter.plugin.platform.PlatformView$-CC
+io.flutter.plugin.common.BinaryMessenger$-CC
+androidx.lifecycle.DefaultLifecycleObserver$-CC

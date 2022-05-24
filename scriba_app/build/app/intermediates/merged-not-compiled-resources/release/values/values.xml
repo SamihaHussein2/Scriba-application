@@ -93,6 +93,13 @@
     <integer name="google_play_services_version">12451000</integer>
     <integer name="status_bar_notification_info_maxnum">999</integer>
     <string name="common_google_play_services_unknown_issue"><ns1:g id="app_name">%1$s</ns1:g> is having trouble with Google Play services. Please try again.</string>
+    <string name="default_web_client_id" translatable="false">390793067268-d5q5r7uhkd4t4fajgo7mi03qbu8307k9.apps.googleusercontent.com</string>
+    <string name="gcm_defaultSenderId" translatable="false">390793067268</string>
+    <string name="google_api_key" translatable="false">AIzaSyCau7RnrUnuTlGfaRYk8Ng9hUsr0Pat1UM</string>
+    <string name="google_app_id" translatable="false">1:390793067268:android:cd67c357f919dee0096e51</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyCau7RnrUnuTlGfaRYk8Ng9hUsr0Pat1UM</string>
+    <string name="google_storage_bucket" translatable="false">scriba-f32be.appspot.com</string>
+    <string name="project_id" translatable="false">scriba-f32be</string>
     <string name="status_bar_notification_info_overflow">999+</string>
     <style name="LaunchTheme" parent="@android:style/Theme.Light.NoTitleBar">
         <!-- Show a splash screen on the activity. Automatically removed when

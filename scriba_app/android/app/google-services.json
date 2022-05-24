@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "390793067268",
+    "project_id": "scriba-f32be",
+    "storage_bucket": "scriba-f32be.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:390793067268:android:10d1bcb1d63688ef096e51",
+        "android_client_info": {
+          "package_name": "com.example.scriba_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "390793067268-d5q5r7uhkd4t4fajgo7mi03qbu8307k9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCau7RnrUnuTlGfaRYk8Ng9hUsr0Pat1UM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "390793067268-d5q5r7uhkd4t4fajgo7mi03qbu8307k9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:390793067268:android:cd67c357f919dee0096e51",
+        "android_client_info": {
+          "package_name": "com.scriba.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "390793067268-d5q5r7uhkd4t4fajgo7mi03qbu8307k9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCau7RnrUnuTlGfaRYk8Ng9hUsr0Pat1UM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "390793067268-d5q5r7uhkd4t4fajgo7mi03qbu8307k9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

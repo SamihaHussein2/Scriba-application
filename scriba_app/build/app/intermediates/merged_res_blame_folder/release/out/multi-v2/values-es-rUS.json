@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "D:\\Senior\\Scriba-application\\scriba_app\\build\\app\\intermediates\\incremental\\mergeReleaseResources\\merged.dir\\values-es-rUS\\values-es-rUS.xml",
+            "outputFile": "D:\\Senior\\Grad\\Scriba-application\\scriba_app\\build\\app\\intermediates\\incremental\\mergeReleaseResources\\merged.dir\\values-es-rUS\\values-es-rUS.xml",
             "map": [
                 {
                     "source": "C:\\Users\\samih\\.gradle\\caches\\transforms-2\\files-2.1\\f9455c21b56d148374e88e8b9fa9c592\\core-1.7.0\\res\\values-es-rUS\\values-es-rUS.xml",
