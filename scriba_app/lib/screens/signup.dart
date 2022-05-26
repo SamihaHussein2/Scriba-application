@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/material.dart';
 import 'package:scriba_app/defaults/theme.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -13,6 +15,10 @@ class Signup extends StatefulWidget {
 }
 
 class _SignupState extends State<Signup> {
+  late String _email;
+  late String _password;
+  late String _name;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -75,7 +81,7 @@ class _SignupState extends State<Signup> {
                         // #email, #password
 
                         const SizedBox(height: 20),
-                        Container(
+                        Form(
                           child: Column(
                             children: [
                               Container(
@@ -85,12 +91,10 @@ class _SignupState extends State<Signup> {
                                     borderRadius: BorderRadius.circular(10),
                                     border:
                                         Border.all(color: AppTheme.darkRed)),
-                                child: const TextField(
+                                child: TextFormField(
                                   decoration: InputDecoration(
                                       hintText: "First Name",
-                                      hintStyle: TextStyle(
-                                        color: AppTheme.darkRed,
-                                      ),
+                                      hintStyle: TextStyle(),
                                       border: InputBorder.none),
                                 ),
                               ),
@@ -102,12 +106,12 @@ class _SignupState extends State<Signup> {
                                     borderRadius: BorderRadius.circular(10),
                                     border:
                                         Border.all(color: AppTheme.darkRed)),
-                                child: const TextField(
+                                child: TextFormField(
                                   decoration: InputDecoration(
                                       hintText: "Email",
                                       hintStyle: TextStyle(
                                           //fontFamily: GoogleFonts.macondoSwashCaps().fontFamily,
-                                          color: AppTheme.darkRed),
+                                          ),
                                       border: InputBorder.none),
                                 ),
                               ),
@@ -119,12 +123,14 @@ class _SignupState extends State<Signup> {
                                     borderRadius: BorderRadius.circular(10),
                                     border:
                                         Border.all(color: AppTheme.darkRed)),
-                                child: const TextField(
+                                child: TextFormField(
+                                  obscureText: true,
                                   decoration: InputDecoration(
                                       hintText: "Password",
                                       hintStyle: TextStyle(
+
                                           //fontFamily: GoogleFonts.macondoSwashCaps().fontFamily,
-                                          color: AppTheme.darkRed),
+                                          ),
                                       border: InputBorder.none),
                                 ),
                               ),
@@ -136,12 +142,13 @@ class _SignupState extends State<Signup> {
                                     borderRadius: BorderRadius.circular(10),
                                     border:
                                         Border.all(color: AppTheme.darkRed)),
-                                child: const TextField(
+                                child: TextFormField(
+                                  obscureText: true,
                                   decoration: InputDecoration(
                                       hintText: "Confirm Password",
                                       hintStyle: TextStyle(
                                           //fontFamily: GoogleFonts.macondoSwashCaps().fontFamily,
-                                          color: AppTheme.darkRed),
+                                          ),
                                       border: InputBorder.none),
                                 ),
                               ),
