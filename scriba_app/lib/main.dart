@@ -11,6 +11,7 @@ import '/screens/navscreens/mainpage.dart';
 import '/screens/navscreens/homepage.dart';
 import '/screens/translation.dart';
 
+import 'data/states/auth_providers/email_password_auth_data.dart';
 import 'defaults/splash.dart';
 
 Future<void> main() async {
@@ -22,6 +23,7 @@ Future<void> main() async {
       ChangeNotifierProvider(
         create: (context) => MythNotifier(),
       ),
+      ChangeNotifierProvider(create: (_) => EmailPasswordAuthData()),
     ],
     child: MyApp(),
   ));

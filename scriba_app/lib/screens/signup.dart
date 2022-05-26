@@ -15,9 +15,14 @@ class Signup extends StatefulWidget {
 }
 
 class _SignupState extends State<Signup> {
+  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   late String _email;
   late String _password;
   late String _name;
+
+  _onActionButtonTap() {
+    _formKey.currentState!.save();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -92,6 +97,11 @@ class _SignupState extends State<Signup> {
                                     border:
                                         Border.all(color: AppTheme.darkRed)),
                                 child: TextFormField(
+                                  onSaved: (value) {
+                                    setState(() {
+                                      _name = value!;
+                                    });
+                                  },
                                   decoration: InputDecoration(
                                       hintText: "First Name",
                                       hintStyle: TextStyle(),
@@ -107,6 +117,11 @@ class _SignupState extends State<Signup> {
                                     border:
                                         Border.all(color: AppTheme.darkRed)),
                                 child: TextFormField(
+                                  onSaved: (value) {
+                                    setState(() {
+                                      _email = value!;
+                                    });
+                                  },
                                   decoration: InputDecoration(
                                       hintText: "Email",
                                       hintStyle: TextStyle(
@@ -124,6 +139,11 @@ class _SignupState extends State<Signup> {
                                     border:
                                         Border.all(color: AppTheme.darkRed)),
                                 child: TextFormField(
+                                  onSaved: (value) {
+                                    setState(() {
+                                      _password = value!;
+                                    });
+                                  },
                                   obscureText: true,
                                   decoration: InputDecoration(
                                       hintText: "Password",
@@ -162,12 +182,7 @@ class _SignupState extends State<Signup> {
                             child: ElevatedButton(
                               child: const Text("Sign Up"),
                               style: AppTheme.buttonStyle,
-                              onPressed: () {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(builder: (_) => Signup()),
-                                );
-                              },
+                              onPressed: _onActionButtonTap,
                             ),
                           ),
                         ),
