@@ -10,7 +10,6 @@ class MythNotifier extends ChangeNotifier {
 
   Future<void> fetchMyths() async {
     _mythList = await _mythService.fetchMyth();
-    //print(_mythList.length);
     notifyListeners();
   }
 

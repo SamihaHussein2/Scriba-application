@@ -4,6 +4,7 @@ import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:scriba_app/defaults/theme.dart';
 import 'package:scriba_app/screens/navscreens/homepage.dart';
 import 'package:dot_navigation_bar/dot_navigation_bar.dart';
@@ -89,56 +90,118 @@ class _HomepageState extends State<MainPage> {
                       crossAxisAlignment: CrossAxisAlignment.center,
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
+                        ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                            shape: const CircleBorder(),
+                            primary: AppTheme.darkRed,
+                            side: BorderSide(
+                                color: AppTheme.moderateOrange, width: 5),
+                          ),
+                          child: Column(
+                            children: [
+                              Container(
+                                width: 40,
+                                height: 40,
+                                alignment: Alignment.center,
+                                decoration: BoxDecoration(
+                                    shape: BoxShape.circle,
+                                    color: AppTheme.moderateOrange),
+                                child: Icon(Icons.refresh,
+                                    color: AppTheme.darkRed),
+                              ),
+                            ],
+                          ),
+                          onPressed: () {
+                            Navigator.pushAndRemoveUntil(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => Homepage()),
+                              (Route<dynamic> route) => false,
+                            );
+                          },
+                        ),
                         _image == null
                             ? Container(
                                 child: Row(
                                 crossAxisAlignment: CrossAxisAlignment.center,
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
-                                  ElevatedButton(
-                                    style: ElevatedButton.styleFrom(
-                                      shape: const CircleBorder(),
-                                      primary: AppTheme.darkRed,
-                                      side: BorderSide(
+                                  Column(
+                                    children: [
+                                      Text(
+                                        'Characters',
+                                        style: TextStyle(
+                                          fontFamily:
+                                              AppTheme.macondoFont.fontFamily,
+                                          fontSize: 20,
                                           color: AppTheme.moderateOrange,
-                                          width: 5),
-                                    ),
-                                    child: Column(
-                                      children: [
-                                        Container(
+                                        ),
+                                      ),
+                                      SizedBox(
+                                        height: 20,
+                                      ),
+                                      ElevatedButton(
+                                        style: ElevatedButton.styleFrom(
+                                          shape: const CircleBorder(),
+                                          primary: AppTheme.darkRed,
+                                          side: BorderSide(
+                                              color: AppTheme.moderateOrange,
+                                              width: 5),
+                                        ),
+                                        child: Column(
+                                          children: [
+                                            Container(
+                                                width: 90,
+                                                height: 90,
+                                                alignment: Alignment.center,
+                                                decoration: const BoxDecoration(
+                                                    shape: BoxShape.circle),
+                                                child: Image.asset(
+                                                  "assets/images/homepage_icons/char.png",
+                                                  width: 50,
+                                                )),
+                                          ],
+                                        ),
+                                        onPressed: _optiondialogbox,
+                                      ),
+                                    ],
+                                  ),
+                                  Column(
+                                    children: [
+                                      Text(
+                                        'Royals',
+                                        style: TextStyle(
+                                          fontFamily:
+                                              AppTheme.macondoFont.fontFamily,
+                                          fontSize: 20,
+                                          color: AppTheme.moderateOrange,
+                                        ),
+                                      ),
+                                      SizedBox(
+                                        height: 20,
+                                      ),
+                                      ElevatedButton(
+                                        style: ElevatedButton.styleFrom(
+                                          shape: const CircleBorder(),
+                                          primary: AppTheme.darkRed,
+                                          side: BorderSide(
+                                              color: AppTheme.moderateOrange,
+                                              width: 5),
+                                        ),
+                                        child: Container(
                                             width: 90,
                                             height: 90,
                                             alignment: Alignment.center,
                                             decoration: const BoxDecoration(
                                                 shape: BoxShape.circle),
                                             child: Image.asset(
-                                              "assets/images/homepage_icons/char.png",
+                                              "assets/images/homepage_icons/royal.png",
                                               width: 50,
                                             )),
-                                      ],
-                                    ),
-                                    onPressed: _optiondialogbox,
+                                        onPressed: _optiondialogbox,
+                                      )
+                                    ],
                                   ),
-                                  ElevatedButton(
-                                    style: ElevatedButton.styleFrom(
-                                      shape: const CircleBorder(),
-                                      primary: AppTheme.darkRed,
-                                      side: BorderSide(
-                                          color: AppTheme.moderateOrange,
-                                          width: 5),
-                                    ),
-                                    child: Container(
-                                        width: 90,
-                                        height: 90,
-                                        alignment: Alignment.center,
-                                        decoration: const BoxDecoration(
-                                            shape: BoxShape.circle),
-                                        child: Image.asset(
-                                          "assets/images/homepage_icons/royal.png",
-                                          width: 50,
-                                        )),
-                                    onPressed: _optiondialogbox,
-                                  )
                                 ],
                               ))
                             : Image.file(File(_image!.path)),
@@ -207,64 +270,65 @@ class _HomepageState extends State<MainPage> {
   }
 }
 
+// body: Container(
+//     constraints: const BoxConstraints.expand(),
+//     decoration: const BoxDecoration(
+//         image: DecorationImage(
+//             image: AssetImage("assets/images/Back-dark.png"),
+//             fit: BoxFit.cover)),
+//     child: _loading
+//         ? Container(
+//             alignment: Alignment.center,
+//             child: CircularProgressIndicator(),
+//           )
+//         : Container(
+//             child: ListView(children: <Widget>[
+//               Row(
+//                 mainAxisAlignment: MainAxisAlignment.center,
+//                 crossAxisAlignment: CrossAxisAlignment.center,
+//                 children: [
+//                   ElevatedButton(
+//                     style: ElevatedButton.styleFrom(
+//                       shape: const CircleBorder(),
+//                       primary: AppTheme.darkRed,
+//                     ),
+//                     child: Container(
+//                         width: 100,
+//                         height: 100,
+//                         alignment: Alignment.center,
+//                         decoration:
+//                             const BoxDecoration(shape: BoxShape.circle),
+//                         child: Image.asset(
+//                           "assets/images/homepage_icons/Import.png",
+//                           width: 70,
+//                         )),
+//                     onPressed: openGallery,
+//                   ),
+//                   SizedBox(
+//                     width: 40,
+//                   ),
+//                   ElevatedButton(
+//                     style: ElevatedButton.styleFrom(
+//                       shape: const CircleBorder(),
+//                       primary: AppTheme.darkRed,
+//                     ),
+//                     child: Container(
+//                       width: 100,
+//                       height: 100,
+//                       alignment: Alignment.center,
+//                       decoration:
+//                           const BoxDecoration(shape: BoxShape.circle),
+//                       child: Icon(
+//                         Icons.camera,
+//                         color: AppTheme.moderateOrange,
+//                         size: 50,
+//                       ),
+//                     ),
+//                     onPressed: openCamera,
+//                   )
+//                 ],
+//               ),
+//             ]),
+//           ))
 
-    // body: Container(
-      //     constraints: const BoxConstraints.expand(),
-      //     decoration: const BoxDecoration(
-      //         image: DecorationImage(
-      //             image: AssetImage("assets/images/Back-dark.png"),
-      //             fit: BoxFit.cover)),
-      //     child: _loading
-      //         ? Container(
-      //             alignment: Alignment.center,
-      //             child: CircularProgressIndicator(),
-      //           )
-      //         : Container(
-      //             child: ListView(children: <Widget>[
-      //               Row(
-      //                 mainAxisAlignment: MainAxisAlignment.center,
-      //                 crossAxisAlignment: CrossAxisAlignment.center,
-      //                 children: [
-      //                   ElevatedButton(
-      //                     style: ElevatedButton.styleFrom(
-      //                       shape: const CircleBorder(),
-      //                       primary: AppTheme.darkRed,
-      //                     ),
-      //                     child: Container(
-      //                         width: 100,
-      //                         height: 100,
-      //                         alignment: Alignment.center,
-      //                         decoration:
-      //                             const BoxDecoration(shape: BoxShape.circle),
-      //                         child: Image.asset(
-      //                           "assets/images/homepage_icons/Import.png",
-      //                           width: 70,
-      //                         )),
-      //                     onPressed: openGallery,
-      //                   ),
-      //                   SizedBox(
-      //                     width: 40,
-      //                   ),
-      //                   ElevatedButton(
-      //                     style: ElevatedButton.styleFrom(
-      //                       shape: const CircleBorder(),
-      //                       primary: AppTheme.darkRed,
-      //                     ),
-      //                     child: Container(
-      //                       width: 100,
-      //                       height: 100,
-      //                       alignment: Alignment.center,
-      //                       decoration:
-      //                           const BoxDecoration(shape: BoxShape.circle),
-      //                       child: Icon(
-      //                         Icons.camera,
-      //                         color: AppTheme.moderateOrange,
-      //                         size: 50,
-      //                       ),
-      //                     ),
-      //                     onPressed: openCamera,
-      //                   )
-      //                 ],
-      //               ),
-      //             ]),
-      //           ))
+
