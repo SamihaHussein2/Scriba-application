@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:scriba_app/screens/onboarding/intro.dart';
+import 'package:scriba_app/screens/onboarding/onboarding.dart';
 
 class Splash extends StatefulWidget {
   @override
@@ -12,7 +12,7 @@ class _SplashState extends State<Splash> {
     Future.delayed(Duration(seconds: 3), () {
       Navigator.push(
         context,
-        MaterialPageRoute(builder: (_) => IntroPage()),
+        MaterialPageRoute(builder: (_) => OnBoardingScreen()),
       );
     });
 
