@@ -1,6 +1,10 @@
+//import 'dart:ffi';
+
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:scriba_app/defaults/theme.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:scriba_app/screens/navscreens/homepage.dart';
 import 'package:scriba_app/screens/navscreens/mainpage.dart';
 
 class Login extends StatefulWidget {
@@ -13,6 +17,16 @@ class Login extends StatefulWidget {
 }
 
 class _LoginState extends State<Login> {
+  final emailController = TextEditingController();
+  final passwordController = TextEditingController();
+
+  @override
+  void dispose() {
+    emailController.dispose();
+    passwordController.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -59,11 +73,6 @@ class _LoginState extends State<Login> {
 
             Expanded(
               child: Container(
-                // decoration: const BoxDecoration(
-                //   image: DecorationImage(
-                //       image: AssetImage("assets/images/Back-light.png"),
-                //       fit: BoxFit.cover),
-                // ),
                 child: SingleChildScrollView(
                   child: Padding(
                     padding: const EdgeInsets.all(20),
@@ -83,13 +92,17 @@ class _LoginState extends State<Login> {
                                     borderRadius: BorderRadius.circular(10),
                                     border:
                                         Border.all(color: AppTheme.darkRed)),
-                                child: const TextField(
+                                child: TextField(
+                                  controller: emailController,
                                   decoration: InputDecoration(
-                                      hintText: "Email",
-                                      hintStyle: TextStyle(
-                                        color: AppTheme.darkRed,
-                                      ),
-                                      border: InputBorder.none),
+                                    //border: OutlineInputBorder(),
+                                    hintText: "Email",
+                                    hintStyle: TextStyle(
+                                      color: AppTheme.darkRed,
+                                      fontFamily:
+                                          AppTheme.macondoFont.fontFamily,
+                                    ),
+                                  ),
                                 ),
                               ),
                               const SizedBox(height: 20),
@@ -100,13 +113,17 @@ class _LoginState extends State<Login> {
                                     borderRadius: BorderRadius.circular(10),
                                     border:
                                         Border.all(color: AppTheme.darkRed)),
-                                child: const TextField(
+                                child: TextField(
+                                  controller: passwordController,
                                   decoration: InputDecoration(
-                                      hintText: "Password",
-                                      hintStyle: TextStyle(
-                                          //fontFamily: GoogleFonts.macondoSwashCaps().fontFamily,
-                                          color: AppTheme.darkRed),
-                                      border: InputBorder.none),
+                                    //border: OutlineInputBorder(),
+                                    hintText: "Password",
+                                    hintStyle: TextStyle(
+                                      color: AppTheme.darkRed,
+                                      fontFamily:
+                                          AppTheme.macondoFont.fontFamily,
+                                    ),
+                                  ),
                                 ),
                               ),
                             ],
@@ -119,70 +136,65 @@ class _LoginState extends State<Login> {
                             child: ElevatedButton(
                               child: const Text("Login"),
                               style: AppTheme.buttonStyle,
-                              onPressed: () {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(builder: (_) => MainPage()),
-                                );
-                              },
+                              onPressed: signIn,
                             ),
                           ),
                         ),
 
-                        const SizedBox(height: 10),
-                        Row(children: <Widget>[
-                          Expanded(
-                            child: new Container(
-                                margin: const EdgeInsets.only(
-                                    left: 10.0, right: 20.0),
-                                child: Divider(
-                                  color: Colors.black,
-                                  height: 36,
-                                )),
-                          ),
-                          Text(
-                            "OR",
-                            style: GoogleFonts.macondoSwashCaps(),
-                          ),
-                          Expanded(
-                            child: new Container(
-                                margin: const EdgeInsets.only(
-                                    left: 20.0, right: 10.0),
-                                child: Divider(
-                                  color: Colors.black,
-                                  height: 36,
-                                )),
-                          ),
-                        ]),
-                        Container(
-                            alignment: Alignment.center,
-                            child: Center(
-                              child: ElevatedButton(
-                                child: const Text("Login with Google"),
-                                style: AppTheme.loginStyle,
-                                onPressed: () {
-                                  Navigator.push(
-                                    context,
-                                    MaterialPageRoute(builder: (_) => Login()),
-                                  );
-                                },
-                              ),
-                            )),
-                        const SizedBox(height: 10),
-                        Container(
-                            alignment: Alignment.center,
-                            child: Center(
-                              child: ElevatedButton(
-                                child: const Text("Login with phone number"),
-                                style: AppTheme.loginStyle,
-                                onPressed: () {
-                                  Navigator.push(
-                                    context,
-                                    MaterialPageRoute(builder: (_) => Login()),
-                                  );
-                                },
-                              ),
-                            ))
+                        // const SizedBox(height: 10),
+                        // Row(children: <Widget>[
+                        //   Expanded(
+                        //     child: new Container(
+                        //         margin: const EdgeInsets.only(
+                        //             left: 10.0, right: 20.0),
+                        //         child: Divider(
+                        //           color: Colors.black,
+                        //           height: 36,
+                        //         )),
+                        //   ),
+                        //   Text(
+                        //     "OR",
+                        //     style: GoogleFonts.macondoSwashCaps(),
+                        //   ),
+                        //   Expanded(
+                        //     child: new Container(
+                        //         margin: const EdgeInsets.only(
+                        //             left: 20.0, right: 10.0),
+                        //         child: Divider(
+                        //           color: Colors.black,
+                        //           height: 36,
+                        //         )),
+                        //   ),
+                        // ]),
+                        // Container(
+                        //     alignment: Alignment.center,
+                        //     child: Center(
+                        //       child: ElevatedButton(
+                        //         child: const Text("Login with Google"),
+                        //         style: AppTheme.buttonStyle,
+                        //         onPressed: () {
+                        //           Navigator.push(
+                        //             context,
+                        //             MaterialPageRoute(builder: (_) => Login()),
+                        //           );
+                        //         },
+                        //       ),
+                        //     )),
+                        // const SizedBox(height: 10),
+                        // Container(
+                        //     alignment: Alignment.center,
+                        //     child: Center(
+                        //       child: ElevatedButton(
+                        //         child: const Text("Login with phone number"),
+                        //         style: AppTheme.buttonStyle,
+                        //         onPressed: () {
+                        //           Navigator.push(
+                        //             context,
+                        //             MaterialPageRoute(builder: (_) => Login()),
+                        //           );
+                        //         },
+                        //       ),
+                        //     ))
                       ],
                     ),
                   ),
@@ -193,5 +205,19 @@ class _LoginState extends State<Login> {
         ),
       ),
     );
+  }
+
+  Future signIn() async {
+    try {
+      await FirebaseAuth.instance.signInWithEmailAndPassword(
+        email: emailController.text.trim(),
+        password: passwordController.text.trim(),
+      );
+      print("Doneee");
+      Navigator.push(context, MaterialPageRoute(builder: (_) => Homepage()));
+    } on FirebaseAuthException catch (e) {
+      print(e);
+      //print("error");
+    }
   }
 }

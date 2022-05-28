@@ -12,18 +12,4 @@ class MythNotifier extends ChangeNotifier {
     _mythList = await _mythService.fetchMyth();
     notifyListeners();
   }
-
-  // UnmodifiableListView<Myth> get mythList => UnmodifiableListView(_mythList);
-
-  // Myth get currentmMyth => _currentmMyth;
-
-  // set mythList(List<Myth> mythList) {
-  //   _mythList = mythList;
-  //   notifyListeners();
-  // }
-
-  // set currentmMyth(Myth myth) {
-  //   _currentmMyth = myth;
-  // }
-
 }

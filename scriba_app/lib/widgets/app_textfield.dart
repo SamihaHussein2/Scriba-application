@@ -7,6 +7,7 @@ class AppTextField extends StatelessWidget {
   final Color textColor;
   final String text;
   final String? fontfamily = GoogleFonts.macondoSwashCaps().fontFamily;
+  //TextEditingController controller;
   final bool obscureText;
   AppTextField({
     Key? key,

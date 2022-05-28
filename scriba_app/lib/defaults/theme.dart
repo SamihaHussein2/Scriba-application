@@ -23,29 +23,29 @@ class AppTheme {
     padding: const EdgeInsets.only(left: 90, right: 90, top: 10, bottom: 10),
   );
 
-  static ButtonStyle buttonGolden = ElevatedButton.styleFrom(
-    textStyle: TextStyle(
-        fontSize: getProportionateScreenWidth(15),
-        fontFamily: macondoFont.fontFamily,
-        color: darkRedOpacity),
-    primary: moderateOrange,
-    shape: RoundedRectangleBorder(
-      borderRadius: BorderRadius.circular(50),
-    ),
-    side: const BorderSide(color: moderateOrange, width: 3),
-    padding: const EdgeInsets.only(left: 0, right: 0, top: 0, bottom: 0),
-  );
+  // static ButtonStyle buttonGolden = ElevatedButton.styleFrom(
+  //   textStyle: TextStyle(
+  //       fontSize: getProportionateScreenWidth(15),
+  //       fontFamily: macondoFont.fontFamily,
+  //       color: darkRedOpacity),
+  //   primary: moderateOrange,
+  //   shape: RoundedRectangleBorder(
+  //     borderRadius: BorderRadius.circular(50),
+  //   ),
+  //   side: const BorderSide(color: moderateOrange, width: 3),
+  //   padding: const EdgeInsets.only(left: 0, right: 0, top: 0, bottom: 0),
+  // );
 
-  static ButtonStyle loginStyle = ElevatedButton.styleFrom(
-    textStyle: TextStyle(
-        fontSize: getProportionateScreenWidth(15),
-        fontFamily: macondoFont.fontFamily,
-        color: moderateOrange),
-    primary: darkRedOpacity,
-    shape: RoundedRectangleBorder(
-      borderRadius: BorderRadius.circular(50),
-    ),
-    side: const BorderSide(color: moderateOrange, width: 3),
-    padding: const EdgeInsets.only(left: 90, right: 90, top: 10, bottom: 10),
-  );
+  // static ButtonStyle loginStyle = ElevatedButton.styleFrom(
+  //   textStyle: TextStyle(
+  //       fontSize: getProportionateScreenWidth(15),
+  //       fontFamily: macondoFont.fontFamily,
+  //       color: moderateOrange),
+  //   primary: darkRedOpacity,
+  //   shape: RoundedRectangleBorder(
+  //     borderRadius: BorderRadius.circular(50),
+  //   ),
+  //   side: const BorderSide(color: moderateOrange, width: 3),
+  //   padding: const EdgeInsets.only(left: 90, right: 90, top: 10, bottom: 10),
+  // );
 }

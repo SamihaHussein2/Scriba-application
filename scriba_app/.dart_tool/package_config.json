@@ -69,7 +69,7 @@
     },
     {
       "name": "cloud_firestore_platform_interface",
-      "rootUri": "file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/cloud_firestore_platform_interface-5.5.6",
+      "rootUri": "file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/cloud_firestore_platform_interface-5.5.7",
       "packageUri": "lib/",
       "languageVersion": "2.16"
     },
@@ -141,7 +141,7 @@
     },
     {
       "name": "firebase_auth_platform_interface",
-      "rootUri": "file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_auth_platform_interface-6.2.6",
+      "rootUri": "file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_auth_platform_interface-6.2.7",
       "packageUri": "lib/",
       "languageVersion": "2.16"
     },
@@ -177,7 +177,7 @@
     },
     {
       "name": "firebase_storage_platform_interface",
-      "rootUri": "file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_storage_platform_interface-4.1.6",
+      "rootUri": "file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_storage_platform_interface-4.1.7",
       "packageUri": "lib/",
       "languageVersion": "2.16"
     },
@@ -309,13 +309,13 @@
     },
     {
       "name": "material_color_utilities",
-      "rootUri": "file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/material_color_utilities-0.1.4",
+      "rootUri": "file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/material_color_utilities-0.1.5",
       "packageUri": "lib/",
       "languageVersion": "2.13"
     },
     {
       "name": "meta",
-      "rootUri": "file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/meta-1.7.0",
+      "rootUri": "file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/meta-1.8.0",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -345,7 +345,7 @@
     },
     {
       "name": "path",
-      "rootUri": "file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/path-1.8.1",
+      "rootUri": "file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/path-1.8.2",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -644,7 +644,7 @@
       "languageVersion": "2.15"
     }
   ],
-  "generated": "2022-05-26T11:53:25.070375Z",
+  "generated": "2022-05-28T00:12:38.667050Z",
   "generator": "pub",
-  "generatorVersion": "2.18.0-142.0.dev"
+  "generatorVersion": "2.18.0-151.0.dev"
 }

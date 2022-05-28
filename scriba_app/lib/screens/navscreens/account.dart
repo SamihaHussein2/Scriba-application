@@ -1,8 +1,10 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:scriba_app/defaults/splash.dart';
 import 'package:scriba_app/defaults/theme.dart';
 import 'package:scriba_app/screens/edit_profile.dart';
+import 'package:scriba_app/screens/onboarding/intro.dart';
 import 'package:scriba_app/widgets/edit_profile_containers.dart';
 import 'package:scriba_app/widgets/sharing_links.dart';
 import 'package:share_plus/share_plus.dart';
@@ -27,6 +29,7 @@ class _AccountPageState extends State<AccountPage> {
     final Uri _url = Uri.parse(FeedbackURL);
     if (!await launchUrl(_url)) throw 'Could not launch $_url';
   }
+
   // late Image myImage;
   // @override
   // void initState() {
@@ -43,6 +46,7 @@ class _AccountPageState extends State<AccountPage> {
   @override
   Widget build(BuildContext context) {
     //precacheImage(AssetImage("assets/images/Back-light.png"), context);
+
     SizeConfig().init(context);
     return Scaffold(
       body: Container(
@@ -134,8 +138,30 @@ class _AccountPageState extends State<AccountPage> {
                   SizedBox(
                     height: 30,
                   ),
-                  EditContainer(
-                      icon: Icons.logout, text: "Logout", dest: Splash())
+                  Card(
+                    color: AppTheme.darkRed,
+                    child: ListTile(
+                      onTap: () {
+                        FirebaseAuth.instance.signOut();
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (_) => IntroPage()));
+                      },
+                      leading: Icon(Icons.logout),
+                      iconColor: AppTheme.moderateOrange,
+                      title: Text(
+                        "Logout",
+                        style: TextStyle(
+                            fontFamily:
+                                GoogleFonts.macondoSwashCaps().fontFamily,
+                            fontSize: 25,
+                            color: AppTheme.moderateOrange),
+                      ),
+                    ),
+                    margin: EdgeInsets.only(left: 30, right: 30),
+                    shape: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10),
+                        borderSide: BorderSide(color: AppTheme.moderateOrange)),
+                  )
                 ],
               ),
             )
