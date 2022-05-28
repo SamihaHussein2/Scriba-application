@@ -114,6 +114,7 @@ class _LoginState extends State<Login> {
                                     border:
                                         Border.all(color: AppTheme.darkRed)),
                                 child: TextField(
+                                  obscureText: true,
                                   controller: passwordController,
                                   decoration: InputDecoration(
                                     //border: OutlineInputBorder(),
