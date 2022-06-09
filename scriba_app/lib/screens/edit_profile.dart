@@ -21,19 +21,6 @@ _Update() {
 }
 
 class _AccountPageState extends State<EditProfile> {
-  // late Image myImage;
-  // @override
-  // void initState() {
-  //   super.initState();
-  //   myImage = Image.asset("assets/images/Back-light.png");
-  // }
-
-  // @override
-  // void didChangeDependencies() {
-  //   super.didChangeDependencies();
-  //   precacheImage(myImage.image, context);
-  // }
-
   @override
   Widget build(BuildContext context) {
     //precacheImage(AssetImage("assets/images/Back-light.png"), context);
