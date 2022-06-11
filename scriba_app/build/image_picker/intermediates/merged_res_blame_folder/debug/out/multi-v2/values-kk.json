@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\302b46\\Desktop\\Scriba-application\\scriba_app\\build\\image_picker\\intermediates\\res\\merged\\debug\\values-kk\\values-kk.xml",
+            "outputFile": "D:\\Senior\\Grad\\Scriba-application\\scriba_app\\build\\image_picker\\intermediates\\res\\merged\\debug\\values-kk\\values-kk.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\302b46\\.gradle\\caches\\transforms-2\\files-2.1\\875654acb8fd75501dc33efa1bebb479\\core-1.6.0\\res\\values-kk\\values-kk.xml",
+                    "source": "C:\\Users\\samih\\.gradle\\caches\\transforms-2\\files-2.1\\875654acb8fd75501dc33efa1bebb479\\core-1.6.0\\res\\values-kk\\values-kk.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -16,10 +16,10 @@
             ]
         },
         {
-            "outputFile": "C:\\Users\\302b46\\Desktop\\Scriba-application\\scriba_app\\build\\image_picker\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-kk\\values-kk.xml",
+            "outputFile": "D:\\Senior\\Grad\\Scriba-application\\scriba_app\\build\\image_picker\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-kk\\values-kk.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\302b46\\.gradle\\caches\\transforms-2\\files-2.1\\875654acb8fd75501dc33efa1bebb479\\core-1.6.0\\res\\values-kk\\values-kk.xml",
+                    "source": "C:\\Users\\samih\\.gradle\\caches\\transforms-2\\files-2.1\\875654acb8fd75501dc33efa1bebb479\\core-1.6.0\\res\\values-kk\\values-kk.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
