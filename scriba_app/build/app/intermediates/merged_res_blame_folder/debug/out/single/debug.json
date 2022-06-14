@@ -20,11 +20,16 @@
         "source": "D:\\Senior\\Grad\\Scriba-application\\scriba_app\\android\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher.png"
     },
     {
+<<<<<<< Updated upstream
         "merged": "D:\\Senior\\Grad\\Scriba-application\\scriba_app\\build\\app\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher.png.flat",
         "source": "D:\\Senior\\Grad\\Scriba-application\\scriba_app\\android\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.png"
     },
     {
         "merged": "D:\\Senior\\Grad\\Scriba-application\\scriba_app\\build\\app\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher.png.flat",
         "source": "D:\\Senior\\Grad\\Scriba-application\\scriba_app\\android\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher.png"
+=======
+        "merged": "D:\\senior year\\GP\\Scriba-application\\scriba_app\\build\\app\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "D:\\senior year\\GP\\Scriba-application\\scriba_app\\android\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher.png"
+>>>>>>> Stashed changes
     }
 ]

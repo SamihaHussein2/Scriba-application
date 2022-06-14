@@ -1,2 +1,8 @@
+<<<<<<< Updated upstream
 2022/05/25-08:02:46.987 41e4 Creating DB C:\Users\user\AppData\Local\Temp\flutter_tools.15f177e3\flutter_tools_chrome_device.bbc6b205\Default\Service Worker\Database since it was missing.
 2022/05/25-08:02:47.201 41e4 Reusing MANIFEST C:\Users\user\AppData\Local\Temp\flutter_tools.15f177e3\flutter_tools_chrome_device.bbc6b205\Default\Service Worker\Database/MANIFEST-000001
+=======
+2022/05/22-02:23:22.464 12a8 Reusing MANIFEST C:\Users\user\AppData\Local\Temp\flutter_tools.76772c26\flutter_tools_chrome_device.b9e5812c\Default\Service Worker\Database/MANIFEST-000001
+2022/05/22-02:23:22.497 12a8 Recovering log #3
+2022/05/22-02:23:22.497 12a8 Reusing old log C:\Users\user\AppData\Local\Temp\flutter_tools.76772c26\flutter_tools_chrome_device.b9e5812c\Default\Service Worker\Database/000003.log 
+>>>>>>> Stashed changes

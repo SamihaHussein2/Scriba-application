@@ -1,2 +1,7 @@
+<<<<<<< Updated upstream
 2022/05/25-08:02:44.169 235c Creating DB C:\Users\user\AppData\Local\Temp\flutter_tools.15f177e3\flutter_tools_chrome_device.bbc6b205\Default\shared_proto_db\metadata since it was missing.
 2022/05/25-08:02:44.411 235c Reusing MANIFEST C:\Users\user\AppData\Local\Temp\flutter_tools.15f177e3\flutter_tools_chrome_device.bbc6b205\Default\shared_proto_db\metadata/MANIFEST-000001
+=======
+2022/05/22-02:15:34.939 1f2c Creating DB C:\Users\user\AppData\Local\Temp\flutter_tools.6643bebc\flutter_tools_chrome_device.847afa71\Default\shared_proto_db\metadata since it was missing.
+2022/05/22-02:15:35.531 1f2c Reusing MANIFEST C:\Users\user\AppData\Local\Temp\flutter_tools.6643bebc\flutter_tools_chrome_device.847afa71\Default\shared_proto_db\metadata/MANIFEST-000001
+>>>>>>> Stashed changes

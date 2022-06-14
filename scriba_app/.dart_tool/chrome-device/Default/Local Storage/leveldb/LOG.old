@@ -1,2 +1,8 @@
+<<<<<<< Updated upstream
 2022/05/25-08:02:45.540 2380 Creating DB C:\Users\user\AppData\Local\Temp\flutter_tools.15f177e3\flutter_tools_chrome_device.bbc6b205\Default\Local Storage\leveldb since it was missing.
 2022/05/25-08:02:46.386 2380 Reusing MANIFEST C:\Users\user\AppData\Local\Temp\flutter_tools.15f177e3\flutter_tools_chrome_device.bbc6b205\Default\Local Storage\leveldb/MANIFEST-000001
+=======
+2022/05/22-02:23:22.501 1a14 Reusing MANIFEST C:\Users\user\AppData\Local\Temp\flutter_tools.76772c26\flutter_tools_chrome_device.b9e5812c\Default\Local Storage\leveldb/MANIFEST-000001
+2022/05/22-02:23:22.504 1a14 Recovering log #3
+2022/05/22-02:23:22.506 1a14 Reusing old log C:\Users\user\AppData\Local\Temp\flutter_tools.76772c26\flutter_tools_chrome_device.b9e5812c\Default\Local Storage\leveldb/000003.log 
+>>>>>>> Stashed changes

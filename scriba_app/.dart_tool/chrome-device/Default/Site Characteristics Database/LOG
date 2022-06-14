@@ -1,3 +1,9 @@
+<<<<<<< Updated upstream
 2022/05/28-04:16:46.597 1ef8 Reusing MANIFEST C:\Users\user\AppData\Local\Temp\flutter_tools.2c852d90\flutter_tools_chrome_device.362330ab\Default\Site Characteristics Database/MANIFEST-000001
 2022/05/28-04:16:46.599 1ef8 Recovering log #3
 2022/05/28-04:16:46.600 1ef8 Reusing old log C:\Users\user\AppData\Local\Temp\flutter_tools.2c852d90\flutter_tools_chrome_device.362330ab\Default\Site Characteristics Database/000003.log 
+=======
+2022/05/22-02:26:26.276 b44 Reusing MANIFEST C:\Users\user\AppData\Local\Temp\flutter_tools.d5cf821c\flutter_tools_chrome_device.b33d9ae2\Default\Site Characteristics Database/MANIFEST-000001
+2022/05/22-02:26:26.277 b44 Recovering log #3
+2022/05/22-02:26:26.277 b44 Reusing old log C:\Users\user\AppData\Local\Temp\flutter_tools.d5cf821c\flutter_tools_chrome_device.b33d9ae2\Default\Site Characteristics Database/000003.log 
+>>>>>>> Stashed changes
