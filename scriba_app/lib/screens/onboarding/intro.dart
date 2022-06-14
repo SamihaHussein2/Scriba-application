@@ -2,6 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:scriba_app/defaults/splash.dart';
+import 'package:scriba_app/screens/navscreens/mainpage_unregistered.dart';
 import 'package:scriba_app/widgets/app_btn.dart';
 
 import '../../defaults/config.dart';
@@ -96,7 +97,7 @@ class IntroPage extends StatelessWidget {
                                       width: 2, color: Colors.transparent),
                                   borderRadius: BorderRadius.circular(20),
                                 ),
-                                link: Homepage(),
+                                link: HomepageUnregistered(),
                                 text: "Continue as a Guest",
                                 textcolor: AppTheme.darkRed,
                                 fontSize: 20),

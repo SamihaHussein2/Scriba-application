@@ -25,7 +25,7 @@ class SingleMyth extends StatelessWidget {
                   fontSize: 25,
                   fontFamily: GoogleFonts.macondoSwashCaps().fontFamily)),
           centerTitle: true,
-          backgroundColor: Colors.transparent,
+          backgroundColor: AppTheme.darkRedOpacity,
           leading: new IconButton(
             icon: new Icon(Icons.arrow_back_ios_new_outlined,
                 color: AppTheme.moderateOrange),

@@ -25,7 +25,7 @@ class HistoryScreen extends StatelessWidget {
           backgroundColor: Colors.transparent,
         ),
         body: Container(
-            // constraints: const BoxConstraints.expand(),
+            constraints: const BoxConstraints.expand(),
             decoration: const BoxDecoration(
                 image: DecorationImage(
                     image: AssetImage("assets/images/Back-dark.png"),
@@ -33,21 +33,21 @@ class HistoryScreen extends StatelessWidget {
             padding: const EdgeInsets.only(top: 90),
             child: Column(
               children: <Widget>[
-                // AppCard(
-                //   title: "",
-                //   subtitle: "Lorem ipsum dolor sit amet.",
-                //   dest: TranslationScreen(),
-                // ),
-                // AppCard(
-                //   title: "",
-                //   subtitle: "Lorem ipsum dolor sit amet.",
-                //   dest: TranslationScreen(),
-                // ),
-                // AppCard(
-                //   title: "",
-                //   subtitle: "Lorem ipsum dolor sit amet.",
-                //   dest: TranslationScreen(),
-                // ),
+                AppCard(
+                  title: "",
+                  subtitle: "Lorem ipsum dolor sit amet.",
+                  dest: TranslationScreen(),
+                ),
+                AppCard(
+                  title: "",
+                  subtitle: "Lorem ipsum dolor sit amet.",
+                  dest: TranslationScreen(),
+                ),
+                AppCard(
+                  title: "",
+                  subtitle: "Lorem ipsum dolor sit amet.",
+                  dest: TranslationScreen(),
+                ),
               ],
             )));
   }

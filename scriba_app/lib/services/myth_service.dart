@@ -15,11 +15,11 @@ class MythService {
     return myths.map((snapshot) {
       var mythMap = snapshot.data();
       return Myth(
-        mythMap['id'],
-        mythMap['title'],
-        mythMap['subtitle'],
-        mythMap['image'],
-        mythMap['info'],
+        mythMap['id'].toString(),
+        mythMap['title'].toString(),
+        mythMap['subtitle'].toString(),
+        mythMap['image'].toString(),
+        mythMap['info'].toString(),
       );
     }).toList();
 

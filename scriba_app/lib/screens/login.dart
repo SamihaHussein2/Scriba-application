@@ -1,7 +1,18 @@
+//import 'dart:ffi';
+
+import 'package:email_validator/email_validator.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:scriba_app/defaults/theme.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:scriba_app/main.dart';
+import 'package:scriba_app/screens/navscreens/homepage.dart';
 import 'package:scriba_app/screens/navscreens/mainpage.dart';
+import 'package:scriba_app/screens/signup.dart';
+import 'package:scriba_app/services/auth_service.dart';
+import 'package:scriba_app/services/user_service.dart';
 
 class Login extends StatefulWidget {
   static const String id = 'Login';
@@ -13,6 +24,18 @@ class Login extends StatefulWidget {
 }
 
 class _LoginState extends State<Login> {
+  final emailController = TextEditingController();
+  final passwordController = TextEditingController();
+
+  final _formkey = GlobalKey<FormState>();
+
+  @override
+  void dispose() {
+    emailController.dispose();
+    passwordController.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,14 +49,10 @@ class _LoginState extends State<Login> {
           ),
         ),
         child: Column(
-          //crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            //const SizedBox(height: 10),
-            // #login, #welcome
             Padding(
               padding: const EdgeInsets.all(10),
             ),
-
             Container(
               height: 180,
               decoration: BoxDecoration(
@@ -44,146 +63,202 @@ class _LoginState extends State<Login> {
                 image: DecorationImage(
                     image: AssetImage("assets/images/logo.png"), scale: 1),
               ),
-              // crossAxisAlignment: CrossAxisAlignment.start,
-              // children: <Widget>[
-              //   ClipRRect(
-              //     borderRadius: BorderRadius.only(
-              //       bottomLeft: Radius.circular(60),
-              //       bottomRight: Radius.circular(60),
-              //     ),
-              //     child: Image.asset('assets/images/logo.png'),
-              //   )
-              // ],
             ),
             //const SizedBox(height: 20),
 
             Expanded(
               child: Container(
-                // decoration: const BoxDecoration(
-                //   image: DecorationImage(
-                //       image: AssetImage("assets/images/Back-light.png"),
-                //       fit: BoxFit.cover),
-                // ),
                 child: SingleChildScrollView(
                   child: Padding(
                     padding: const EdgeInsets.all(20),
-                    child: Column(
-                      children: [
-                        const SizedBox(
-                          height: 60,
-                        ),
-                        // #email, #password
-                        Container(
-                          child: Column(
-                            children: [
-                              Container(
-                                padding: const EdgeInsets.only(left: 20.0),
-                                decoration: BoxDecoration(
-                                    color: AppTheme.moderateOrange,
-                                    borderRadius: BorderRadius.circular(10),
-                                    border:
-                                        Border.all(color: AppTheme.darkRed)),
-                                child: const TextField(
-                                  decoration: InputDecoration(
+                    child: Form(
+                      key: _formkey,
+                      child: Column(
+                        children: [
+                          const SizedBox(
+                            height: 60,
+                          ),
+                          // #email, #password
+                          Container(
+                            child: Column(
+                              children: [
+                                Container(
+                                  padding: const EdgeInsets.only(left: 20.0),
+                                  decoration: BoxDecoration(
+                                      color: AppTheme.moderateOrange,
+                                      borderRadius: BorderRadius.circular(10),
+                                      border:
+                                          Border.all(color: AppTheme.darkRed)),
+                                  child: TextFormField(
+                                    validator: (value) {
+                                      if (value == null || value.isEmpty) {
+                                        return "Can't be empty";
+                                      } else if (EmailValidator.validate(
+                                              value) ==
+                                          false) {
+                                        return 'Please Enter valid email';
+                                      }
+                                      return null;
+                                    },
+                                    controller: emailController,
+                                    decoration: InputDecoration(
+                                      //border: OutlineInputBorder(),
                                       hintText: "Email",
                                       hintStyle: TextStyle(
                                         color: AppTheme.darkRed,
+                                        fontFamily:
+                                            AppTheme.macondoFont.fontFamily,
                                       ),
-                                      border: InputBorder.none),
+                                    ),
+                                  ),
                                 ),
-                              ),
-                              const SizedBox(height: 20),
-                              Container(
-                                padding: const EdgeInsets.only(left: 20.0),
-                                decoration: BoxDecoration(
-                                    color: AppTheme.moderateOrange,
-                                    borderRadius: BorderRadius.circular(10),
-                                    border:
-                                        Border.all(color: AppTheme.darkRed)),
-                                child: const TextField(
-                                  decoration: InputDecoration(
+                                const SizedBox(height: 20),
+                                Container(
+                                  padding: const EdgeInsets.only(left: 20.0),
+                                  decoration: BoxDecoration(
+                                      color: AppTheme.moderateOrange,
+                                      borderRadius: BorderRadius.circular(10),
+                                      border:
+                                          Border.all(color: AppTheme.darkRed)),
+                                  child: TextFormField(
+                                    validator: (value) {
+                                      if (value == null || value.isEmpty) {
+                                        return "Can't be empty";
+                                      } else if (value.length < 6) {
+                                        return 'too short';
+                                      }
+                                      return null;
+                                    },
+                                    obscureText: true,
+                                    controller: passwordController,
+                                    decoration: InputDecoration(
+                                      //border: OutlineInputBorder(),
                                       hintText: "Password",
                                       hintStyle: TextStyle(
-                                          //fontFamily: GoogleFonts.macondoSwashCaps().fontFamily,
-                                          color: AppTheme.darkRed),
-                                      border: InputBorder.none),
+                                        color: AppTheme.darkRed,
+                                        fontFamily:
+                                            AppTheme.macondoFont.fontFamily,
+                                      ),
+                                    ),
+                                  ),
                                 ),
-                              ),
-                            ],
-                          ),
-                        ),
-                        const SizedBox(height: 40),
-                        // #login
-                        Container(
-                          child: Center(
-                            child: ElevatedButton(
-                              child: const Text("Login"),
-                              style: AppTheme.buttonStyle,
-                              onPressed: () {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(builder: (_) => MainPage()),
-                                );
-                              },
+                              ],
                             ),
                           ),
-                        ),
+                          const SizedBox(height: 40),
+                          // #login
+                          Container(
+                            child: Center(
+                              child: ElevatedButton(
+                                child: const Text("Login"),
+                                style: AppTheme.buttonStyle,
+                                onPressed: () async {
+                                  if (_formkey.currentState!.validate()) {
+                                    final check = await context
+                                        .read<AuthService>()
+                                        .signIn(
+                                          emailController.text.trim(),
+                                          passwordController.text.trim(),
+                                        );
+                                    final snackBar = SnackBar(
+                                      content: Text(check.toString()),
+                                    );
+                                    ScaffoldMessenger.of(context)
+                                        .showSnackBar(snackBar);
 
-                        const SizedBox(height: 10),
-                        Row(children: <Widget>[
-                          Expanded(
-                            child: new Container(
-                                margin: const EdgeInsets.only(
-                                    left: 10.0, right: 20.0),
-                                child: Divider(
-                                  color: Colors.black,
-                                  height: 36,
-                                )),
-                          ),
-                          Text(
-                            "OR",
-                            style: GoogleFonts.macondoSwashCaps(),
-                          ),
-                          Expanded(
-                            child: new Container(
-                                margin: const EdgeInsets.only(
-                                    left: 20.0, right: 10.0),
-                                child: Divider(
-                                  color: Colors.black,
-                                  height: 36,
-                                )),
-                          ),
-                        ]),
-                        Container(
-                            alignment: Alignment.center,
-                            child: Center(
-                              child: ElevatedButton(
-                                child: const Text("Login with Google"),
-                                style: AppTheme.loginStyle,
-                                onPressed: () {
-                                  Navigator.push(
-                                    context,
-                                    MaterialPageRoute(builder: (_) => Login()),
-                                  );
+                                    if (check.toString() == "Signed in") {
+                                      GetID(FirebaseAuth
+                                          .instance.currentUser?.uid);
+                                      Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                              builder: (context) =>
+                                                  Homepage()));
+                                    }
+                                  }
                                 },
                               ),
-                            )),
-                        const SizedBox(height: 10),
-                        Container(
-                            alignment: Alignment.center,
-                            child: Center(
-                              child: ElevatedButton(
-                                child: const Text("Login with phone number"),
-                                style: AppTheme.loginStyle,
-                                onPressed: () {
-                                  Navigator.push(
-                                    context,
-                                    MaterialPageRoute(builder: (_) => Login()),
-                                  );
-                                },
-                              ),
-                            ))
-                      ],
+                            ),
+                          ),
+                          RichText(
+                              text: TextSpan(
+                                  style: TextStyle(
+                                      fontFamily:
+                                          AppTheme.macondoFont.fontFamily,
+                                      color: AppTheme.darkRed,
+                                      fontSize: 17),
+                                  text: "You don't have an Account?",
+                                  children: [
+                                TextSpan(
+                                    recognizer: TapGestureRecognizer()
+                                      ..onTap = () {
+                                        Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                                builder: (_) => Signup()));
+                                      },
+                                    text: "Register",
+                                    style: TextStyle(
+                                        fontFamily:
+                                            AppTheme.macondoFont.fontFamily,
+                                        decoration: TextDecoration.underline)),
+                              ]))
+                          // const SizedBox(height: 10),
+                          // Row(children: <Widget>[
+                          //   Expanded(
+                          //     child: new Container(
+                          //         margin: const EdgeInsets.only(
+                          //             left: 10.0, right: 20.0),
+                          //         child: Divider(
+                          //           color: Colors.black,
+                          //           height: 36,
+                          //         )),
+                          //   ),
+                          //   Text(
+                          //     "OR",
+                          //     style: GoogleFonts.macondoSwashCaps(),
+                          //   ),
+                          //   Expanded(
+                          //     child: new Container(
+                          //         margin: const EdgeInsets.only(
+                          //             left: 20.0, right: 10.0),
+                          //         child: Divider(
+                          //           color: Colors.black,
+                          //           height: 36,
+                          //         )),
+                          //   ),
+                          // ]),
+                          // Container(
+                          //     alignment: Alignment.center,
+                          //     child: Center(
+                          //       child: ElevatedButton(
+                          //         child: const Text("Login with Google"),
+                          //         style: AppTheme.buttonStyle,
+                          //         onPressed: () {
+                          //           Navigator.push(
+                          //             context,
+                          //             MaterialPageRoute(builder: (_) => Login()),
+                          //           );
+                          //         },
+                          //       ),
+                          //     )),
+                          // const SizedBox(height: 10),
+                          // Container(
+                          //     alignment: Alignment.center,
+                          //     child: Center(
+                          //       child: ElevatedButton(
+                          //         child: const Text("Login with phone number"),
+                          //         style: AppTheme.buttonStyle,
+                          //         onPressed: () {
+                          //           Navigator.push(
+                          //             context,
+                          //             MaterialPageRoute(builder: (_) => Login()),
+                          //           );
+                          //         },
+                          //       ),
+                          //     ))
+                        ],
+                      ),
                     ),
                   ),
                 ),
@@ -194,4 +269,19 @@ class _LoginState extends State<Login> {
       ),
     );
   }
+
+  // Future signIn() async {
+  //   try {
+  //     await FirebaseAuth.instance.signInWithEmailAndPassword(
+  //       email: emailController.text.trim(),
+  //       password: passwordController.text.trim(),
+  //     );
+
+  //     print("Doneee");
+  //     Navigator.push(context, MaterialPageRoute(builder: (_) => Homepage()));
+  //   } on FirebaseAuthException catch (e) {
+  //     print(e);
+  //     //print("error");
+  //   }
+  // }
 }

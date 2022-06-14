@@ -36,7 +36,7 @@ class MythScreen extends StatelessWidget {
                   fontSize: 25,
                   fontFamily: GoogleFonts.macondoSwashCaps().fontFamily)),
           centerTitle: true,
-          backgroundColor: Colors.transparent,
+          backgroundColor: AppTheme.darkRedOpacity,
         ),
         body: Selector<MythNotifier, List<Myth>>(
             selector: (_, notifier) => notifier.mythList,

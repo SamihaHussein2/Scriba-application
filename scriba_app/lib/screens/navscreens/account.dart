@@ -1,8 +1,15 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'package:scriba_app/defaults/splash.dart';
 import 'package:scriba_app/defaults/theme.dart';
 import 'package:scriba_app/screens/edit_profile.dart';
+import 'package:scriba_app/screens/login.dart';
+import 'package:scriba_app/screens/onboarding/intro.dart';
+import 'package:scriba_app/services/auth_service.dart';
+import 'package:scriba_app/services/user_service.dart';
 import 'package:scriba_app/widgets/edit_profile_containers.dart';
 import 'package:scriba_app/widgets/sharing_links.dart';
 import 'package:share_plus/share_plus.dart';
@@ -27,6 +34,8 @@ class _AccountPageState extends State<AccountPage> {
     final Uri _url = Uri.parse(FeedbackURL);
     if (!await launchUrl(_url)) throw 'Could not launch $_url';
   }
+
+  //print(userID);
   // late Image myImage;
   // @override
   // void initState() {
@@ -43,6 +52,9 @@ class _AccountPageState extends State<AccountPage> {
   @override
   Widget build(BuildContext context) {
     //precacheImage(AssetImage("assets/images/Back-light.png"), context);
+    final userID = FirebaseAuth.instance.currentUser?.uid;
+    print(userID);
+    final users = FirebaseFirestore.instance.collection('Users');
     SizeConfig().init(context);
     return Scaffold(
       body: Container(
@@ -68,18 +80,38 @@ class _AccountPageState extends State<AccountPage> {
                 SizedBox(
                   height: 10,
                 ),
-                Text(
-                  "John Doe",
-                  style: TextStyle(
-                    fontSize: 40,
-                    fontFamily: GoogleFonts.macondoSwashCaps().fontFamily,
-                    color: AppTheme.darkRed,
-                  ),
+                FutureBuilder<DocumentSnapshot>(
+                  future: users.doc(userID).get(),
+                  builder: (BuildContext context,
+                      AsyncSnapshot<DocumentSnapshot> snapshot) {
+                    if (snapshot.hasError) {
+                      return Text("Something went wrong");
+                    }
+
+                    if (snapshot.hasData && !snapshot.data!.exists) {
+                      return Text("Document does not exist");
+                    }
+
+                    if (snapshot.connectionState == ConnectionState.done) {
+                      Map<String, dynamic> data =
+                          snapshot.data!.data() as Map<String, dynamic>;
+
+                      return Text(
+                        "${data['name']}",
+                        style: TextStyle(
+                          fontSize: 40,
+                          fontFamily: GoogleFonts.macondoSwashCaps().fontFamily,
+                          color: AppTheme.darkRed,
+                        ),
+                      );
+                    }
+                    return Text("loading");
+                  },
                 ),
               ],
             ),
             SizedBox(
-              height: 40,
+              height: 20,
             ),
             Container(
               height: MediaQuery.of(context).size.height,
@@ -134,8 +166,62 @@ class _AccountPageState extends State<AccountPage> {
                   SizedBox(
                     height: 30,
                   ),
-                  EditContainer(
-                      icon: Icons.logout, text: "Logout", dest: Splash())
+                  Card(
+                    color: AppTheme.darkRed,
+                    child: ListTile(
+                      onTap: () {
+                        FirebaseAuth.instance.signOut();
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (_) => IntroPage()));
+                      },
+                      leading: Icon(Icons.logout),
+                      iconColor: AppTheme.moderateOrange,
+                      title: Text(
+                        "Logout",
+                        style: TextStyle(
+                            fontFamily:
+                                GoogleFonts.macondoSwashCaps().fontFamily,
+                            fontSize: 25,
+                            color: AppTheme.moderateOrange),
+                      ),
+                    ),
+                    margin: EdgeInsets.only(left: 30, right: 30),
+                    shape: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10),
+                        borderSide: BorderSide(color: AppTheme.moderateOrange)),
+                  ),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  Card(
+                    color: AppTheme.darkRed,
+                    child: ListTile(
+                      onTap: () async {
+                        final check =
+                            await context.read<AuthService>().deleteAccount();
+                        await DeleteUserFromFirestore();
+
+                        print(check);
+
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (context) => Login()));
+                      },
+                      leading: Icon(Icons.delete),
+                      iconColor: AppTheme.moderateOrange,
+                      title: Text(
+                        "Delete Account",
+                        style: TextStyle(
+                            fontFamily:
+                                GoogleFonts.macondoSwashCaps().fontFamily,
+                            fontSize: 25,
+                            color: AppTheme.moderateOrange),
+                      ),
+                    ),
+                    margin: EdgeInsets.only(left: 30, right: 30),
+                    shape: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10),
+                        borderSide: BorderSide(color: AppTheme.moderateOrange)),
+                  )
                 ],
               ),
             )
