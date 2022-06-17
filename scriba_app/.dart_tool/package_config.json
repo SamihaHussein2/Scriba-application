@@ -290,15 +290,10 @@
       "languageVersion": "2.12"
     },
     {
-<<<<<<< Updated upstream
       "name": "intl",
       "rootUri": "file:///E:/SDK%20dart-flutter/flutter_windows_2.5.3-stable/flutter/.pub-cache/hosted/pub.dartlang.org/intl-0.17.0",
-=======
-      "name": "js",
-      "rootUri": "file:///E:/SDK%20dart-flutter/flutter_windows_2.5.3-stable/flutter/.pub-cache/hosted/pub.dartlang.org/js-0.6.4",
->>>>>>> Stashed changes
       "packageUri": "lib/",
-      "languageVersion": "2.16"
+      "languageVersion": "2.12"
     },
     {
       "name": "js",
@@ -655,11 +650,7 @@
       "languageVersion": "2.15"
     }
   ],
-<<<<<<< Updated upstream
-  "generated": "2022-06-14T09:57:27.973055Z",
-=======
-  "generated": "2022-05-22T00:46:53.170436Z",
->>>>>>> Stashed changes
+  "generated": "2022-06-17T17:38:01.762919Z",
   "generator": "pub",
   "generatorVersion": "2.17.1"
 }

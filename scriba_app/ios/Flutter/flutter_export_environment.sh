@@ -1,12 +1,7 @@
 #!/bin/sh
 # This is a generated file; do not edit or check into version control.
-<<<<<<< Updated upstream
-export "FLUTTER_ROOT=C:\flutter"
-export "FLUTTER_APPLICATION_PATH=D:\Senior\Grad\Scriba-application\scriba_app"
-=======
 export "FLUTTER_ROOT=E:\SDK dart-flutter\flutter_windows_2.5.3-stable\flutter"
 export "FLUTTER_APPLICATION_PATH=D:\senior year\GP\Scriba-application\scriba_app"
->>>>>>> Stashed changes
 export "COCOAPODS_PARALLEL_CODE_SIGN=true"
 export "FLUTTER_TARGET=lib\main.dart"
 export "FLUTTER_BUILD_DIR=build"

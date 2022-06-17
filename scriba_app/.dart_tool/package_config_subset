@@ -182,13 +182,10 @@ image_picker_platform_interface
 2.12
 file:///E:/SDK%20dart-flutter/flutter_windows_2.5.3-stable/flutter/.pub-cache/hosted/pub.dartlang.org/image_picker_platform_interface-2.4.4/
 file:///E:/SDK%20dart-flutter/flutter_windows_2.5.3-stable/flutter/.pub-cache/hosted/pub.dartlang.org/image_picker_platform_interface-2.4.4/lib/
-<<<<<<< Updated upstream
 intl
 2.12
 file:///E:/SDK%20dart-flutter/flutter_windows_2.5.3-stable/flutter/.pub-cache/hosted/pub.dartlang.org/intl-0.17.0/
 file:///E:/SDK%20dart-flutter/flutter_windows_2.5.3-stable/flutter/.pub-cache/hosted/pub.dartlang.org/intl-0.17.0/lib/
-=======
->>>>>>> Stashed changes
 js
 2.16
 file:///E:/SDK%20dart-flutter/flutter_windows_2.5.3-stable/flutter/.pub-cache/hosted/pub.dartlang.org/js-0.6.4/
@@ -301,7 +298,6 @@ share_plus_windows
 2.12
 file:///E:/SDK%20dart-flutter/flutter_windows_2.5.3-stable/flutter/.pub-cache/hosted/pub.dartlang.org/share_plus_windows-3.0.0/
 file:///E:/SDK%20dart-flutter/flutter_windows_2.5.3-stable/flutter/.pub-cache/hosted/pub.dartlang.org/share_plus_windows-3.0.0/lib/
-<<<<<<< Updated upstream
 shared_preferences
 2.14
 file:///E:/SDK%20dart-flutter/flutter_windows_2.5.3-stable/flutter/.pub-cache/hosted/pub.dartlang.org/shared_preferences-2.0.15/
@@ -334,8 +330,6 @@ shared_preferences_windows
 2.12
 file:///E:/SDK%20dart-flutter/flutter_windows_2.5.3-stable/flutter/.pub-cache/hosted/pub.dartlang.org/shared_preferences_windows-2.1.1/
 file:///E:/SDK%20dart-flutter/flutter_windows_2.5.3-stable/flutter/.pub-cache/hosted/pub.dartlang.org/shared_preferences_windows-2.1.1/lib/
-=======
->>>>>>> Stashed changes
 source_span
 2.14
 file:///E:/SDK%20dart-flutter/flutter_windows_2.5.3-stable/flutter/.pub-cache/hosted/pub.dartlang.org/source_span-1.8.2/
