@@ -12,6 +12,8 @@ class SingleMyth extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double sizeHeight = MediaQuery.of(context).size.height;
+    double sizeWidth = MediaQuery.of(context).size.width;
     SizeConfig().init(context);
     MythNotifier mythNotifier = Provider.of<MythNotifier>(context);
     return Scaffold(
@@ -47,8 +49,8 @@ class SingleMyth extends StatelessWidget {
                 ClipRRect(
                     child: Image.network(
                   context.watch<MythNotifier>().mythList.elementAt(index).image,
-                  width: 200,
-                  height: 200,
+                  width: sizeWidth / 3,
+                  height: sizeHeight / 2,
                 )),
                 SizedBox(
                   height: 10,
@@ -67,7 +69,7 @@ class SingleMyth extends StatelessWidget {
                           .info,
                       style: TextStyle(
                           fontFamily: GoogleFonts.macondoSwashCaps().fontFamily,
-                          fontSize: 20,
+                          fontSize: 30,
                           color: AppTheme.moderateOrange)),
                 )
               ],

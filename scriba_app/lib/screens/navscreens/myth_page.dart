@@ -33,7 +33,7 @@ class MythScreen extends StatelessWidget {
           title: Text("Myth",
               style: TextStyle(
                   color: AppTheme.moderateOrange,
-                  fontSize: 25,
+                  fontSize: 30,
                   fontFamily: GoogleFonts.macondoSwashCaps().fontFamily)),
           centerTitle: true,
           backgroundColor: AppTheme.darkRedOpacity,

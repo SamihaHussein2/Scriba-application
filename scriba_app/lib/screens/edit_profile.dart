@@ -6,6 +6,7 @@ import 'package:scriba_app/screens/navscreens/homepage.dart';
 import 'package:scriba_app/screens/navscreens/mainpage.dart';
 import 'package:scriba_app/widgets/app_btn.dart';
 import 'package:scriba_app/widgets/app_textfield.dart';
+import 'package:scriba_app/widgets/edit_btn.dart';
 
 import '../../defaults/config.dart';
 
@@ -106,7 +107,7 @@ class _AccountPageState extends State<EditProfile> {
                         SizedBox(
                           height: 40,
                         ),
-                        AppBtn(
+                        EditBtn(
                             fontSize: 20,
                             textcolor: AppTheme.darkRed,
                             width: 300,

@@ -9,6 +9,7 @@ import 'package:scriba_app/models/myth.dart';
 import 'package:scriba_app/screens/single_myth_page.dart';
 import 'package:scriba_app/screens/translation.dart';
 import 'package:scriba_app/widgets/app_btn.dart';
+import 'package:scriba_app/widgets/edit_btn.dart';
 
 class AppCard extends StatelessWidget {
   final String title;
@@ -16,7 +17,7 @@ class AppCard extends StatelessWidget {
   final Widget dest;
   //final Myth myth;
 
-  AppCard({
+  const AppCard({
     Key? key,
     required this.dest,
     required this.subtitle,
@@ -45,7 +46,7 @@ class AppCard extends StatelessWidget {
                   fontSize: 18,
                 ),
               ),
-              trailing: AppBtn(
+              trailing: EditBtn(
                   width: 80,
                   height: 40,
                   decoration: BoxDecoration(

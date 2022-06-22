@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:scriba_app/defaults/config.dart';
 import 'package:scriba_app/screens/onboarding/onboarding.dart';
 
 class Splash extends StatefulWidget {
@@ -21,6 +22,7 @@ class _SplashState extends State<Splash> {
 
   @override
   Widget build(BuildContext context) {
+    SizeConfig().init(context);
     return Scaffold(
         body: Container(
             color: Colors.black,
@@ -37,7 +39,7 @@ class _SplashState extends State<Splash> {
                     Center(
                       child: Image.asset(
                         "assets/images/logo.png",
-                        width: 270,
+                        width: SizeConfig.screenWidth / 2,
                       ),
                     ),
                   ]))

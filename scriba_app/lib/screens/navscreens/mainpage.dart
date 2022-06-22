@@ -8,7 +8,6 @@ import 'package:scriba_app/defaults/theme.dart';
 import 'package:scriba_app/screens/navscreens/homepage.dart';
 import 'package:dot_navigation_bar/dot_navigation_bar.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:tflite/tflite.dart';
 import 'dart:async';
 
 import 'package:scriba_app/screens/translation.dart';
@@ -50,128 +49,133 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-          constraints: const BoxConstraints.expand(),
-          decoration: const BoxDecoration(
-              image: DecorationImage(
-                  image: AssetImage("assets/images/Back-dark.png"),
-                  fit: BoxFit.cover)),
-      
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Row(
+        constraints: const BoxConstraints.expand(),
+        decoration: const BoxDecoration(
+            image: DecorationImage(
+                image: AssetImage("assets/images/Back-dark.png"),
+                fit: BoxFit.cover)),
+        child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                shape: const CircleBorder(),
-                primary: AppTheme.darkRed,
-                side: const BorderSide(
-                    color: AppTheme.moderateOrange,
-                    width: 5),
-              ),
-              child: Column(
-                children: [
-                  Container(
+            Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    shape: const CircleBorder(),
+                    primary: AppTheme.darkRed,
+                    side: const BorderSide(
+                        color: AppTheme.moderateOrange, width: 5),
+                  ),
+                  child: Column(
+                    children: [
+                      Container(
+                          width: 90,
+                          height: 90,
+                          alignment: Alignment.center,
+                          decoration:
+                              const BoxDecoration(shape: BoxShape.circle),
+                          child: Image.asset(
+                            "assets/images/homepage_icons/char.png",
+                            width: 50,
+                          )),
+                    ],
+                  ),
+                  onPressed: () async {
+                    try {
+                      final XFile? pickedFile = await _picker.pickImage(
+                        source: ImageSource.gallery,
+                      );
+                      setState(() {
+                        _imageFile = pickedFile;
+                        imageSelected = true;
+                      });
+                    } catch (e) {
+                      print(e);
+                    }
+                    try {
+                      final bytes = File(_imageFile!.path).readAsBytesSync();
+                      String img64 = base64Encode(bytes);
+                      final Dio _dio = Dio();
+                      // print('sending image');
+                      // print(img64);
+                      _dio.post(
+                        ipUrl,
+                        data: {},
+                        queryParameters: {"image": img64},
+                      ).then((value) {
+                        // display value wherever
+                        print("value is ");
+                        print(value);
+
+                        setState(() {
+                          output = value.toString();
+                        });
+                        // print(output);
+                        // if (value.data['status'] == "Image Opened") {
+                        //   Fluttertoast.showToast(
+                        //     msg: "Image Sent To Backend",
+                        //     toastLength: Toast.LENGTH_SHORT,
+                        //     gravity: ToastGravity.BOTTOM,
+                        //     backgroundColor: Color.fromARGB(255, 175, 155, 76),
+                        //     textColor: Colors.white,
+                        //     fontSize: 16.0,
+                        //   );
+                        // }
+                      });
+                    } catch (e) {
+                      print(e);
+                    }
+                  },
+                ),
+                ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    shape: const CircleBorder(),
+                    primary: AppTheme.darkRed,
+                    side: const BorderSide(
+                        color: AppTheme.moderateOrange, width: 5),
+                  ),
+                  child: Container(
                       width: 90,
                       height: 90,
                       alignment: Alignment.center,
-                      decoration: const BoxDecoration(
-                          shape: BoxShape.circle),
+                      decoration: const BoxDecoration(shape: BoxShape.circle),
                       child: Image.asset(
-                        "assets/images/homepage_icons/char.png",
+                        "assets/images/homepage_icons/royal.png",
                         width: 50,
                       )),
-                ],
-              ),
-              onPressed: ()async {
-              try {
-                final XFile? pickedFile = await _picker.pickImage(
-                  source: ImageSource.gallery,
-                );
-                setState(() {
-                  _imageFile = pickedFile;
-                  imageSelected = true;
-                });
-              } catch (e) {
-                print(e);
-              }
-              try {
-                  final bytes = File(_imageFile!.path).readAsBytesSync();
-                  String img64 = base64Encode(bytes);
-                  final Dio _dio = Dio();
-                  // print('sending image');
-                  // print(img64);
-                  _dio.post(
-                    ipUrl,
-                    data:{},
-                    queryParameters: {"image":img64},
-                  ).then((value) {
-                   // display value wherever
-                    print("value is ");
-                    print(value);
-                    
-                     setState(() {
-                  output = value.toString();
-                }); 
-                    // print(output);
-                    // if (value.data['status'] == "Image Opened") {
-                    //   Fluttertoast.showToast(
-                    //     msg: "Image Sent To Backend",
-                    //     toastLength: Toast.LENGTH_SHORT,
-                    //     gravity: ToastGravity.BOTTOM,
-                    //     backgroundColor: Color.fromARGB(255, 175, 155, 76),
-                    //     textColor: Colors.white,
-                    //     fontSize: 16.0,
-                    //   );
-                    // }
-                  });
-                } catch (e) {
-                  print(e);
-                }
-               
-            },
-            ),
-            ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                shape: const CircleBorder(),
-                primary: AppTheme.darkRed,
-                side: const BorderSide(
-                    color: AppTheme.moderateOrange,
-                    width: 5),
-              ),
-              child: Container(
-                  width: 90,
-                  height: 90,
-                  alignment: Alignment.center,
-                  decoration: const BoxDecoration(
-                      shape: BoxShape.circle),
-                  child: Image.asset(
-                    "assets/images/homepage_icons/royal.png",
-                    width: 50,
-                  )),
-              onPressed: (){},
-            )
-          ],
+                  onPressed: () {},
+                )
+              ],
             ),
             // SizedBox(height: 10,),
             Center(
-            child: imageSelected
-              ? SizedBox(height: 300,width: 300,child: Image.file(File(_imageFile!.path)))
-              : const Text(
-                  'You have not yet picked an image.',
-                  textAlign: TextAlign.center,),
-          ),
-          SizedBox(height: 5,),
-          Text(output, style: TextStyle(fontSize: 15, backgroundColor: AppTheme.moderateOrange, color: Colors.white),),
-          
-        ],
-        
+              child: imageSelected
+                  ? SizedBox(
+                      height: 300,
+                      width: 300,
+                      child: Image.file(File(_imageFile!.path)))
+                  : const Text(
+                      'You have not yet picked an image.',
+                      textAlign: TextAlign.center,
+                    ),
+            ),
+            SizedBox(
+              height: 5,
+            ),
+            Text(
+              output,
+              style: TextStyle(
+                  fontSize: 15,
+                  backgroundColor: AppTheme.moderateOrange,
+                  color: Colors.white),
+            ),
+          ],
+        ),
       ),
-      ),
-      
+
       // floatingActionButton: Column(
       //   mainAxisAlignment: MainAxisAlignment.end,
       //   children: <Widget>[
