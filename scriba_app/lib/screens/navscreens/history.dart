@@ -16,7 +16,7 @@ class HistoryScreen extends StatelessWidget {
         extendBodyBehindAppBar: true,
         appBar: AppBar(
           automaticallyImplyLeading: false,
-          title: Text("Saved Translation",
+          title: Text("Translation History",
               style: TextStyle(
                   color: AppTheme.moderateOrange,
                   fontSize: 25,

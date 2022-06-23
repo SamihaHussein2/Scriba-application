@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:scriba_app/provider/google_login_notifier.dart';
 import 'package:scriba_app/provider/myth_notifier.dart';
 import 'package:scriba_app/screens/auth_wrapper.dart';
 import 'package:scriba_app/screens/edit_profile.dart';
@@ -30,6 +31,7 @@ Future<void> main() async {
       ChangeNotifierProvider(
         create: (_) => MythNotifier(),
       ),
+      // ChangeNotifierProvider(create: (context) => GoogleLoginNotifier()),
     ],
     child: MyApp(),
   ));

@@ -2,9 +2,11 @@ import 'package:email_validator/email_validator.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:provider/provider.dart';
 import 'package:scriba_app/defaults/theme.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:scriba_app/provider/google_login_notifier.dart';
 import 'package:scriba_app/screens/login.dart';
 import 'package:scriba_app/screens/navscreens/homepage.dart';
 import 'package:scriba_app/services/auth_service.dart';
@@ -59,13 +61,9 @@ class _SignupState extends State<Signup> {
             Container(
               child: SingleChildScrollView(
                 child: Padding(
-                  padding: const EdgeInsets.all(20),
+                  padding: const EdgeInsets.all(10),
                   child: Column(
                     children: [
-                      const SizedBox(
-                        height: 10,
-                      ),
-                      const SizedBox(height: 20),
                       Container(
                         child: Form(
                           key: _formKey,
@@ -98,7 +96,7 @@ class _SignupState extends State<Signup> {
                                   ),
                                 ),
                               ),
-                              const SizedBox(height: 20),
+                              const SizedBox(height: 10),
                               Container(
                                 padding: const EdgeInsets.only(left: 20.0),
                                 decoration: BoxDecoration(
@@ -127,7 +125,7 @@ class _SignupState extends State<Signup> {
                                   ),
                                 ),
                               ),
-                              const SizedBox(height: 20),
+                              const SizedBox(height: 10),
                               Container(
                                 padding: const EdgeInsets.only(left: 20.0),
                                 decoration: BoxDecoration(
@@ -155,7 +153,7 @@ class _SignupState extends State<Signup> {
                                   ),
                                 ),
                               ),
-                              const SizedBox(height: 20),
+                              const SizedBox(height: 10),
                               Container(
                                 padding: const EdgeInsets.only(left: 20.0),
                                 decoration: BoxDecoration(
@@ -183,11 +181,11 @@ class _SignupState extends State<Signup> {
                                   ),
                                 ),
                               ),
-                              const SizedBox(height: 40),
+                              const SizedBox(height: 10),
                               Container(
                                 child: Center(
                                   child: ElevatedButton(
-                                    child: const Text("Login"),
+                                    child: const Text("Register"),
                                     style: AppTheme.buttonStyle,
                                     onPressed: () async {
                                       if (_formKey.currentState!.validate()) {
@@ -221,8 +219,37 @@ class _SignupState extends State<Signup> {
                                   ),
                                 ),
                               ),
-                              SizedBox(
-                                height: 20,
+                              Container(
+                                child: Center(
+                                  child: ElevatedButton.icon(
+                                    icon: FaIcon(
+                                      FontAwesomeIcons.google,
+                                      size: 15,
+                                    ),
+                                    label: const Text("Login with Gmail"),
+                                    style: AppTheme.buttonStyle,
+                                    onPressed: () async {
+                                      // final googleProvider =
+                                      //     Provider.of<GoogleLoginNotifier>(
+                                      //         context,
+                                      //         listen: false);
+                                      // googleProvider.googleLogin();
+                                      final check = await context
+                                          .read<AuthService>()
+                                          .signInWithGoogle();
+                                      if (check != null) {
+                                        AddUserInFirestoreGoogle(
+                                            FirebaseAuth.instance.currentUser);
+                                        Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                                //change page to the homepage
+                                                builder: (context) =>
+                                                    Homepage()));
+                                      }
+                                    },
+                                  ),
+                                ),
                               ),
                             ],
                           ),

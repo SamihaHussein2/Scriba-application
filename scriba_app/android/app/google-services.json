@@ -43,6 +43,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "390793067268-sg96ise1pbhnus5hv8e4jc5aoq83va1m.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.scriba.app",
+            "certificate_hash": "6f5375731a1b48dd59c10067a7077856061d7e16"
+          }
+        },
+        {
           "client_id": "390793067268-d5q5r7uhkd4t4fajgo7mi03qbu8307k9.apps.googleusercontent.com",
           "client_type": 3
         }

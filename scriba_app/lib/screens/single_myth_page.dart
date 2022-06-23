@@ -49,6 +49,22 @@ class SingleMyth extends StatelessWidget {
                 ClipRRect(
                     child: Image.network(
                   context.watch<MythNotifier>().mythList.elementAt(index).image,
+                  frameBuilder:
+                      (context, child, frame, wasSynchronouslyLoaded) {
+                    return child;
+                  },
+                  loadingBuilder: (context, child, loadingProgress) {
+                    if (loadingProgress == null) {
+                      return child;
+                    } else {
+                      return const Center(
+                        child: CircularProgressIndicator(
+                          backgroundColor: AppTheme.moderateOrange,
+                          color: AppTheme.darkRed,
+                        ),
+                      );
+                    }
+                  },
                   width: sizeWidth / 3,
                   height: sizeHeight / 2,
                 )),

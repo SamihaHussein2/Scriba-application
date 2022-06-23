@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 CollectionReference users = FirebaseFirestore.instance.collection('Users');
 String? uid;
@@ -13,6 +14,16 @@ Future<void> AddUserInFirestore(String displayName, String email) async {
     'name': displayName,
     'id': uid,
     'email': email,
+  });
+
+  return;
+}
+
+Future<void> AddUserInFirestoreGoogle(User? userGoogle) async {
+  users.doc(userGoogle?.uid).set({
+    'name': userGoogle?.displayName,
+    'id': userGoogle?.uid,
+    'email': userGoogle?.email,
   });
 
   return;

@@ -1,4 +1,4 @@
-#Wed Jun 22 13:58:52 EET 2022
+#Fri Jun 24 00:15:43 EET 2022
 base.2=D\:\\Senior\\Scriba-application\\scriba_app\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes3.dex
 path.2=classes3.dex
 base.1=D\:\\Senior\\Scriba-application\\scriba_app\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes2.dex
