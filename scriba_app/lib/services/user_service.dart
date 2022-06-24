@@ -34,7 +34,9 @@ Future<void> DeleteUserFromFirestore() async {
   return;
 }
 
-Future<void> UpdateUser(String displayName, String email) async {
-  users.doc(uid).update({'Full Name': displayName, 'email': email});
-  return;
-}
+// Future<void> UpdateUser(String displayName, String email) async {
+//   users.doc(uid).update({'Full Name': displayName, 'email': email});
+//   return;
+// }
+
+

@@ -21,8 +21,8 @@
 16-->D:\Senior\Scriba-application\scriba_app\android\app\src\main\AndroidManifest.xml:4:5-80
 16-->D:\Senior\Scriba-application\scriba_app\android\app\src\main\AndroidManifest.xml:4:22-77
 17    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-17-->[com.google.firebase:firebase-auth:21.0.3] C:\Users\samih\.gradle\caches\transforms-3\4d7475e18572af92cac1051b889b438a\transformed\jetified-firebase-auth-21.0.3\AndroidManifest.xml:24:5-79
-17-->[com.google.firebase:firebase-auth:21.0.3] C:\Users\samih\.gradle\caches\transforms-3\4d7475e18572af92cac1051b889b438a\transformed\jetified-firebase-auth-21.0.3\AndroidManifest.xml:24:22-76
+17-->[:connectivity_plus] D:\Senior\Scriba-application\scriba_app\build\connectivity_plus\intermediates\merged_manifest\debug\AndroidManifest.xml:7:5-79
+17-->[:connectivity_plus] D:\Senior\Scriba-application\scriba_app\build\connectivity_plus\intermediates\merged_manifest\debug\AndroidManifest.xml:7:22-76
 18    <uses-permission android:name="android.permission.WAKE_LOCK" />
 18-->[com.google.android.gms:play-services-measurement-api:21.0.0] C:\Users\samih\.gradle\caches\transforms-3\105f33d17ecf28b44478212f6ceabc9f\transformed\jetified-play-services-measurement-api-21.0.0\AndroidManifest.xml:24:5-68
 18-->[com.google.android.gms:play-services-measurement-api:21.0.0] C:\Users\samih\.gradle\caches\transforms-3\105f33d17ecf28b44478212f6ceabc9f\transformed\jetified-play-services-measurement-api-21.0.0\AndroidManifest.xml:24:22-65

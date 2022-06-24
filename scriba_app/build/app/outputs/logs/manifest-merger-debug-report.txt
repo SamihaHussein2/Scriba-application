@@ -82,6 +82,7 @@ MERGED from [:flutter_plugin_android_lifecycle] D:\Senior\Scriba-application\scr
 MERGED from [:url_launcher_android] D:\Senior\Scriba-application\scriba_app\build\url_launcher_android\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-14:12
 MERGED from [:path_provider_android] D:\Senior\Scriba-application\scriba_app\build\path_provider_android\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-7:12
 MERGED from [:google_sign_in_android] D:\Senior\Scriba-application\scriba_app\build\google_sign_in_android\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-9:12
+MERGED from [:connectivity_plus] D:\Senior\Scriba-application\scriba_app\build\connectivity_plus\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-9:12
 MERGED from [:shared_preferences_android] D:\Senior\Scriba-application\scriba_app\build\shared_preferences_android\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-7:12
 MERGED from [:share_plus] D:\Senior\Scriba-application\scriba_app\build\share_plus\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-19:12
 MERGED from [:fluttertoast] D:\Senior\Scriba-application\scriba_app\build\fluttertoast\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-7:12
@@ -194,6 +195,8 @@ MERGED from [:path_provider_android] D:\Senior\Scriba-application\scriba_app\bui
 MERGED from [:path_provider_android] D:\Senior\Scriba-application\scriba_app\build\path_provider_android\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:google_sign_in_android] D:\Senior\Scriba-application\scriba_app\build\google_sign_in_android\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:google_sign_in_android] D:\Senior\Scriba-application\scriba_app\build\google_sign_in_android\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-44
+MERGED from [:connectivity_plus] D:\Senior\Scriba-application\scriba_app\build\connectivity_plus\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-44
+MERGED from [:connectivity_plus] D:\Senior\Scriba-application\scriba_app\build\connectivity_plus\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:shared_preferences_android] D:\Senior\Scriba-application\scriba_app\build\shared_preferences_android\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:shared_preferences_android] D:\Senior\Scriba-application\scriba_app\build\shared_preferences_android\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:share_plus] D:\Senior\Scriba-application\scriba_app\build\share_plus\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-44
@@ -430,6 +433,28 @@ ADDED from [:url_launcher_android] D:\Senior\Scriba-application\scriba_app\build
 		ADDED from [:url_launcher_android] D:\Senior\Scriba-application\scriba_app\build\url_launcher_android\intermediates\merged_manifest\debug\AndroidManifest.xml:11:13-71
 	android:name
 		ADDED from [:url_launcher_android] D:\Senior\Scriba-application\scriba_app\build\url_launcher_android\intermediates\merged_manifest\debug\AndroidManifest.xml:9:13-74
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from [:connectivity_plus] D:\Senior\Scriba-application\scriba_app\build\connectivity_plus\intermediates\merged_manifest\debug\AndroidManifest.xml:7:5-79
+MERGED from [com.google.firebase:firebase-auth:21.0.3] C:\Users\samih\.gradle\caches\transforms-3\4d7475e18572af92cac1051b889b438a\transformed\jetified-firebase-auth-21.0.3\AndroidManifest.xml:24:5-79
+MERGED from [com.google.firebase:firebase-auth:21.0.3] C:\Users\samih\.gradle\caches\transforms-3\4d7475e18572af92cac1051b889b438a\transformed\jetified-firebase-auth-21.0.3\AndroidManifest.xml:24:5-79
+MERGED from [com.google.firebase:firebase-firestore:24.1.2] C:\Users\samih\.gradle\caches\transforms-3\ec767915a610b15b4d10746613a23e3f\transformed\jetified-firebase-firestore-24.1.2\AndroidManifest.xml:13:5-79
+MERGED from [com.google.firebase:firebase-firestore:24.1.2] C:\Users\samih\.gradle\caches\transforms-3\ec767915a610b15b4d10746613a23e3f\transformed\jetified-firebase-firestore-24.1.2\AndroidManifest.xml:13:5-79
+MERGED from [com.google.firebase:firebase-storage:20.0.1] C:\Users\samih\.gradle\caches\transforms-3\5552edd945fbc801504e0bd2cdb23339\transformed\jetified-firebase-storage-20.0.1\AndroidManifest.xml:26:5-79
+MERGED from [com.google.firebase:firebase-storage:20.0.1] C:\Users\samih\.gradle\caches\transforms-3\5552edd945fbc801504e0bd2cdb23339\transformed\jetified-firebase-storage-20.0.1\AndroidManifest.xml:26:5-79
+MERGED from [com.google.android.gms:play-services-measurement-api:21.0.0] C:\Users\samih\.gradle\caches\transforms-3\105f33d17ecf28b44478212f6ceabc9f\transformed\jetified-play-services-measurement-api-21.0.0\AndroidManifest.xml:23:5-79
+MERGED from [com.google.android.gms:play-services-measurement-api:21.0.0] C:\Users\samih\.gradle\caches\transforms-3\105f33d17ecf28b44478212f6ceabc9f\transformed\jetified-play-services-measurement-api-21.0.0\AndroidManifest.xml:23:5-79
+MERGED from [com.google.firebase:firebase-installations:17.0.1] C:\Users\samih\.gradle\caches\transforms-3\03d04f0232474a181e3a267bc09ccdf3\transformed\jetified-firebase-installations-17.0.1\AndroidManifest.xml:10:5-79
+MERGED from [com.google.firebase:firebase-installations:17.0.1] C:\Users\samih\.gradle\caches\transforms-3\03d04f0232474a181e3a267bc09ccdf3\transformed\jetified-firebase-installations-17.0.1\AndroidManifest.xml:10:5-79
+MERGED from [com.google.android.gms:play-services-measurement:21.0.0] C:\Users\samih\.gradle\caches\transforms-3\9759e2062f9ab4e1d826b8b781ee576d\transformed\jetified-play-services-measurement-21.0.0\AndroidManifest.xml:24:5-79
+MERGED from [com.google.android.gms:play-services-measurement:21.0.0] C:\Users\samih\.gradle\caches\transforms-3\9759e2062f9ab4e1d826b8b781ee576d\transformed\jetified-play-services-measurement-21.0.0\AndroidManifest.xml:24:5-79
+MERGED from [com.google.android.gms:play-services-measurement-impl:21.0.0] C:\Users\samih\.gradle\caches\transforms-3\16ed842b6730529f2d9c1f7a654da870\transformed\jetified-play-services-measurement-impl-21.0.0\AndroidManifest.xml:24:5-79
+MERGED from [com.google.android.gms:play-services-measurement-impl:21.0.0] C:\Users\samih\.gradle\caches\transforms-3\16ed842b6730529f2d9c1f7a654da870\transformed\jetified-play-services-measurement-impl-21.0.0\AndroidManifest.xml:24:5-79
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:21.0.0] C:\Users\samih\.gradle\caches\transforms-3\03628e24b35e00d1c059e4a81e883de4\transformed\jetified-play-services-measurement-sdk-api-21.0.0\AndroidManifest.xml:24:5-79
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:21.0.0] C:\Users\samih\.gradle\caches\transforms-3\03628e24b35e00d1c059e4a81e883de4\transformed\jetified-play-services-measurement-sdk-api-21.0.0\AndroidManifest.xml:24:5-79
+MERGED from [io.grpc:grpc-android:1.44.1] C:\Users\samih\.gradle\caches\transforms-3\0681b8515f78022bd63ca4404ed52b74\transformed\jetified-grpc-android-1.44.1\AndroidManifest.xml:9:5-79
+MERGED from [io.grpc:grpc-android:1.44.1] C:\Users\samih\.gradle\caches\transforms-3\0681b8515f78022bd63ca4404ed52b74\transformed\jetified-grpc-android-1.44.1\AndroidManifest.xml:9:5-79
+	android:name
+		ADDED from [:connectivity_plus] D:\Senior\Scriba-application\scriba_app\build\connectivity_plus\intermediates\merged_manifest\debug\AndroidManifest.xml:7:22-76
 provider#dev.fluttercommunity.plus.share.ShareFileProvider
 ADDED from [:share_plus] D:\Senior\Scriba-application\scriba_app\build\share_plus\intermediates\merged_manifest\debug\AndroidManifest.xml:8:9-16:20
 	android:grantUriPermissions
@@ -452,26 +477,6 @@ ADDED from [androidx.window:window:1.0.0-beta04] C:\Users\samih\.gradle\caches\t
 		ADDED from [androidx.window:window:1.0.0-beta04] C:\Users\samih\.gradle\caches\transforms-3\59d72cac1f1b2bf7c2890f5fcaf11987\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:30:13-37
 	android:name
 		ADDED from [androidx.window:window:1.0.0-beta04] C:\Users\samih\.gradle\caches\transforms-3\59d72cac1f1b2bf7c2890f5fcaf11987\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:29:13-51
-uses-permission#android.permission.ACCESS_NETWORK_STATE
-ADDED from [com.google.firebase:firebase-auth:21.0.3] C:\Users\samih\.gradle\caches\transforms-3\4d7475e18572af92cac1051b889b438a\transformed\jetified-firebase-auth-21.0.3\AndroidManifest.xml:24:5-79
-MERGED from [com.google.firebase:firebase-firestore:24.1.2] C:\Users\samih\.gradle\caches\transforms-3\ec767915a610b15b4d10746613a23e3f\transformed\jetified-firebase-firestore-24.1.2\AndroidManifest.xml:13:5-79
-MERGED from [com.google.firebase:firebase-firestore:24.1.2] C:\Users\samih\.gradle\caches\transforms-3\ec767915a610b15b4d10746613a23e3f\transformed\jetified-firebase-firestore-24.1.2\AndroidManifest.xml:13:5-79
-MERGED from [com.google.firebase:firebase-storage:20.0.1] C:\Users\samih\.gradle\caches\transforms-3\5552edd945fbc801504e0bd2cdb23339\transformed\jetified-firebase-storage-20.0.1\AndroidManifest.xml:26:5-79
-MERGED from [com.google.firebase:firebase-storage:20.0.1] C:\Users\samih\.gradle\caches\transforms-3\5552edd945fbc801504e0bd2cdb23339\transformed\jetified-firebase-storage-20.0.1\AndroidManifest.xml:26:5-79
-MERGED from [com.google.android.gms:play-services-measurement-api:21.0.0] C:\Users\samih\.gradle\caches\transforms-3\105f33d17ecf28b44478212f6ceabc9f\transformed\jetified-play-services-measurement-api-21.0.0\AndroidManifest.xml:23:5-79
-MERGED from [com.google.android.gms:play-services-measurement-api:21.0.0] C:\Users\samih\.gradle\caches\transforms-3\105f33d17ecf28b44478212f6ceabc9f\transformed\jetified-play-services-measurement-api-21.0.0\AndroidManifest.xml:23:5-79
-MERGED from [com.google.firebase:firebase-installations:17.0.1] C:\Users\samih\.gradle\caches\transforms-3\03d04f0232474a181e3a267bc09ccdf3\transformed\jetified-firebase-installations-17.0.1\AndroidManifest.xml:10:5-79
-MERGED from [com.google.firebase:firebase-installations:17.0.1] C:\Users\samih\.gradle\caches\transforms-3\03d04f0232474a181e3a267bc09ccdf3\transformed\jetified-firebase-installations-17.0.1\AndroidManifest.xml:10:5-79
-MERGED from [com.google.android.gms:play-services-measurement:21.0.0] C:\Users\samih\.gradle\caches\transforms-3\9759e2062f9ab4e1d826b8b781ee576d\transformed\jetified-play-services-measurement-21.0.0\AndroidManifest.xml:24:5-79
-MERGED from [com.google.android.gms:play-services-measurement:21.0.0] C:\Users\samih\.gradle\caches\transforms-3\9759e2062f9ab4e1d826b8b781ee576d\transformed\jetified-play-services-measurement-21.0.0\AndroidManifest.xml:24:5-79
-MERGED from [com.google.android.gms:play-services-measurement-impl:21.0.0] C:\Users\samih\.gradle\caches\transforms-3\16ed842b6730529f2d9c1f7a654da870\transformed\jetified-play-services-measurement-impl-21.0.0\AndroidManifest.xml:24:5-79
-MERGED from [com.google.android.gms:play-services-measurement-impl:21.0.0] C:\Users\samih\.gradle\caches\transforms-3\16ed842b6730529f2d9c1f7a654da870\transformed\jetified-play-services-measurement-impl-21.0.0\AndroidManifest.xml:24:5-79
-MERGED from [com.google.android.gms:play-services-measurement-sdk-api:21.0.0] C:\Users\samih\.gradle\caches\transforms-3\03628e24b35e00d1c059e4a81e883de4\transformed\jetified-play-services-measurement-sdk-api-21.0.0\AndroidManifest.xml:24:5-79
-MERGED from [com.google.android.gms:play-services-measurement-sdk-api:21.0.0] C:\Users\samih\.gradle\caches\transforms-3\03628e24b35e00d1c059e4a81e883de4\transformed\jetified-play-services-measurement-sdk-api-21.0.0\AndroidManifest.xml:24:5-79
-MERGED from [io.grpc:grpc-android:1.44.1] C:\Users\samih\.gradle\caches\transforms-3\0681b8515f78022bd63ca4404ed52b74\transformed\jetified-grpc-android-1.44.1\AndroidManifest.xml:9:5-79
-MERGED from [io.grpc:grpc-android:1.44.1] C:\Users\samih\.gradle\caches\transforms-3\0681b8515f78022bd63ca4404ed52b74\transformed\jetified-grpc-android-1.44.1\AndroidManifest.xml:9:5-79
-	android:name
-		ADDED from [com.google.firebase:firebase-auth:21.0.3] C:\Users\samih\.gradle\caches\transforms-3\4d7475e18572af92cac1051b889b438a\transformed\jetified-firebase-auth-21.0.3\AndroidManifest.xml:24:22-76
 activity#com.google.firebase.auth.internal.GenericIdpActivity
 ADDED from [com.google.firebase:firebase-auth:21.0.3] C:\Users\samih\.gradle\caches\transforms-3\4d7475e18572af92cac1051b889b438a\transformed\jetified-firebase-auth-21.0.3\AndroidManifest.xml:27:9-44:20
 	android:excludeFromRecents

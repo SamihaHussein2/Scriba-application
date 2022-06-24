@@ -1,16 +1,21 @@
 import 'dart:convert';
 import 'dart:io';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dio/dio.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:scriba_app/defaults/theme.dart';
+import 'package:scriba_app/models/translation.dart';
 import 'package:scriba_app/screens/navscreens/homepage.dart';
 import 'package:dot_navigation_bar/dot_navigation_bar.dart';
 import 'package:image_picker/image_picker.dart';
 import 'dart:async';
-
-import 'package:scriba_app/screens/translation.dart';
+import 'package:scriba_app/services/translation_service.dart';
+import 'package:scriba_app/screens/single_translation_page.dart';
+import 'package:scriba_app/services/translation_service.dart';
+import 'package:scriba_app/services/user_service.dart';
 
 class MainPage extends StatefulWidget {
   @override
@@ -37,9 +42,12 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  XFile? _imageFile;
-
+  late XFile _imageFile;
+  bool isLoading = false;
+  bool check = false;
   bool imageSelected = false;
+
+  var userID = FirebaseAuth.instance.currentUser?.uid;
 
   final ImagePicker _picker = ImagePicker();
 
@@ -89,13 +97,15 @@ class _MyHomePageState extends State<MyHomePage> {
                         source: ImageSource.gallery,
                       );
                       setState(() {
-                        _imageFile = pickedFile;
+                        _imageFile = pickedFile!;
                         imageSelected = true;
                       });
                     } catch (e) {
                       print(e);
                     }
                     try {
+                      isLoading = true;
+                      check = true;
                       final bytes = File(_imageFile!.path).readAsBytesSync();
                       String img64 = base64Encode(bytes);
                       final Dio _dio = Dio();
@@ -105,7 +115,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         ipUrl,
                         data: {},
                         queryParameters: {"image": img64},
-                      ).then((value) {
+                      ).then((value) async {
                         // display value wherever
                         print("value is ");
                         print(value);
@@ -113,6 +123,22 @@ class _MyHomePageState extends State<MyHomePage> {
                         setState(() {
                           output = value.toString();
                         });
+
+                        if (output != "") {
+                          getTranslation(output);
+                          isLoading = false;
+                          check = false;
+                          DateTime currentPhoneDate = DateTime.now(); //DateTime
+                          Timestamp myTimeStamp =
+                              Timestamp.fromDate(currentPhoneDate);
+                          await addTranslationToFirebase(
+                              output, myTimeStamp, userID!);
+
+                          // Navigator.push(
+                          //     context,
+                          //     MaterialPageRoute(
+                          //         builder: (_) => TranslationScreen()));
+                        }
                         // print(output);
                         // if (value.data['status'] == "Image Opened") {
                         //   Fluttertoast.showToast(
@@ -156,7 +182,11 @@ class _MyHomePageState extends State<MyHomePage> {
                   ? SizedBox(
                       height: 300,
                       width: 300,
-                      child: Image.file(File(_imageFile!.path)))
+                      child: Image.file(File(_imageFile.path)) ??
+                          const Text(
+                            "Choose an image please",
+                            style: TextStyle(color: Colors.white),
+                          ))
                   : const Text(
                       'You have not yet picked an image.',
                       textAlign: TextAlign.center,
@@ -165,13 +195,30 @@ class _MyHomePageState extends State<MyHomePage> {
             SizedBox(
               height: 5,
             ),
-            Text(
-              output,
-              style: TextStyle(
-                  fontSize: 15,
-                  backgroundColor: AppTheme.moderateOrange,
-                  color: Colors.white),
+            isLoading
+                ? CircularProgressIndicator(
+                    backgroundColor: AppTheme.moderateOrange,
+                    color: AppTheme.darkRed,
+                  )
+                : Text(
+                    output,
+                    style: TextStyle(
+                        fontSize: 30,
+                        backgroundColor: AppTheme.darkRed,
+                        color: AppTheme.moderateOrange),
+                  ),
+            SizedBox(
+              height: 10,
             ),
+            check
+                ? Center(
+                    child: Text(
+                    "Wait for translation",
+                    style: TextStyle(color: AppTheme.moderateOrange),
+                  ))
+                : SizedBox(
+                    height: 10,
+                  ),
           ],
         ),
       ),
@@ -553,65 +600,67 @@ class _MyHomePageState extends State<MyHomePage> {
 //             ]),
 //           ))
 
+// body: Container(
+//     constraints: const BoxConstraints.expand(),
+//     decoration: const BoxDecoration(
+//         image: DecorationImage(
+//             image: AssetImage("assets/images/Back-dark.png"),
+//             fit: BoxFit.cover)),
+//     child: _loading
+//         ? Container(
+//             alignment: Alignment.center,
+//             child: CircularProgressIndicator(),
+//           )
+//         : Container(
+//             child: ListView(children: <Widget>[
+//               Row(
+//                 mainAxisAlignment: MainAxisAlignment.center,
+//                 crossAxisAlignment: CrossAxisAlignment.center,
+//                 children: [
+//                   ElevatedButton(
+//                     style: ElevatedButton.styleFrom(
+//                       shape: const CircleBorder(),
+//                       primary: AppTheme.darkRed,
+//                     ),
+//                     child: Container(
+//                         width: 100,
+//                         height: 100,
+//                         alignment: Alignment.center,
+//                         decoration:
+//                             const BoxDecoration(shape: BoxShape.circle),
+//                         child: Image.asset(
+//                           "assets/images/homepage_icons/Import.png",
+//                           width: 70,
+//                         )),
+//                     onPressed: openGallery,
+//                   ),
+//                   SizedBox(
+//                     width: 40,
+//                   ),
+//                   ElevatedButton(
+//                     style: ElevatedButton.styleFrom(
+//                       shape: const CircleBorder(),
+//                       primary: AppTheme.darkRed,
+//                     ),
+//                     child: Container(
+//                       width: 100,
+//                       height: 100,
+//                       alignment: Alignment.center,
+//                       decoration:
+//                           const BoxDecoration(shape: BoxShape.circle),
+//                       child: Icon(
+//                         Icons.camera,
+//                         color: AppTheme.moderateOrange,
+//                         size: 50,
+//                       ),
+//                     ),
+//                     onPressed: openCamera,
+//                   )
+//                 ],
+//               ),
+//             ]),
+//           ))
 
 
-    // body: Container(
-      //     constraints: const BoxConstraints.expand(),
-      //     decoration: const BoxDecoration(
-      //         image: DecorationImage(
-      //             image: AssetImage("assets/images/Back-dark.png"),
-      //             fit: BoxFit.cover)),
-      //     child: _loading
-      //         ? Container(
-      //             alignment: Alignment.center,
-      //             child: CircularProgressIndicator(),
-      //           )
-      //         : Container(
-      //             child: ListView(children: <Widget>[
-      //               Row(
-      //                 mainAxisAlignment: MainAxisAlignment.center,
-      //                 crossAxisAlignment: CrossAxisAlignment.center,
-      //                 children: [
-      //                   ElevatedButton(
-      //                     style: ElevatedButton.styleFrom(
-      //                       shape: const CircleBorder(),
-      //                       primary: AppTheme.darkRed,
-      //                     ),
-      //                     child: Container(
-      //                         width: 100,
-      //                         height: 100,
-      //                         alignment: Alignment.center,
-      //                         decoration:
-      //                             const BoxDecoration(shape: BoxShape.circle),
-      //                         child: Image.asset(
-      //                           "assets/images/homepage_icons/Import.png",
-      //                           width: 70,
-      //                         )),
-      //                     onPressed: openGallery,
-      //                   ),
-      //                   SizedBox(
-      //                     width: 40,
-      //                   ),
-      //                   ElevatedButton(
-      //                     style: ElevatedButton.styleFrom(
-      //                       shape: const CircleBorder(),
-      //                       primary: AppTheme.darkRed,
-      //                     ),
-      //                     child: Container(
-      //                       width: 100,
-      //                       height: 100,
-      //                       alignment: Alignment.center,
-      //                       decoration:
-      //                           const BoxDecoration(shape: BoxShape.circle),
-      //                       child: Icon(
-      //                         Icons.camera,
-      //                         color: AppTheme.moderateOrange,
-      //                         size: 50,
-      //                       ),
-      //                     ),
-      //                     onPressed: openCamera,
-      //                   )
-      //                 ],
-      //               ),
-      //             ]),
-      //           ))
+
+

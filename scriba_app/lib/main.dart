@@ -15,7 +15,7 @@ import 'package:provider/provider.dart';
 import 'package:scriba_app/services/auth_service.dart';
 import '/screens/navscreens/mainpage.dart';
 import '/screens/navscreens/homepage.dart';
-import '/screens/translation.dart';
+import 'screens/single_translation_page.dart';
 
 import 'defaults/splash.dart';
 
