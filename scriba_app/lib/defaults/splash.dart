@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:scriba_app/defaults/config.dart';
+import 'package:scriba_app/defaults/theme.dart';
 import 'package:scriba_app/screens/onboarding/onboarding.dart';
 
 class Splash extends StatefulWidget {
@@ -10,7 +11,8 @@ class Splash extends StatefulWidget {
 class _SplashState extends State<Splash> {
   @override
   void initState() {
-    Future.delayed(Duration(seconds: 3), () {
+    backImg = Image.asset("assets/images/Back-dark.png", fit: BoxFit.fitWidth);
+    Future.delayed(Duration(seconds: 6), () {
       Navigator.push(
         context,
         MaterialPageRoute(builder: (_) => OnBoardingScreen()),
@@ -20,6 +22,14 @@ class _SplashState extends State<Splash> {
     super.initState();
   }
 
+  late Image backImg;
+
+  @override
+  void didChangeDependencies() {
+    precacheImage(backImg.image, context);
+    super.didChangeDependencies();
+  }
+
   @override
   Widget build(BuildContext context) {
     SizeConfig().init(context);
@@ -27,9 +37,12 @@ class _SplashState extends State<Splash> {
         body: Container(
             color: Colors.black,
             child: Stack(children: [
-              Positioned.fill(
-                child: Image.asset('assets/images/Back-dark.png',
-                    fit: BoxFit.fitWidth),
+              Container(
+                decoration: const BoxDecoration(
+                    image: DecorationImage(
+                        image: AssetImage("assets/images/Back-dark.png"),
+                        fit: BoxFit.fitWidth)),
+                child: backImg,
               ),
               Center(
                   child: Column(

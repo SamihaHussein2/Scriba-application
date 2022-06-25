@@ -1,9 +1,10 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:scriba_app/defaults/no_internet.dart';
 import 'package:scriba_app/provider/google_login_notifier.dart';
 import 'package:scriba_app/provider/myth_notifier.dart';
-import 'package:scriba_app/screens/auth_wrapper.dart';
+import 'package:scriba_app/screens/Auth_wrapper.dart';
 import 'package:scriba_app/screens/edit_profile.dart';
 import 'package:scriba_app/screens/navscreens/history.dart';
 import 'package:scriba_app/screens/navscreens/myth_page.dart';
@@ -66,7 +67,7 @@ class _MyAppState extends State<MyApp> {
         primarySwatch: Colors.blue,
       ),
       //home: Splash(),
-      home: AuthWrapper(),
+      home: const AuthWrapper(),
     );
   }
 }

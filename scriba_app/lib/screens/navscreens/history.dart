@@ -4,6 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:scriba_app/screens/single_translation_page.dart';
 import 'package:scriba_app/services/user_service.dart';
 import 'package:scriba_app/widgets/app_cards.dart';
+import 'package:scriba_app/widgets/history_card.dart';
 import '/defaults/theme.dart';
 
 import '/defaults/config.dart';
@@ -45,7 +46,7 @@ class HistoryScreen extends StatelessWidget {
                 return ListView.builder(
                   itemCount: snapshot.data!.docs.length,
                   itemBuilder: (context, index) {
-                    return AppCard(
+                    return HistoryCard(
                       title: "",
                       subtitle: snapshot.data!.docs[index].get('english'),
                       dest: TranslationScreen(),
