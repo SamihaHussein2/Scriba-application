@@ -89,10 +89,11 @@ MERGED from [:path_provider_android] D:\senior year\GP\Scriba-application\scriba
 MERGED from [:shared_preferences_android] D:\senior year\GP\Scriba-application\scriba_app\build\shared_preferences_android\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-7:12
 MERGED from [:share_plus] D:\senior year\GP\Scriba-application\scriba_app\build\share_plus\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-19:12
 MERGED from [:fluttertoast] D:\senior year\GP\Scriba-application\scriba_app\build\fluttertoast\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-7:12
-MERGED from [androidx.multidex:multidex:2.0.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\a35e7deafbbca66133ce715fee63e7b5\multidex-2.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [:flutter_tts] D:\senior year\GP\Scriba-application\scriba_app\build\flutter_tts\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-13:12
 MERGED from [androidx.window:window-java:1.0.0-beta04] C:\Users\user\.gradle\caches\transforms-2\files-2.1\0a729947d9f2682586d5957414cbefca\jetified-window-java-1.0.0-beta04\AndroidManifest.xml:17:1-23:12
 MERGED from [androidx.window:window:1.0.0-beta04] C:\Users\user\.gradle\caches\transforms-2\files-2.1\9a30143a20a029e68d2a2c8980fee508\jetified-window-1.0.0-beta04\AndroidManifest.xml:17:1-33:12
 MERGED from [com.google.firebase:firebase-analytics:21.0.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\edafffb2b06bb4bed60c55bd40603b70\jetified-firebase-analytics-21.0.0\AndroidManifest.xml:2:1-9:12
+MERGED from [androidx.multidex:multidex:2.0.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\a35e7deafbbca66133ce715fee63e7b5\multidex-2.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [com.google.firebase:firebase-auth:21.0.3] C:\Users\user\.gradle\caches\transforms-2\files-2.1\3ccf00c947fd7d5986b0b89b04022ac1\jetified-firebase-auth-21.0.3\AndroidManifest.xml:17:1-73:12
 MERGED from [com.google.firebase:firebase-firestore:24.1.2] C:\Users\user\.gradle\caches\transforms-2\files-2.1\fde7979de2f47618a715f3af207c25d3\jetified-firebase-firestore-24.1.2\AndroidManifest.xml:2:1-26:12
 MERGED from [com.google.firebase:firebase-storage:20.0.1] C:\Users\user\.gradle\caches\transforms-2\files-2.1\2613da6907a382485d34b76e2f789e15\jetified-firebase-storage-20.0.1\AndroidManifest.xml:15:1-39:12
@@ -205,14 +206,16 @@ MERGED from [:share_plus] D:\senior year\GP\Scriba-application\scriba_app\build\
 MERGED from [:share_plus] D:\senior year\GP\Scriba-application\scriba_app\build\share_plus\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:fluttertoast] D:\senior year\GP\Scriba-application\scriba_app\build\fluttertoast\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:fluttertoast] D:\senior year\GP\Scriba-application\scriba_app\build\fluttertoast\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
-MERGED from [androidx.multidex:multidex:2.0.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\a35e7deafbbca66133ce715fee63e7b5\multidex-2.0.0\AndroidManifest.xml:20:5-43
-MERGED from [androidx.multidex:multidex:2.0.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\a35e7deafbbca66133ce715fee63e7b5\multidex-2.0.0\AndroidManifest.xml:20:5-43
+MERGED from [:flutter_tts] D:\senior year\GP\Scriba-application\scriba_app\build\flutter_tts\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
+MERGED from [:flutter_tts] D:\senior year\GP\Scriba-application\scriba_app\build\flutter_tts\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [androidx.window:window-java:1.0.0-beta04] C:\Users\user\.gradle\caches\transforms-2\files-2.1\0a729947d9f2682586d5957414cbefca\jetified-window-java-1.0.0-beta04\AndroidManifest.xml:19:5-21:41
 MERGED from [androidx.window:window-java:1.0.0-beta04] C:\Users\user\.gradle\caches\transforms-2\files-2.1\0a729947d9f2682586d5957414cbefca\jetified-window-java-1.0.0-beta04\AndroidManifest.xml:19:5-21:41
 MERGED from [androidx.window:window:1.0.0-beta04] C:\Users\user\.gradle\caches\transforms-2\files-2.1\9a30143a20a029e68d2a2c8980fee508\jetified-window-1.0.0-beta04\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.window:window:1.0.0-beta04] C:\Users\user\.gradle\caches\transforms-2\files-2.1\9a30143a20a029e68d2a2c8980fee508\jetified-window-1.0.0-beta04\AndroidManifest.xml:20:5-22:41
 MERGED from [com.google.firebase:firebase-analytics:21.0.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\edafffb2b06bb4bed60c55bd40603b70\jetified-firebase-analytics-21.0.0\AndroidManifest.xml:5:5-44
 MERGED from [com.google.firebase:firebase-analytics:21.0.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\edafffb2b06bb4bed60c55bd40603b70\jetified-firebase-analytics-21.0.0\AndroidManifest.xml:5:5-44
+MERGED from [androidx.multidex:multidex:2.0.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\a35e7deafbbca66133ce715fee63e7b5\multidex-2.0.0\AndroidManifest.xml:20:5-43
+MERGED from [androidx.multidex:multidex:2.0.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\a35e7deafbbca66133ce715fee63e7b5\multidex-2.0.0\AndroidManifest.xml:20:5-43
 MERGED from [com.google.firebase:firebase-auth:21.0.3] C:\Users\user\.gradle\caches\transforms-2\files-2.1\3ccf00c947fd7d5986b0b89b04022ac1\jetified-firebase-auth-21.0.3\AndroidManifest.xml:21:5-44
 MERGED from [com.google.firebase:firebase-auth:21.0.3] C:\Users\user\.gradle\caches\transforms-2\files-2.1\3ccf00c947fd7d5986b0b89b04022ac1\jetified-firebase-auth-21.0.3\AndroidManifest.xml:21:5-44
 MERGED from [com.google.firebase:firebase-firestore:24.1.2] C:\Users\user\.gradle\caches\transforms-2\files-2.1\fde7979de2f47618a715f3af207c25d3\jetified-firebase-firestore-24.1.2\AndroidManifest.xml:7:5-9:41
@@ -448,6 +451,14 @@ ADDED from [:share_plus] D:\senior year\GP\Scriba-application\scriba_app\build\s
 		ADDED from [:share_plus] D:\senior year\GP\Scriba-application\scriba_app\build\share_plus\intermediates\library_manifest\debug\AndroidManifest.xml:11:13-37
 	android:name
 		ADDED from [:share_plus] D:\senior year\GP\Scriba-application\scriba_app\build\share_plus\intermediates\library_manifest\debug\AndroidManifest.xml:9:13-77
+queries
+ADDED from [:flutter_tts] D:\senior year\GP\Scriba-application\scriba_app\build\flutter_tts\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-11:15
+intent#action:name:android.intent.action.TTS_SERVICE
+ADDED from [:flutter_tts] D:\senior year\GP\Scriba-application\scriba_app\build\flutter_tts\intermediates\library_manifest\debug\AndroidManifest.xml:8:9-10:18
+action#android.intent.action.TTS_SERVICE
+ADDED from [:flutter_tts] D:\senior year\GP\Scriba-application\scriba_app\build\flutter_tts\intermediates\library_manifest\debug\AndroidManifest.xml:9:13-72
+	android:name
+		ADDED from [:flutter_tts] D:\senior year\GP\Scriba-application\scriba_app\build\flutter_tts\intermediates\library_manifest\debug\AndroidManifest.xml:9:21-69
 uses-library#androidx.window.extensions
 ADDED from [androidx.window:window:1.0.0-beta04] C:\Users\user\.gradle\caches\transforms-2\files-2.1\9a30143a20a029e68d2a2c8980fee508\jetified-window-1.0.0-beta04\AndroidManifest.xml:25:9-27:40
 	android:required

@@ -9,6 +9,7 @@ import 'package:scriba_app/screens/navscreens/homepage.dart';
 import 'package:dot_navigation_bar/dot_navigation_bar.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:tflite/tflite.dart';
+import 'package:flutter_tts/flutter_tts.dart';
 import 'dart:async';
 
 import 'package:scriba_app/screens/translation.dart';
@@ -64,19 +65,20 @@ class _MyHomePageState extends State<MyHomePage> {
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            // first letters classification button
             ElevatedButton(
               style: ElevatedButton.styleFrom(
                 shape: const CircleBorder(),
                 primary: AppTheme.darkRed,
                 side: const BorderSide(
                     color: AppTheme.moderateOrange,
-                    width: 5),
+                    width: 4),
               ),
               child: Column(
                 children: [
                   Container(
-                      width: 90,
-                      height: 90,
+                      width: 80,
+                      height: 80,
                       alignment: Alignment.center,
                       decoration: const BoxDecoration(
                           shape: BoxShape.circle),
@@ -107,7 +109,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   _dio.post(
                     ipUrl,
                     data:{},
-                    queryParameters: {"image":img64},
+                    queryParameters: {"image":img64, "classid":1},
                   ).then((value) {
                    // display value wherever
                     print("value is ");
@@ -131,20 +133,22 @@ class _MyHomePageState extends State<MyHomePage> {
                 } catch (e) {
                   print(e);
                 }
+
                
             },
             ),
+            // second (words) classification button
             ElevatedButton(
               style: ElevatedButton.styleFrom(
                 shape: const CircleBorder(),
                 primary: AppTheme.darkRed,
                 side: const BorderSide(
                     color: AppTheme.moderateOrange,
-                    width: 5),
+                    width: 4),
               ),
               child: Container(
-                  width: 90,
-                  height: 90,
+                  width: 80,
+                  height: 80,
                   alignment: Alignment.center,
                   decoration: const BoxDecoration(
                       shape: BoxShape.circle),
@@ -152,7 +156,122 @@ class _MyHomePageState extends State<MyHomePage> {
                     "assets/images/homepage_icons/royal.png",
                     width: 50,
                   )),
-              onPressed: (){},
+              onPressed: ()async {
+              try {
+                final XFile? pickedFile = await _picker.pickImage(
+                  source: ImageSource.gallery,
+                );
+                setState(() {
+                  _imageFile = pickedFile;
+                  imageSelected = true;
+                });
+              } catch (e) {
+                print(e);
+              }
+              try {
+                  final bytes = File(_imageFile!.path).readAsBytesSync();
+                  String img64 = base64Encode(bytes);
+                  final Dio _dio = Dio();
+                  // print('sending image');
+                  // print(img64);
+                  _dio.post(
+                    ipUrl,
+                    data:{},
+                    queryParameters: {"image":img64, "classid":2},
+                  ).then((value) {
+                   // display value wherever
+                    print("value is ");
+                    print(value);
+                    
+                     setState(() {
+                  output = value.toString();
+                }); 
+                    // print(output);
+                    // if (value.data['status'] == "Image Opened") {
+                    //   Fluttertoast.showToast(
+                    //     msg: "Image Sent To Backend",
+                    //     toastLength: Toast.LENGTH_SHORT,
+                    //     gravity: ToastGravity.BOTTOM,
+                    //     backgroundColor: Color.fromARGB(255, 175, 155, 76),
+                    //     textColor: Colors.white,
+                    //     fontSize: 16.0,
+                    //   );
+                    // }
+                  });
+                } catch (e) {
+                  print(e);
+                }
+
+               
+            },
+            ),
+            //third (ROYALS) classification button
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                shape: const CircleBorder(),
+                primary: AppTheme.darkRed,
+                side: const BorderSide(
+                    color: AppTheme.moderateOrange,
+                    width: 4),
+              ),
+              child: Container(
+                  width: 80,
+                  height: 80,
+                  alignment: Alignment.center,
+                  decoration: const BoxDecoration(
+                      shape: BoxShape.circle),
+                  child: Image.asset(
+                    "assets/images/homepage_icons/royal.png",
+                    width: 50,
+                  )),
+              onPressed: ()async {
+              try {
+                final XFile? pickedFile = await _picker.pickImage(
+                  source: ImageSource.gallery,
+                );
+                setState(() {
+                  _imageFile = pickedFile;
+                  imageSelected = true;
+                });
+              } catch (e) {
+                print(e);
+              }
+              try {
+                  final bytes = File(_imageFile!.path).readAsBytesSync();
+                  String img64 = base64Encode(bytes);
+                  final Dio _dio = Dio();
+                  // print('sending image');
+                  // print(img64);
+                  _dio.post(
+                    ipUrl,
+                    data:{},
+                    queryParameters: {"image":img64, "classid":3},
+                  ).then((value) {
+                   // display value wherever
+                    print("value is ");
+                    print(value);
+                    
+                     setState(() {
+                  output = value.toString();
+                }); 
+                    // print(output);
+                    // if (value.data['status'] == "Image Opened") {
+                    //   Fluttertoast.showToast(
+                    //     msg: "Image Sent To Backend",
+                    //     toastLength: Toast.LENGTH_SHORT,
+                    //     gravity: ToastGravity.BOTTOM,
+                    //     backgroundColor: Color.fromARGB(255, 175, 155, 76),
+                    //     textColor: Colors.white,
+                    //     fontSize: 16.0,
+                    //   );
+                    // }
+                  });
+                } catch (e) {
+                  print(e);
+                }
+
+               
+            },
             )
           ],
             ),
@@ -166,6 +285,8 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
           SizedBox(height: 5,),
           Text(output, style: TextStyle(fontSize: 15, backgroundColor: AppTheme.moderateOrange, color: Colors.white),),
+          
+          ElevatedButton(onPressed: () => speak(output), child: Text("listen to me")) 
           
         ],
         
@@ -233,6 +354,13 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 }
 
+  final FlutterTts flutterTts = FlutterTts();
+speak(word) async {
+      //print(await flutterTts.getLanguages);
+      await flutterTts.setLanguage("en-US");
+      await flutterTts.setVolume(10);
+      await flutterTts.speak(word);
+    }
 //----------------------------------------------------------------------------------------------
 
 // class _HomepageState extends State<MainPage> {
