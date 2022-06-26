@@ -4,6 +4,7 @@ import 'package:email_validator/email_validator.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:provider/provider.dart';
 import 'package:scriba_app/defaults/theme.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -175,6 +176,43 @@ class _LoginState extends State<Login> {
                                               builder: (context) =>
                                                   Homepage()));
                                     }
+                                  }
+                                },
+                              ),
+                            ),
+                          ),
+                          Container(
+                            child: Center(
+                              child: ElevatedButton.icon(
+                                icon: FaIcon(
+                                  FontAwesomeIcons.google,
+                                  size: 15,
+                                ),
+                                label: const Text("Login with Gmail"),
+                                style: AppTheme.buttonStyle,
+                                onPressed: () async {
+                                  var result = await context
+                                      .read<AuthService>()
+                                      .signInWithGoogle();
+
+                                  if (result.additionalUserInfo!.isNewUser) {
+                                    AddUserInFirestoreGoogle(
+                                        FirebaseAuth.instance.currentUser);
+                                    Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) => Homepage()));
+                                  } else {
+                                    GetID(
+                                        FirebaseAuth.instance.currentUser?.uid);
+                                    Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            //change page to the homepage
+                                            builder: (context) => Homepage()));
+                                    //Perform what you want to do for old users here
+                                    //like fetching a specific user document
+
                                   }
                                 },
                               ),

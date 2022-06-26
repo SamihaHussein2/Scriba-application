@@ -3,7 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:scriba_app/screens/navscreens/history.dart';
 import 'package:scriba_app/screens/navscreens/homepage.dart';
 import 'package:scriba_app/screens/navscreens/mainpage.dart';
-import 'package:scriba_app/screens/translation.dart';
+import 'package:scriba_app/screens/single_translation_page.dart';
 import 'package:scriba_app/widgets/translation_card.dart';
 import '/defaults/theme.dart';
 

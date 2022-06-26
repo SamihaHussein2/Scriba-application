@@ -8,11 +8,10 @@ import 'package:scriba_app/defaults/theme.dart';
 import 'package:scriba_app/screens/navscreens/homepage.dart';
 import 'package:dot_navigation_bar/dot_navigation_bar.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:tflite/tflite.dart';
 import 'package:flutter_tts/flutter_tts.dart';
 import 'dart:async';
 
-import 'package:scriba_app/screens/translation.dart';
+//import 'package:scriba_app/screens/translation.dart';
 
 class MainPage extends StatefulWidget {
   @override
@@ -40,7 +39,8 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   XFile? _imageFile;
-
+  bool isLoading = false;
+  bool check = false;
   bool imageSelected = false;
 
   final ImagePicker _picker = ImagePicker();
@@ -101,6 +101,8 @@ class _MyHomePageState extends State<MyHomePage> {
                 print(e);
               }
               try {
+                isLoading = true;
+                      check = true;
                   final bytes = File(_imageFile!.path).readAsBytesSync();
                   String img64 = base64Encode(bytes);
                   final Dio _dio = Dio();
@@ -118,6 +120,16 @@ class _MyHomePageState extends State<MyHomePage> {
                      setState(() {
                   output = value.toString();
                 }); 
+                // if (output != "") {
+                //           getTranslation(output);
+                //           isLoading = false;
+                //           check = false;
+                //           DateTime currentPhoneDate = DateTime.now(); //DateTime
+                //           Timestamp myTimeStamp =
+                //               Timestamp.fromDate(currentPhoneDate);
+                //           await addTranslationToFirebase(
+                //               output, myTimeStamp, userID!);
+
                     // print(output);
                     // if (value.data['status'] == "Image Opened") {
                     //   Fluttertoast.showToast(
@@ -169,6 +181,8 @@ class _MyHomePageState extends State<MyHomePage> {
                 print(e);
               }
               try {
+                isLoading = true;
+                      check = true;
                   final bytes = File(_imageFile!.path).readAsBytesSync();
                   String img64 = base64Encode(bytes);
                   final Dio _dio = Dio();
@@ -237,6 +251,8 @@ class _MyHomePageState extends State<MyHomePage> {
                 print(e);
               }
               try {
+                isLoading = true;
+                      check = true;
                   final bytes = File(_imageFile!.path).readAsBytesSync();
                   String img64 = base64Encode(bytes);
                   final Dio _dio = Dio();
@@ -284,8 +300,33 @@ class _MyHomePageState extends State<MyHomePage> {
                   textAlign: TextAlign.center,),
           ),
           SizedBox(height: 5,),
-          Text(output, style: TextStyle(fontSize: 15, backgroundColor: AppTheme.moderateOrange, color: Colors.white),),
-          
+          // Text(output, style: TextStyle(fontSize: 15, backgroundColor: AppTheme.moderateOrange, color: Colors.white),),
+
+          isLoading
+                ? CircularProgressIndicator(
+                    backgroundColor: AppTheme.moderateOrange,
+                    color: AppTheme.darkRed,
+                  )
+                : Text(
+                    output,
+                    style: TextStyle(
+                        fontSize: 30,
+                        backgroundColor: AppTheme.darkRed,
+                        color: AppTheme.moderateOrange),
+                  ),
+            SizedBox(
+              height: 10,
+            ),
+            check
+                ? Center(
+                    child: Text(
+                    "Wait for translation",
+                    style: TextStyle(color: AppTheme.moderateOrange),
+                  ))
+                : SizedBox(
+                    height: 10,
+                  ),
+
           ElevatedButton(onPressed: () => speak(output), child: Text("listen to me")) 
           
         ],

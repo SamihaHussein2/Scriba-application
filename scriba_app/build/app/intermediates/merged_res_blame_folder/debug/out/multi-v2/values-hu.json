@@ -1,27 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "D:\\senior year\\GP\\Scriba-application\\scriba_app\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-hu\\values-hu.xml",
+            "outputFile": "D:\\Senior\\Scriba-application\\scriba_app\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-hu\\values-hu.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\user\\.gradle\\caches\\transforms-2\\files-2.1\\f9455c21b56d148374e88e8b9fa9c592\\core-1.7.0\\res\\values-hu\\values-hu.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "100",
-                        "endOffsets": "151"
-                    },
-                    "to": {
-                        "startLines": "20",
-                        "startColumns": "4",
-                        "startOffsets": "2483",
-                        "endColumns": "100",
-                        "endOffsets": "2579"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\user\\.gradle\\caches\\transforms-2\\files-2.1\\2ffdea9840cb447d8a46ba75a1207d80\\jetified-play-services-basement-18.0.0\\res\\values-hu\\values.xml",
+                    "source": "C:\\Users\\samih\\.gradle\\caches\\transforms-3\\d26c8d9d6f52c7cc05d224430416e23b\\transformed\\jetified-play-services-basement-18.0.0\\res\\values-hu\\values.xml",
                     "from": {
                         "startLines": "4",
                         "startColumns": "0",
@@ -38,7 +21,24 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\user\\.gradle\\caches\\transforms-2\\files-2.1\\37425ca1da537beeff65bfee35ec9b80\\jetified-play-services-base-18.0.1\\res\\values-hu\\values.xml",
+                    "source": "C:\\Users\\samih\\.gradle\\caches\\transforms-3\\e2aa45d3ca4d9b3e2b056ecf1f07a44c\\transformed\\core-1.7.0\\res\\values-hu\\values-hu.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    },
+                    "to": {
+                        "startLines": "20",
+                        "startColumns": "4",
+                        "startOffsets": "2483",
+                        "endColumns": "100",
+                        "endOffsets": "2579"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\samih\\.gradle\\caches\\transforms-3\\f4196cff807ebbd4909ea89fa3add560\\transformed\\jetified-play-services-base-18.0.1\\res\\values-hu\\values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
                         "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
