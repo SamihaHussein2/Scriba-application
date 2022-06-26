@@ -3,9 +3,11 @@ import 'dart:ui';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_tts/flutter_tts.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:scriba_app/defaults/theme.dart';
 import 'package:scriba_app/models/myth.dart';
+import 'package:scriba_app/screens/navscreens/history.dart';
 import 'package:scriba_app/screens/single_myth_page.dart';
 import 'package:scriba_app/screens/single_translation_page.dart';
 import 'package:scriba_app/widgets/app_btn.dart';
@@ -14,14 +16,15 @@ import 'package:scriba_app/widgets/edit_btn.dart';
 class HistoryCard extends StatelessWidget {
   final String title;
   final String subtitle;
-  final Widget dest;
-  //final Myth myth;
+  //final Widget dest;
+  final String trans;
 
-  const HistoryCard({
+  HistoryCard({
     Key? key,
-    required this.dest,
+    // required this.dest,
     required this.subtitle,
     required this.title,
+    required this.trans,
   }) : super(key: key);
 
   @override
@@ -49,19 +52,29 @@ class HistoryCard extends StatelessWidget {
             trailing: IconButton(
               onPressed: () {
                 //code text-to-speech
-                const TranslationScreen();
+                // const TranslationScreen();
+                speak(trans);
               },
-              icon: ImageIcon(
+              icon: const ImageIcon(
                 AssetImage("assets/images/homepage_icons/speech.png"),
                 size: 70,
                 color: AppTheme.moderateOrange,
               ),
             ),
           ),
-          margin: EdgeInsets.only(top: 20, left: 15, right: 15, bottom: 0),
+          margin:
+              const EdgeInsets.only(top: 20, left: 15, right: 15, bottom: 0),
           shape: OutlineInputBorder(
               borderRadius: BorderRadius.circular(10),
-              borderSide: BorderSide(color: AppTheme.moderateOrange))),
+              borderSide: const BorderSide(color: AppTheme.moderateOrange))),
     );
+  }
+
+  final FlutterTts flutterTts = FlutterTts();
+  speak(word) async {
+    //print(await flutterTts.getLanguages);
+    await flutterTts.setLanguage("ar-US");
+    await flutterTts.setVolume(16);
+    await flutterTts.speak(word);
   }
 }
