@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_tts/flutter_tts.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:scriba_app/screens/single_translation_page.dart';
 import 'package:scriba_app/services/user_service.dart';
@@ -11,6 +12,8 @@ import '/defaults/config.dart';
 
 class HistoryScreen extends StatelessWidget {
   const HistoryScreen({Key? key}) : super(key: key);
+
+  get word => null;
   @override
   Widget build(BuildContext context) {
     SizeConfig().init(context);
@@ -49,7 +52,7 @@ class HistoryScreen extends StatelessWidget {
                     return HistoryCard(
                       title: "",
                       subtitle: snapshot.data!.docs[index].get('english'),
-                      dest: TranslationScreen(),
+                      trans: snapshot.data!.docs[index].get('english'),
                     );
                   },
                 );

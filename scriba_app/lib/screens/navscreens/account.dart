@@ -127,13 +127,13 @@ class _AccountPageState extends State<AccountPage> {
                   SizedBox(
                     height: 70,
                   ),
-                  EditContainer(
-                      icon: Icons.mode_edit_outline_outlined,
-                      text: "Edit profile",
-                      dest: EditProfile()),
-                  SizedBox(
-                    height: 30,
-                  ),
+                  // EditContainer(
+                  //     icon: Icons.mode_edit_outline_outlined,
+                  //     text: "Edit profile",
+                  //     dest: EditProfile()),
+                  // SizedBox(
+                  //   height: 30,
+                  // ),
                   Card(
                     color: AppTheme.darkRed,
                     child: ListTile(

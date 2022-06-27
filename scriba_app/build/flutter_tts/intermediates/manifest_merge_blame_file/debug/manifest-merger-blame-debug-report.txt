@@ -3,15 +3,15 @@
 3    package="com.tundralabs.fluttertts" >
 4
 5    <uses-sdk android:minSdkVersion="21" />
-5-->E:\SDK dart-flutter\flutter_windows_2.5.3-stable\flutter\.pub-cache\hosted\pub.dartlang.org\flutter_tts-3.4.0\android\src\main\AndroidManifest.xml
+5-->C:\flutter\.pub-cache\hosted\pub.dartlang.org\flutter_tts-3.4.0\android\src\main\AndroidManifest.xml
 6
 7    <queries>
-7-->E:\SDK dart-flutter\flutter_windows_2.5.3-stable\flutter\.pub-cache\hosted\pub.dartlang.org\flutter_tts-3.4.0\android\src\main\AndroidManifest.xml:3:5-7:15
+7-->C:\flutter\.pub-cache\hosted\pub.dartlang.org\flutter_tts-3.4.0\android\src\main\AndroidManifest.xml:3:5-7:15
 8        <intent>
-8-->E:\SDK dart-flutter\flutter_windows_2.5.3-stable\flutter\.pub-cache\hosted\pub.dartlang.org\flutter_tts-3.4.0\android\src\main\AndroidManifest.xml:4:9-6:18
+8-->C:\flutter\.pub-cache\hosted\pub.dartlang.org\flutter_tts-3.4.0\android\src\main\AndroidManifest.xml:4:9-6:18
 9            <action android:name="android.intent.action.TTS_SERVICE" />
-9-->E:\SDK dart-flutter\flutter_windows_2.5.3-stable\flutter\.pub-cache\hosted\pub.dartlang.org\flutter_tts-3.4.0\android\src\main\AndroidManifest.xml:5:13-72
-9-->E:\SDK dart-flutter\flutter_windows_2.5.3-stable\flutter\.pub-cache\hosted\pub.dartlang.org\flutter_tts-3.4.0\android\src\main\AndroidManifest.xml:5:21-69
+9-->C:\flutter\.pub-cache\hosted\pub.dartlang.org\flutter_tts-3.4.0\android\src\main\AndroidManifest.xml:5:13-72
+9-->C:\flutter\.pub-cache\hosted\pub.dartlang.org\flutter_tts-3.4.0\android\src\main\AndroidManifest.xml:5:21-69
 10        </intent>
 11    </queries>
 12
