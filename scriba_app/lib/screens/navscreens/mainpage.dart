@@ -1,6 +1,8 @@
 import 'dart:convert';
 import 'dart:io';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dio/dio.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:fluttertoast/fluttertoast.dart';
@@ -10,6 +12,8 @@ import 'package:dot_navigation_bar/dot_navigation_bar.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:flutter_tts/flutter_tts.dart';
 import 'dart:async';
+
+import 'package:scriba_app/services/translation_service.dart';
 
 //import 'package:scriba_app/screens/translation.dart';
 
@@ -42,6 +46,8 @@ class _MyHomePageState extends State<MyHomePage> {
   bool isLoading = false;
   bool check = false;
   bool imageSelected = false;
+
+  var userID = FirebaseAuth.instance.currentUser?.uid;
 
   final ImagePicker _picker = ImagePicker();
 
@@ -106,13 +112,13 @@ class _MyHomePageState extends State<MyHomePage> {
                   final bytes = File(_imageFile!.path).readAsBytesSync();
                   String img64 = base64Encode(bytes);
                   final Dio _dio = Dio();
+                  FormData formData = FormData.fromMap({"image":img64, "classid":1});
                   // print('sending image');
                   // print(img64);
-                  _dio.post(
+                 await _dio.post(
                     ipUrl,
-                    data:{},
-                    queryParameters: {"image":img64, "classid":1},
-                  ).then((value) {
+                    data:formData,
+                  ).then((value) async{
                    // display value wherever
                     print("value is ");
                     print(value);
@@ -120,15 +126,15 @@ class _MyHomePageState extends State<MyHomePage> {
                      setState(() {
                   output = value.toString();
                 }); 
-                // if (output != "") {
-                //           getTranslation(output);
-                //           isLoading = false;
-                //           check = false;
-                //           DateTime currentPhoneDate = DateTime.now(); //DateTime
-                //           Timestamp myTimeStamp =
-                //               Timestamp.fromDate(currentPhoneDate);
-                //           await addTranslationToFirebase(
-                //               output, myTimeStamp, userID!);
+                if (output != "") {
+                          getTranslation(output);
+                          isLoading = false;
+                          check = false;
+                          DateTime currentPhoneDate = DateTime.now(); //DateTime
+                          Timestamp myTimeStamp =
+                              Timestamp.fromDate(currentPhoneDate);
+                          await addTranslationToFirebase(
+                              output, myTimeStamp, userID!);}
 
                     // print(output);
                     // if (value.data['status'] == "Image Opened") {
@@ -186,13 +192,13 @@ class _MyHomePageState extends State<MyHomePage> {
                   final bytes = File(_imageFile!.path).readAsBytesSync();
                   String img64 = base64Encode(bytes);
                   final Dio _dio = Dio();
+                  FormData formData = FormData.fromMap({"image":img64, "classid":2});
                   // print('sending image');
                   // print(img64);
                   _dio.post(
                     ipUrl,
-                    data:{},
-                    queryParameters: {"image":img64, "classid":2},
-                  ).then((value) {
+                    data:formData,
+                  ).then((value) async{
                    // display value wherever
                     print("value is ");
                     print(value);
@@ -200,6 +206,16 @@ class _MyHomePageState extends State<MyHomePage> {
                      setState(() {
                   output = value.toString();
                 }); 
+                if (output != "") {
+                          getTranslation(output);
+                          isLoading = false;
+                          check = false;
+                          DateTime currentPhoneDate = DateTime.now(); //DateTime
+                          Timestamp myTimeStamp =
+                              Timestamp.fromDate(currentPhoneDate);
+                          if(userID != null)
+                          await addTranslationToFirebase(
+                              output, myTimeStamp, userID!);}
                     // print(output);
                     // if (value.data['status'] == "Image Opened") {
                     //   Fluttertoast.showToast(
@@ -256,13 +272,13 @@ class _MyHomePageState extends State<MyHomePage> {
                   final bytes = File(_imageFile!.path).readAsBytesSync();
                   String img64 = base64Encode(bytes);
                   final Dio _dio = Dio();
+                  FormData formData = FormData.fromMap({"image":img64, "classid":3});
                   // print('sending image');
                   // print(img64);
                   _dio.post(
                     ipUrl,
-                    data:{},
-                    queryParameters: {"image":img64, "classid":3},
-                  ).then((value) {
+                    data:formData,
+                  ).then((value) async{
                    // display value wherever
                     print("value is ");
                     print(value);
@@ -270,6 +286,15 @@ class _MyHomePageState extends State<MyHomePage> {
                      setState(() {
                   output = value.toString();
                 }); 
+                if (output != "") {
+                          getTranslation(output);
+                          isLoading = false;
+                          check = false;
+                          DateTime currentPhoneDate = DateTime.now(); //DateTime
+                          Timestamp myTimeStamp =
+                              Timestamp.fromDate(currentPhoneDate);
+                          await addTranslationToFirebase(
+                              output, myTimeStamp, userID!);}
                     // print(output);
                     // if (value.data['status'] == "Image Opened") {
                     //   Fluttertoast.showToast(
@@ -398,7 +423,7 @@ class _MyHomePageState extends State<MyHomePage> {
   final FlutterTts flutterTts = FlutterTts();
 speak(word) async {
       //print(await flutterTts.getLanguages);
-      await flutterTts.setLanguage("en-US");
+      await flutterTts.setLanguage("ar");
       await flutterTts.setVolume(10);
       await flutterTts.speak(word);
     }
