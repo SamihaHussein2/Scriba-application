@@ -151,6 +151,7 @@ class _SignupState extends State<Signup> {
                                           AppTheme.macondoFont.fontFamily,
                                     ),
                                   ),
+                                  obscureText: true,
                                 ),
                               ),
                               const SizedBox(height: 10),
