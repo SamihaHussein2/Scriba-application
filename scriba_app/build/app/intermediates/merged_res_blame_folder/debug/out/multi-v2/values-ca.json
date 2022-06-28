@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "D:\\senior year\\GP\\Scriba-application\\scriba_app\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-ca\\values-ca.xml",
+            "outputFile": "D:\\Senior\\Scriba-application\\scriba_app\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-ca\\values-ca.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\user\\.gradle\\caches\\transforms-3\\d26c8d9d6f52c7cc05d224430416e23b\\transformed\\jetified-play-services-basement-18.0.0\\res\\values-ca\\values.xml",
+                    "source": "C:\\Users\\samih\\.gradle\\caches\\transforms-3\\d26c8d9d6f52c7cc05d224430416e23b\\transformed\\jetified-play-services-basement-18.0.0\\res\\values-ca\\values.xml",
                     "from": {
                         "startLines": "4",
                         "startColumns": "0",
@@ -21,7 +21,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\user\\.gradle\\caches\\transforms-3\\f4196cff807ebbd4909ea89fa3add560\\transformed\\jetified-play-services-base-18.0.1\\res\\values-ca\\values.xml",
+                    "source": "C:\\Users\\samih\\.gradle\\caches\\transforms-3\\f4196cff807ebbd4909ea89fa3add560\\transformed\\jetified-play-services-base-18.0.1\\res\\values-ca\\values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
                         "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
@@ -38,7 +38,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\user\\.gradle\\caches\\transforms-3\\e2aa45d3ca4d9b3e2b056ecf1f07a44c\\transformed\\core-1.7.0\\res\\values-ca\\values-ca.xml",
+                    "source": "C:\\Users\\samih\\.gradle\\caches\\transforms-3\\e2aa45d3ca4d9b3e2b056ecf1f07a44c\\transformed\\core-1.7.0\\res\\values-ca\\values-ca.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
