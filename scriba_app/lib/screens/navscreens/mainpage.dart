@@ -239,10 +239,10 @@ class _MyHomePageState extends State<MyHomePage> {
                             if (output != "") {
                               if (userID != null) {
                                 getTranslationScreen(output, userID!);
+                              } else {
+                                isLoading = false;
+                                check = false;
                               }
-                            } else {
-                              isLoading = false;
-                              check = false;
                             }
                             // print(output);
                             // if (value.data['status'] == "Image Opened") {
