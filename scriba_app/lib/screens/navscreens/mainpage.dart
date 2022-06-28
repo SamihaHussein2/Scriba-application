@@ -106,17 +106,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         ],
                       ),
                       onPressed: () async {
-                        try {
-                          final XFile? pickedFile = await _picker.pickImage(
-                            source: ImageSource.gallery,
-                          );
-                          setState(() {
-                            _imageFile = pickedFile!;
-                            imageSelected = true;
-                          });
-                        } catch (e) {
-                          print(e);
-                        }
+                        _showChoiceDialog(context);
                         try {
                           isLoading = true;
                           check = true;
@@ -201,17 +191,7 @@ class _MyHomePageState extends State<MyHomePage> {
                             width: 50,
                           )),
                       onPressed: () async {
-                        try {
-                          final XFile? pickedFile = await _picker.pickImage(
-                            source: ImageSource.gallery,
-                          );
-                          setState(() {
-                            _imageFile = pickedFile!;
-                            imageSelected = true;
-                          });
-                        } catch (e) {
-                          print(e);
-                        }
+                        _showChoiceDialog(context);
                         try {
                           isLoading = true;
                           check = true;
@@ -295,17 +275,7 @@ class _MyHomePageState extends State<MyHomePage> {
                             width: 50,
                           )),
                       onPressed: () async {
-                        try {
-                          final XFile? pickedFile = await _picker.pickImage(
-                            source: ImageSource.gallery,
-                          );
-                          setState(() {
-                            _imageFile = pickedFile!;
-                            imageSelected = true;
-                          });
-                        } catch (e) {
-                          print(e);
-                        }
+                        _showChoiceDialog(context);
                         try {
                           isLoading = true;
                           check = true;
@@ -489,6 +459,64 @@ class _MyHomePageState extends State<MyHomePage> {
       //   ],
       // ),
     );
+  }
+
+  _openCamera() async {
+    try {
+      final XFile? pickedFile = await _picker.pickImage(
+        source: ImageSource.camera,
+      );
+      setState(() {
+        _imageFile = pickedFile!;
+        imageSelected = true;
+      });
+    } catch (e) {
+      print(e);
+    }
+    // _isLoading();
+  }
+
+  _uploadImage() async {
+    try {
+      final XFile? pickedFile = await _picker.pickImage(
+        source: ImageSource.gallery,
+      );
+      setState(() {
+        _imageFile = pickedFile!;
+        imageSelected = true;
+      });
+    } catch (e) {
+      print(e);
+    }
+    // _isLoading();
+  }
+
+  Future<void> _showChoiceDialog(BuildContext context) async {
+    return showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return AlertDialog(
+              title: Text("Choose an Option"),
+              backgroundColor: AppTheme.moderateOrange,
+              content: SingleChildScrollView(
+                  child: ListBody(
+                children: <Widget>[
+                  GestureDetector(
+                    child: Text("Take a Picture"),
+                    onTap: () {
+                      _openCamera();
+                    },
+                  ),
+                  Padding(padding: EdgeInsets.all(8.0)),
+                  GestureDetector(
+                    child: Text("Pick Image from Gallery"),
+                    onTap: () {
+                      _uploadImage();
+                    },
+                  ),
+                ],
+              )));
+        });
   }
 
   getTranslationScreen(String output, String userID) async {
