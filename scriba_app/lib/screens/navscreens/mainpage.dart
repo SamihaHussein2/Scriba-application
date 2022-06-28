@@ -42,7 +42,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  XFile? _imageFile;
+  late XFile _imageFile;
   bool isLoading = false;
   bool check = false;
   bool imageSelected = false;
@@ -57,24 +57,23 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-          constraints: const BoxConstraints.expand(),
-          decoration: const BoxDecoration(
-              image: DecorationImage(
-                  image: AssetImage("assets/images/Back-dark.png"),
-                  fit: BoxFit.cover)),
-      
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Row(
+        constraints: const BoxConstraints.expand(),
+        decoration: const BoxDecoration(
+            image: DecorationImage(
+                image: AssetImage("assets/images/Back-dark.png"),
+                fit: BoxFit.cover)),
+        child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            // first letters classification button
-            Column(
+            Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text(
+                // first letters classification button
+                Column(
+                  children: [
+                    Text(
                       "Characters",
                       style: TextStyle(
                         color: AppTheme.moderateOrange,
@@ -85,95 +84,95 @@ class _MyHomePageState extends State<MyHomePage> {
                     SizedBox(
                       height: 10,
                     ),
-                ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    shape: const CircleBorder(),
-                    primary: AppTheme.darkRed,
-                    side: const BorderSide(
-                        color: AppTheme.moderateOrange,
-                        width: 4),
-                  ),
-                  child: Column(
-                    children: [
-                      Container(
-                          width: 80,
-                          height: 80,
-                          alignment: Alignment.center,
-                          decoration: const BoxDecoration(
-                              shape: BoxShape.circle),
-                          child: Image.asset(
-                            "assets/images/homepage_icons/char.png",
-                            width: 50,
-                          )),
-                    ],
-                  ),
-                  onPressed: ()async {
-                  try {
-                    final XFile? pickedFile = await _picker.pickImage(
-                      source: ImageSource.gallery,
-                    );
-                    setState(() {
-                      _imageFile = pickedFile;
-                      imageSelected = true;
-                    });
-                  } catch (e) {
-                    print(e);
-                  }
-                  try {
-                    isLoading = true;
+                    ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        shape: const CircleBorder(),
+                        primary: AppTheme.darkRed,
+                        side: const BorderSide(
+                            color: AppTheme.moderateOrange, width: 4),
+                      ),
+                      child: Column(
+                        children: [
+                          Container(
+                              width: 80,
+                              height: 80,
+                              alignment: Alignment.center,
+                              decoration:
+                                  const BoxDecoration(shape: BoxShape.circle),
+                              child: Image.asset(
+                                "assets/images/homepage_icons/char.png",
+                                width: 50,
+                              )),
+                        ],
+                      ),
+                      onPressed: () async {
+                        try {
+                          final XFile? pickedFile = await _picker.pickImage(
+                            source: ImageSource.gallery,
+                          );
+                          setState(() {
+                            _imageFile = pickedFile!;
+                            imageSelected = true;
+                          });
+                        } catch (e) {
+                          print(e);
+                        }
+                        try {
+                          isLoading = true;
                           check = true;
-                      final bytes = File(_imageFile!.path).readAsBytesSync();
-                      String img64 = base64Encode(bytes);
-                      final Dio _dio = Dio();
-                      FormData formData = FormData.fromMap({"image":img64, "classid":1});
-                      // print('sending image');
-                      // print(img64);
-                     await _dio.post(
-                        ipUrl,
-                        data:formData,
-                      ).then((value) async{
-                       // display value wherever
-                        print("value is ");
-                        print(value);
-                        
-                         setState(() {
-                      output = value.toString();
-                    }); 
-                    if (output != "") {
-                              getTranslation(output);
-                              isLoading = false;
-                              check = false;
-                              DateTime currentPhoneDate = DateTime.now(); //DateTime
-                              Timestamp myTimeStamp =
-                                  Timestamp.fromDate(currentPhoneDate);
-                              await addTranslationToFirebase(
-                                  output, myTimeStamp, userID!);}
+                          final bytes =
+                              File(_imageFile!.path).readAsBytesSync();
+                          String img64 = base64Encode(bytes);
+                          final Dio _dio = Dio();
+                          FormData formData =
+                              FormData.fromMap({"image": img64, "classid": 1});
+                          // print('sending image');
+                          // print(img64);
+                          await _dio
+                              .post(
+                            ipUrl,
+                            data: formData,
+                          )
+                              .then((value) async {
+                            // display value wherever
+                            print("value is ");
+                            print(value);
 
-                        // print(output);
-                        // if (value.data['status'] == "Image Opened") {
-                        //   Fluttertoast.showToast(
-                        //     msg: "Image Sent To Backend",
-                        //     toastLength: Toast.LENGTH_SHORT,
-                        //     gravity: ToastGravity.BOTTOM,
-                        //     backgroundColor: Color.fromARGB(255, 175, 155, 76),
-                        //     textColor: Colors.white,
-                        //     fontSize: 16.0,
-                        //   );
-                        // }
-                      });
-                    } catch (e) {
-                      print(e);
-                    }
+                            setState(() {
+                              output = value.toString();
+                            });
+                            if (output != "") {
+                              if (userID != null) {
+                                getTranslationScreen(output, userID!);
+                              } else {
+                                isLoading = false;
+                                check = false;
+                              }
+                            }
 
-                   
-                },
+                            // print(output);
+                            // if (value.data['status'] == "Image Opened") {
+                            //   Fluttertoast.showToast(
+                            //     msg: "Image Sent To Backend",
+                            //     toastLength: Toast.LENGTH_SHORT,
+                            //     gravity: ToastGravity.BOTTOM,
+                            //     backgroundColor: Color.fromARGB(255, 175, 155, 76),
+                            //     textColor: Colors.white,
+                            //     fontSize: 16.0,
+                            //   );
+                            // }
+                          });
+                        } catch (e) {
+                          print(e);
+                        }
+                      },
+                    ),
+                  ],
                 ),
-              ],
-            ),
-            // second (words) classification button
-            Column(
-              children: [
-                Text(
+                // second (words) classification button
+                Column(
+                  children: [
+                    Text(
                       "Words",
                       style: TextStyle(
                         color: AppTheme.moderateOrange,
@@ -184,91 +183,90 @@ class _MyHomePageState extends State<MyHomePage> {
                     SizedBox(
                       height: 10,
                     ),
-                ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    shape: const CircleBorder(),
-                    primary: AppTheme.darkRed,
-                    side: const BorderSide(
-                        color: AppTheme.moderateOrange,
-                        width: 4),
-                  ),
-                  child: Container(
-                      width: 80,
-                      height: 80,
-                      alignment: Alignment.center,
-                      decoration: const BoxDecoration(
-                          shape: BoxShape.circle),
-                      child: Image.asset(
-                        "assets/images/homepage_icons/translate.png",
-                        width: 50,
-                      )),
-                  onPressed: ()async {
-                  try {
-                    final XFile? pickedFile = await _picker.pickImage(
-                      source: ImageSource.gallery,
-                    );
-                    setState(() {
-                      _imageFile = pickedFile;
-                      imageSelected = true;
-                    });
-                  } catch (e) {
-                    print(e);
-                  }
-                  try {
-                    isLoading = true;
+                    ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        shape: const CircleBorder(),
+                        primary: AppTheme.darkRed,
+                        side: const BorderSide(
+                            color: AppTheme.moderateOrange, width: 4),
+                      ),
+                      child: Container(
+                          width: 80,
+                          height: 80,
+                          alignment: Alignment.center,
+                          decoration:
+                              const BoxDecoration(shape: BoxShape.circle),
+                          child: Image.asset(
+                            "assets/images/homepage_icons/translate.png",
+                            width: 50,
+                          )),
+                      onPressed: () async {
+                        try {
+                          final XFile? pickedFile = await _picker.pickImage(
+                            source: ImageSource.gallery,
+                          );
+                          setState(() {
+                            _imageFile = pickedFile!;
+                            imageSelected = true;
+                          });
+                        } catch (e) {
+                          print(e);
+                        }
+                        try {
+                          isLoading = true;
                           check = true;
-                      final bytes = File(_imageFile!.path).readAsBytesSync();
-                      String img64 = base64Encode(bytes);
-                      final Dio _dio = Dio();
-                      FormData formData = FormData.fromMap({"image":img64, "classid":2});
-                      // print('sending image');
-                      // print(img64);
-                      _dio.post(
-                        ipUrl,
-                        data:formData,
-                      ).then((value) async{
-                       // display value wherever
-                        print("value is ");
-                        print(value);
-                        
-                         setState(() {
-                      output = value.toString();
-                    }); 
-                    if (output != "") {
-                              getTranslation(output);
+                          final bytes =
+                              File(_imageFile!.path).readAsBytesSync();
+                          String img64 = base64Encode(bytes);
+                          final Dio _dio = Dio();
+                          FormData formData =
+                              FormData.fromMap({"image": img64, "classid": 2});
+                          // print('sending image');
+                          // print(img64);
+                          _dio
+                              .post(
+                            ipUrl,
+                            data: formData,
+                          )
+                              .then((value) async {
+                            // display value wherever
+                            print("value is ");
+                            print(value);
+
+                            setState(() {
+                              output = value.toString();
+                            });
+                            if (output != "") {
+                              if (userID != null) {
+                                getTranslationScreen(output, userID!);
+                              }
+                            } else {
                               isLoading = false;
                               check = false;
-                              DateTime currentPhoneDate = DateTime.now(); //DateTime
-                              Timestamp myTimeStamp =
-                                  Timestamp.fromDate(currentPhoneDate);
-                              if(userID != null)
-                              await addTranslationToFirebase(
-                                  output, myTimeStamp, userID!);}
-                        // print(output);
-                        // if (value.data['status'] == "Image Opened") {
-                        //   Fluttertoast.showToast(
-                        //     msg: "Image Sent To Backend",
-                        //     toastLength: Toast.LENGTH_SHORT,
-                        //     gravity: ToastGravity.BOTTOM,
-                        //     backgroundColor: Color.fromARGB(255, 175, 155, 76),
-                        //     textColor: Colors.white,
-                        //     fontSize: 16.0,
-                        //   );
-                        // }
-                      });
-                    } catch (e) {
-                      print(e);
-                    }
-
-                   
-                },
+                            }
+                            // print(output);
+                            // if (value.data['status'] == "Image Opened") {
+                            //   Fluttertoast.showToast(
+                            //     msg: "Image Sent To Backend",
+                            //     toastLength: Toast.LENGTH_SHORT,
+                            //     gravity: ToastGravity.BOTTOM,
+                            //     backgroundColor: Color.fromARGB(255, 175, 155, 76),
+                            //     textColor: Colors.white,
+                            //     fontSize: 16.0,
+                            //   );
+                            // }
+                          });
+                        } catch (e) {
+                          print(e);
+                        }
+                      },
+                    ),
+                  ],
                 ),
-              ],
-            ),
-            //third (ROYALS) classification button
-            Column(
-              children: [
-                Text(
+                //third (ROYALS) classification button
+                Column(
+                  children: [
+                    Text(
                       "Royals",
                       style: TextStyle(
                         color: AppTheme.moderateOrange,
@@ -279,100 +277,106 @@ class _MyHomePageState extends State<MyHomePage> {
                     SizedBox(
                       height: 10,
                     ),
-                ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    shape: const CircleBorder(),
-                    primary: AppTheme.darkRed,
-                    side: const BorderSide(
-                        color: AppTheme.moderateOrange,
-                        width: 4),
-                  ),
-                  child: Container(
-                      width: 80,
-                      height: 80,
-                      alignment: Alignment.center,
-                      decoration: const BoxDecoration(
-                          shape: BoxShape.circle),
-                      child: Image.asset(
-                        "assets/images/homepage_icons/royal.png",
-                        width: 50,
-                      )),
-                  onPressed: ()async {
-                  try {
-                    final XFile? pickedFile = await _picker.pickImage(
-                      source: ImageSource.gallery,
-                    );
-                    setState(() {
-                      _imageFile = pickedFile;
-                      imageSelected = true;
-                    });
-                  } catch (e) {
-                    print(e);
-                  }
-                  try {
-                    isLoading = true;
+                    ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        shape: const CircleBorder(),
+                        primary: AppTheme.darkRed,
+                        side: const BorderSide(
+                            color: AppTheme.moderateOrange, width: 4),
+                      ),
+                      child: Container(
+                          width: 80,
+                          height: 80,
+                          alignment: Alignment.center,
+                          decoration:
+                              const BoxDecoration(shape: BoxShape.circle),
+                          child: Image.asset(
+                            "assets/images/homepage_icons/royal.png",
+                            width: 50,
+                          )),
+                      onPressed: () async {
+                        try {
+                          final XFile? pickedFile = await _picker.pickImage(
+                            source: ImageSource.gallery,
+                          );
+                          setState(() {
+                            _imageFile = pickedFile!;
+                            imageSelected = true;
+                          });
+                        } catch (e) {
+                          print(e);
+                        }
+                        try {
+                          isLoading = true;
                           check = true;
-                      final bytes = File(_imageFile!.path).readAsBytesSync();
-                      String img64 = base64Encode(bytes);
-                      final Dio _dio = Dio();
-                      FormData formData = FormData.fromMap({"image":img64, "classid":3});
-                      // print('sending image');
-                      // print(img64);
-                      _dio.post(
-                        ipUrl,
-                        data:formData,
-                      ).then((value) async{
-                       // display value wherever
-                        print("value is ");
-                        print(value);
-                        
-                         setState(() {
-                      output = value.toString();
-                    }); 
-                    if (output != "") {
-                              getTranslation(output);
-                              isLoading = false;
-                              check = false;
-                              DateTime currentPhoneDate = DateTime.now(); //DateTime
-                              Timestamp myTimeStamp =
-                                  Timestamp.fromDate(currentPhoneDate);
-                              await addTranslationToFirebase(
-                                  output, myTimeStamp, userID!);}
-                        // print(output);
-                        // if (value.data['status'] == "Image Opened") {
-                        //   Fluttertoast.showToast(
-                        //     msg: "Image Sent To Backend",
-                        //     toastLength: Toast.LENGTH_SHORT,
-                        //     gravity: ToastGravity.BOTTOM,
-                        //     backgroundColor: Color.fromARGB(255, 175, 155, 76),
-                        //     textColor: Colors.white,
-                        //     fontSize: 16.0,
-                        //   );
-                        // }
-                      });
-                    } catch (e) {
-                      print(e);
-                    }
+                          final bytes =
+                              File(_imageFile!.path).readAsBytesSync();
+                          String img64 = base64Encode(bytes);
+                          final Dio _dio = Dio();
+                          FormData formData =
+                              FormData.fromMap({"image": img64, "classid": 3});
+                          // print('sending image');
+                          // print(img64);
+                          _dio
+                              .post(
+                            ipUrl,
+                            data: formData,
+                          )
+                              .then((value) async {
+                            // display value wherever
+                            print("value is ");
+                            print(value);
 
-                   
-                },
-                ),
+                            setState(() {
+                              output = value.toString();
+                            });
+                            if (output != "") {
+                              if (userID != null) {
+                                getTranslationScreen(output, userID!);
+                              } else {
+                                isLoading = false;
+                                check = false;
+                              }
+                            }
+                            // print(output);
+                            // if (value.data['status'] == "Image Opened") {
+                            //   Fluttertoast.showToast(
+                            //     msg: "Image Sent To Backend",
+                            //     toastLength: Toast.LENGTH_SHORT,
+                            //     gravity: ToastGravity.BOTTOM,
+                            //     backgroundColor: Color.fromARGB(255, 175, 155, 76),
+                            //     textColor: Colors.white,
+                            //     fontSize: 16.0,
+                            //   );
+                            // }
+                          });
+                        } catch (e) {
+                          print(e);
+                        }
+                      },
+                    ),
+                  ],
+                )
               ],
-            )
-          ],
             ),
             // SizedBox(height: 10,),
             Center(
-            child: imageSelected
-              ? SizedBox(height: 300,width: 300,child: Image.file(File(_imageFile!.path)))
-              : const Text(
-                  'You have not yet picked an image.',
-                  textAlign: TextAlign.center,),
-          ),
-          SizedBox(height: 5,),
-          // Text(output, style: TextStyle(fontSize: 15, backgroundColor: AppTheme.moderateOrange, color: Colors.white),),
+              child: imageSelected
+                  ? SizedBox(
+                      height: 300,
+                      width: 300,
+                      child: Image.file(File(_imageFile.path)))
+                  : const Text(
+                      '',
+                      textAlign: TextAlign.center,
+                    ),
+            ),
+            SizedBox(
+              height: 5,
+            ),
+            // Text(output, style: TextStyle(fontSize: 15, backgroundColor: AppTheme.moderateOrange, color: Colors.white),),
 
-          isLoading
+            isLoading
                 ? CircularProgressIndicator(
                     backgroundColor: AppTheme.moderateOrange,
                     color: AppTheme.darkRed,
@@ -387,7 +391,7 @@ class _MyHomePageState extends State<MyHomePage> {
             SizedBox(
               height: 10,
             ),
-             check
+            check
                 ? Center(
                     child: Text(
                     "Wait for translation",
@@ -426,7 +430,7 @@ class _MyHomePageState extends State<MyHomePage> {
           ],
         ),
       ),
-      
+
       // floatingActionButton: Column(
       //   mainAxisAlignment: MainAxisAlignment.end,
       //   children: <Widget>[
@@ -486,15 +490,24 @@ class _MyHomePageState extends State<MyHomePage> {
       // ),
     );
   }
+
+  getTranslationScreen(String output, String userID) async {
+    getTranslation(output);
+    isLoading = false;
+    check = false;
+    DateTime currentPhoneDate = DateTime.now(); //DateTime
+    Timestamp myTimeStamp = Timestamp.fromDate(currentPhoneDate);
+    await addTranslationToFirebase(output, myTimeStamp, userID);
+  }
 }
 
-  final FlutterTts flutterTts = FlutterTts();
+final FlutterTts flutterTts = FlutterTts();
 speak(word) async {
-      //print(await flutterTts.getLanguages);
-      await flutterTts.setLanguage("ar");
-      await flutterTts.setVolume(10);
-      await flutterTts.speak(word);
-    }
+  //print(await flutterTts.getLanguages);
+  await flutterTts.setLanguage("ar");
+  await flutterTts.setVolume(10);
+  await flutterTts.speak(word);
+}
 //----------------------------------------------------------------------------------------------
 
 // class _HomepageState extends State<MainPage> {
