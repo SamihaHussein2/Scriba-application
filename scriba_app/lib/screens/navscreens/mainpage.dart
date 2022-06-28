@@ -380,7 +380,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 : Text(
                     output,
                     style: TextStyle(
-                        fontSize: 30,
+                        fontSize: 20,
                         backgroundColor: AppTheme.darkRed,
                         color: AppTheme.moderateOrange),
                   ),
