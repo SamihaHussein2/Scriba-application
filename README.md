@@ -20,3 +20,11 @@ MobileNet suitable for mobile devices.
 The app is developed using Flutter  to
 be compatible with Android and iOS devices. 
 
+# Dart Programming Language 
+Dart is an object oriented programming language used in Flutter.
+
+# Figma 
+Figma is an online software used in designing wireframes and screens.
+
+# Python 
+Python is the language used in building the backend of scriba application, by implementing the MobileNet model to be trained and tested then get the best results to use the model in the processing of translation in the app.
