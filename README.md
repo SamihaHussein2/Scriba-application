@@ -3,7 +3,7 @@ Flutter mobile application to translate hieroglyphs by capturing or importing im
 
 # Technology used: 
 - MobileNet Lightweight CNN
-- Flutter Framework
+- Flutter software development kit
 - Dart Programming Language
 - Figma for screens designs
 - Python Programming Language
@@ -14,4 +14,9 @@ layers of the MobileNet architecture are built on depthwise
 separable convolutions that factorize a standard convolution
 into a depthwise one, and a 1x1 convolution called ’pointwise
 convolution’, which simplifies processing and makes
-MobileNet suitable for mobile devices
+MobileNet suitable for mobile devices.
+
+# Flutter software development kit
+The app is developed using Flutter  to
+be compatible with Android and iOS devices. 
+
