@@ -16,11 +16,11 @@ into a depthwise one, and a 1x1 convolution called ’pointwise
 convolution’, which simplifies processing and makes
 MobileNet suitable for mobile devices.
 
-# Flutter software development kit
+# Flutter 
 The app is developed using Flutter  to
 be compatible with Android and iOS devices. 
 
-# Dart Programming Language 
+# Dart 
 Dart is an object oriented programming language used in Flutter.
 
 # Figma 
